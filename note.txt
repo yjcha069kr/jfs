@@ -1,0 +1,37 @@
+메모용 사용 좋아요~!!
+
+1. VSCode 제거
+2. VSCode 기본 설치
+3. 확장 프로그램
+    - 한국어 팩: (검색어: kor)
+    - (필수) Live Server: (검색어: Live)
+    - 테마: one dark pro: (검색어:theme one)
+    - (power mode): (검색어: power)
+    - (추천) vscode-icons: (검색어: vscode)
+        -> 기본값은 seti -> VSCode icons
+
+
+내 컴퓨터 > 로컬디스크D: > 이름폴더
+서버(Server) 컴퓨터 -> github(깃허브) > jfs폴더 > readme.md
+
+git(깃)
+    -> 자료를 깃허브에 업로드/다운도르
+
+    
+github(깃허브): 저장소(repository)
+    https://github.com/
+    -> ctrl+클릭
+    -> 파일/폴더 저장공간 확보
+
+
+ctrl+/ = 주석 설명글되;ㅁ
+
+<<git 사용>>
+    git init
+    git remote add origin https://github.com/yjcha069kr/jfs.git
+    git add .
+    git commit -m "first commit"
+    git push -u origin main
+(에러나면)
+    git pull origin main
+    git pull --rebase origin main
