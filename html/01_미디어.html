@@ -8,24 +8,96 @@
 </head>
 
 <body>
-    <!-- !tab-->
+
+    <!-- 
+    
+        HTML(Hyper Text Markup Language)
+           -웹사이트에 내용 표시
+           
+        형식:
+            <(시작)태그>내용</(끝)태그>
+            반드시 속성 써야되는 태그들도 있음
+               *속성
+                 -필수 속성: ex) a태그의 href
+                                img태그의 src, alt
+                 -선택 속성: ex) img태그의 width (굳이 안써도 됨. CSS(디자인)에서 하니까)
+           
+        -->
+
+    <!-- 주석: ctrl + /  (그냥 바로 주석 만들기)
+               shift + alt + a (코드 옆에 새로운 주석 만들기) -->
+    <!-- 화면 확대/축소: ctrl+마우스휠
+           확대: ctrl + +
+           축소: ctrl + -   -->
+    <!-- 취소: ctrl + z -->
+    <!-- !tab emmet(에밋) --> 
     <!-- https://docs.emmet.io/cheat-sheet/ -->
     <!-- HTML 요소(element) = 태그(tag)는 요소의 일부
        1. 블록레벨 요소 : h1, p
-       2. 인라인(inline)요소 : a, img
-       -->
+       2. 인라인(inline)요소 : a, img -->
 
+    <!-- 복제: shift + alt + ↑/↓ -->
     <!-- 시작태그, contents, 끝태그 -->
     <!-- 빈태그: 종료(끝) 태그가 없는 태그도 있다. -->
-    <!-- 정돈(들여쓰기) shift+alt_f -->
-     <!-- 라이브 서버: 웹 브라우저 결과 확인: F12 -->
-    <!-- h1+p+a+img 탭 -->
+    <!-- 정돈(들여쓰기) shift + alt + f -->
+    <!-- 라이브 서버: 웹 브라우저 결과 확인: F12 -->
+   
 
+    <!-- h1 + p + a + img + 탭/엔터 -->
+    <h1>제목</h1><!-- shift + alt + a  로 옆에 주석 달기 가능 -->
     <h1>제목</h1>
-    <p>본문</p>
+    <p>본문텍스트입니다.</p>
+    <p>본문텍스트임</p>
+    <a href="링크">마이 깃허브 사이트</a>
     <a href="https://github.com/yjcha069kr/jfs">마이 깃허브 사이트</a>
-    <img src="figma.png" alt="대체텍스트">
-    <img src="figma.svg" alt="대체텍스트">    
+    <!-- 하이퍼링크: 한 문서에서 다른 참조로 바로 연결되는 참조링크(a태그의 역할) -->
+    
+    <!-- 순서없는 목록 -->
+     <!-- ul>li*5  (태그 사라지면 ctrl + spacebar) --> 
+    <ul>
+        <li>딸기라떼</li>
+        <li>오미자에이드</li>
+        <li>아이스티</li>
+        <li>매실차</li>
+        <li>펩시 제로 슈가</li>
+    </ul>
+
+    <!-- 순서 있는 목록 -->
+     <!-- ol>li*3 -->
+    <h2>올림픽 양궁 순위</h2>
+    <h2>올림픽 양궁 순위</h2>
+    <ol>
+        <li>한국</li>
+        <li>미국</li>
+        <li>????</li>
+    </ol>
+
+    <!-- 웹표준   ::자세한 설명은 강사님 깃허브 확인
+         웹접근성: 모든 사람이 동등하게 웹에 사용할수있도록(장애인, 어르신도 포함) 
+         
+         유효성 검사: HTML을 표준에 맞게 작성했는지 확인
+                    사이트- https://validator.w3.org/      -->
+    <!-- 적응형 vs 반응형 
+            *적응형웹: 고정 레이아웃 중 하나를 선택하여 보여주는 웹 디자인
+                      복잡한 요소 많은 웹들
+                      (화면 조정할 때 화면 움직임 반응X) 
+                  ex) 네이버, 메가박스 등
+                      -> naver.com -> 데스크탑 PC
+                      -> m.naver.com -> 모바일(테블릿 PC, 폰)
+            *반응형웹: (화면 조정할 때 화면 움직임 반응O)
+                  ex) 메가커피 -->
+
+    <!-- 이미지 사진 사이즈 조정은  alt+내용 뒤에 width="숫자"
+                                  alt+내용 뒤에 style="width:숫자px;" -->
+
+    <img src="figma.svg" alt="대체텍스트" width="67">
+
+
+    <img src="https://kyf.or.kr/utl/web/imageSrc.do?path=20220725&physical=FE0766CA00A847BE9719D8EF205586EC&contentType=image/jpeg" alt="인스타그램 SNS 아이콘" width="100">
+
+    <!-- 인라인 스타일 : style="width:100px;"  -->
+    <img src="https://kyf.or.kr/utl/web/imageSrc.do?path=20220725&physical=FE0766CA00A847BE9719D8EF205586EC&contentType=image/jpeg" alt="인스타그램 SNS 아이콘" style="width:100px;">
+
 </body>
 
 </html>
