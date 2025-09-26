@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko"><!-- HTML문서의 시작, 언어 선택가능
+                     https://www.w3schools.com/tags/ref_language_codes.asp
+                        한국어: ko
+                        영어: en 
+                        중국어: zh
+                        일본어: ja
+                -->
+<!-- 머리의 시작 -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML의 기본구조</title> <!-- 웹 브라우저의 제목 표시줄에 표시할 내용 -->
+        <link rel="stylesheet" href="스타일.css"> <!-- 외부 스타일 방식 -->
+        <style>body {background: rgb(36, 159, 207);}</style> <!-- 내부 스크립트 -->
+        <script>"자바스크립트의 내용"</script> <!-- 내부 스크립트-->
+    </head> <!-- 머리의 끝 -->
+
+<!-- 본문의 시작 -->
+    <body> <!-- 인라인 스타일 방식-->
+        <!-- 웹 브라우저에 표시할 내용 -->
+        <!-- 콘텐츠 제목: h1~h6-->
+        <h1>제목</h1>
+        <!-- 본문 내용(문단, 단락: p) -->
+         <!-- Lorem탭(의미없는 텍스트=채우기 텍스트) -->
+          <!-- strong: 강한 강조 텍스트, 굵게-->
+          <!-- em: 중요한 텍스트, 이탤릭 -->
+          <!-- mark: 강조 텍스트 -->
+        <p><span style="font-weight: 700; font-size: 30px; color: rgb(186, 206, 76);">Lorem ipsum</span> dolor sit amet <b>consectetur</b> adipisicing elit. <strong>Maiores tenetur</strong> reiciendis <span style="font-style: italic;">molestiae consectetur</span> corporis impedit? <span style="background: yellow;">Rerum</span> tenetur, <i>magni voluptates</i> nisi veniam, qui <mark>doloremque</mark> neque natus, nemo saepe quaerat ab! Pariatur.</p>
+        <!-- Lorem5탭(5글자, 더미 텍스트) -->
+        <p>Lorem ipsum dolor sit amet.</p>
+        <!-- ul의 자식은 li만 사용 가능 -->
+        <!-- li안에는 본문에서 배운 모든 태그 사용 가능 -->
+        <ul>
+            <!-- <h2>제목</h2>: 틀림 -->
+            <!-- <p>단락</p>: 틀림 -->
+            <li>
+                <ul>
+                    <li>순서없는 목록 만들기</li>
+                </ul>
+            </li>
+        </ul>
+        <a href="URL 파일 이메일 전화번호"내용></a> <!-- 하이퍼링크 -->
+    <!-- 이미지 삽입: jpg(이미지 용량이 작음), gif, png(투명배경사진), svg(로고, 아이콘) -->
+         <!-- 더미이미지사이트: https://picsum.photos/ -->
+        <img src="https://picsum.photos/id/237/300/200" alt="대체텍스트">
+    <!-- 비디오 삽입: mp4, webm, ogv -->
+        <!-- 무료영상 사이트: https://www.pexels.com/ko-kr/videos/ -->
+        <video controls style="width: 400px;" autoplay muted loop>
+            <source src="../assets/vid/13562144_3840_2160_32fps.mp4" type="video/mp4">
+            <source src="../assets/vid/13562144_3840_2160_32fps.webm" type="video/webm">
+            <source src="../assets/vid/13562144_3840_2160_32fps.ogv" type="video/ogg">
+        </video>
+    <!-- 오디오 삽입: mp3, wav, ogg/og -->
+     <audio controls>
+        <!-- 선택 영역 복제: shift+alt+방향키 -->
+         <source src="../assets/aud/99C7FE405FA95C2C04.mp3" type="audio/mpeg">
+         <source src="../assets/aud/99C7FE405FA95C2C04.wav" type="audio/wav">
+         <source src="../assets/aud/99C7FE405FA95C2C04.ogg" type="audio/ogg">
+    </audio> 
+    <!-- 외부 파일(*.mp4), URL 가져오기 -->
+        <!-- frameborder 쓰면 안됨!! style="border: none 으로 바꿔야됨 -->
+     <iframe src="https://www.daum.net/" style="border: none;"></iframe> <!-- 크기조정 가능 --> 
+    <script>"자바스크립트의 내용"</script>
+
+    </body> <!-- 본문의 끝 -->
+
+</html> <!-- HTML문서의 끝 -->
