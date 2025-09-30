@@ -1,0 +1,12 @@
+CSS 우선순위
+0. !important -> 위치 관계 없이 가장 우선 (거의 안씀. 표현안될때 최후 수단으로만 사용)
+    예) color: red; !important     <<얘로 결과나옴
+        color: blue;
+        color: yellow;
+1. 인라인 -> <body> 사이 필요한 태그에 기록(제일 아래에 기록돼서)
+2. 내부 또는 외부 -> <head> 사이에 기록
+3. 제일 아래쪽에 기록한 것
+    예) color: red;    
+        color: blue;
+        color: yellow;      <<얘로 결과나옴
+
