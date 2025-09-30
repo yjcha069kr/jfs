@@ -146,17 +146,22 @@
             z-index: 10;
         }
 
+        /* 클래스 이름이 like-button에 해당하는 태그에 마우스를 올리면(마우스에 올린 형태) */
         .like-button:hover {
-            background-color: #b3b3b3;
+            background-color: #f01919;
         }
 
         /* Add a heart shape using a pseudo-element */
+        /* <button class="like-button">내용</button> 
+            ::after는 종료태그 바로 앞에 삽입(=내용 이후에)
+            ::before는 시작태그 바로 뒤에 삽입(=내용 이전에)
+        */
         .like-button::after {
             content: '';
             display: block;
             width: 18px;
             height: 18px;
-            background-color: white;
+            background-color: blue;
             border-radius: 50%;
         }
 
