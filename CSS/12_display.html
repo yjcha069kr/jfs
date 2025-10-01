@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS:display</title>
+    <style>
+        /* 
+            display: 표시방식;
+                block
+                inline
+                inline-block: 인라인이면서 블록 성격
+                none: 없음
+        */
+    </style>
+</head>
+<body>
+    <div>
+        <h1>display</h1>
+        <p>Lorem <span>ipsum</span> dolor sit amet consectetur <b>adipisicing</b> elit. Cumque <i>omnis</i> aliquam iure incidunt voluptate.<br> Dicta, itaque necessitatibus accusantium ratione placeat ipsum, suscipit qui alias deleniti quisquam voluptatibus nostrum cupiditate tenetur.</p>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="https://yjcha069kr.github.io/jfs">개인 사이트</a></li>
+                    <li><a href="abcd@efgh.com">abcd@efgh.com</a></li>
+                    <li><a href="tel:010-1234-5678">010-1234-5678</a></li>
+                    <li><a href="index.html">파일</a></li>
+                    <li><a href="#sec">클릭하면 id가 sec인 위치로 이동</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="sec">
+            <h2>block vs inline</h2>
+            <figure>
+                <!-- 경로 지정 방법
+                    1. 절대 경로: http://, https://~, /~
+                    2. 상대 경로: ./, ../
+                -->
+                <!-- 상대 경로, 로컬과 서버에서 모두 테스트 가능 -->
+                <img src="../assets/imgs/figma.svg" alt="피그마 로고">
+                <figcaption>상대 경로 연결</figcaption>
+                <!-- 작업 영역 폴더 기준(절대 경로), 로컬x, 서버 테스트만 o -->
+                <img src="/assets/imgs/figma.svg" alt="피그마 로고">
+                <figcaption>작업 영역 폴더 기준 경로 연결</figcaption>
+            </figure>
+            <video>
+                <source src="../assets/vid/mov_bbb.mp4" type="video/mp4">
+            </video>
+            <audio src="../assets/aud/Last Cappuccino in Rio - Chris Haugen.mp3"></audio>
+        </section>
+        <footer>
+            <adress>주소 및 연락처</adress>
+        </footer>
+    </div>
+</body>
+</html>
