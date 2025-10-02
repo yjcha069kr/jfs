@@ -6,12 +6,88 @@
     <title>CSS:display</title>
     <style>
         /* 
-            display: 표시방식;
-                block
-                inline
-                inline-block: 인라인이면서 블록 성격
-                none: 없음
+            ***************CSS가 적용되는 우선순위***************
+            ********           id > class > 태그        ********
+            **          같은 선택자끼리는 아래 기록한 것        **
+            ***************************************************
         */
+
+        /* 
+            VS Code 창 분할
+            1. 왼쪽 탐색기에서 분할하여 볼 파일을 마우스로 드래그
+            2. 두 개 이상의 파일이 탭으로 열려있을때: ctrl+alt+좌우방향키
+            3. 같은 파일을 분할하여 볼 때: ctrl+\
+            4. 기본 창 분할은 좌우 -> 상하 분할: alt+오른쪽 위 분할버튼클릭
+        */
+
+        /* 
+            HTML에서 요소를 구분(v4.01 이전)
+                1. 블록 레벨 요소
+                   : html, body, div, h1, p, ul, li
+                2. 인라인 요소
+                   : span, b, i, br, a, img, iframe
+        */
+
+        /* 
+            display: 표시방식;
+                1. block: 줄 바꿈(세로배치: 위->아래)
+                    - width: 100%;
+                    - height: 컨텐츠 크기;
+                    - 크기조절⭕, 여백(margin, padding)조절⭕, 테두리(border)조절⭕
+                        ❗❗❗주의❗❗❗ margin 겹침 주의
+                    - 태그종류: html, body, div(header, section, footer, nav, ...), h1~h6, p, ul, figure, figcaption, address
+
+                2. list-item: 
+                    - li(블록레벨 요소랑 같음)
+
+                3. inline: 줄 바꿈❌(가로배치: 왼->오)
+                    - width: 컨텐츠 크기;
+                    - height: 컨텐츠 크기;
+                    - 크기조절❌ (예외 img, video, iframe는 조절 가능), 위아래margin조절❌
+                    - padding, 테두리(border) 조절⭕
+                    - 태그종류: span, b, i, br, a, img, video
+
+                4. inline-block: 줄 바꿈x(가로배치: 왼->오)
+                    - width: 컨텐츠 크기;
+                    - height: 컨텐츠 크기;
+                    - 크기조절⭕, 여백(margin, padding)조절o, 테두리(border)조절o
+                    - margin 겹침 없음
+                    - 인라인이면서 블록 성격
+                    - 태그종류: button
+
+                5. none: 
+                    -없음 audio
+        */
+
+        /* 페이지에 있는 모든 요소 */
+        body * {
+            outline: 1px solid lime;
+            width: 200px;
+        }
+        /* p 안에 들어있는 모든 요소 */
+        p *, a, img, video {outline: 2px solid red;}
+
+         #btn {
+            display: flow-root;
+            width: 1000px;
+            height: 600px;
+            margin-top: 500px;
+            background-color: lawngreen;
+            outline: none;
+            line-height: 1;
+        }
+
+        #btn button {
+            width: auto;
+            /* width: 120px;
+            height: 40px; */
+            padding: 13px 46px;
+            border: 1px solid red;
+            margin: 10px;
+            line-height: 1;
+            outline: none;
+        }
+
     </style>
 </head>
 <body>
@@ -43,14 +119,22 @@
                 <img src="/assets/imgs/figma.svg" alt="피그마 로고">
                 <figcaption>작업 영역 폴더 기준 경로 연결</figcaption>
             </figure>
-            <video>
-                <source src="../assets/vid/mov_bbb.mp4" type="video/mp4">
-            </video>
-            <audio src="../assets/aud/Last Cappuccino in Rio - Chris Haugen.mp3"></audio>
+            <div>
+                <video>
+                    <source src="../assets/vid/mov_bbb.mp4" type="video/mp4">
+                </video>
+                <!-- ***!!!주의!!!*** HTML의 frameborder속성 대신 CSS의 border 속성 사용해야됨. frameborder 지우기 -->
+                <iframe src="https://www.daum.net"></iframe>
+                <audio src="../assets/aud/Last Cappuccino in Rio - Chris Haugen.mp3"></audio>
+            </div>
         </section>
         <footer>
             <adress>주소 및 연락처</adress>
         </footer>
+    </div>
+
+    <div id="btn">
+        <button>버튼</button><button>버튼</button><button>버튼</button><button>버튼</button><button>버튼</button>
     </div>
 </body>
 </html>

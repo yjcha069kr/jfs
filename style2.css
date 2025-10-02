@@ -1,0 +1,38 @@
+@charset "ut-8";
+/* https://cdnjs.com */
+/* font awesome 소스 코드 */
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.css);
+
+/* common */
+* {
+    box-sizing: border-box;
+}
+
+/* header */
+/* section */
+
+/* card-container */
+/* 배경색: bgc */
+.card-container {
+    width: 340px;
+    background-color: #DDE3F1;
+    /* overflow: hidden;  ->넘친 부분은 숨긴다.(지운다) */
+}
+.card-content {
+    /* 상 좌우 하 */
+    padding: 0 45px 120px;
+}
+/* 좋아요 하트 */
+.like-button {
+    /* 요소의 크기는 지정하면서 줄은 안 바뀌게 */
+    display: inline-block; /* dib */
+    width: 55px;
+    height: 55px;
+    /* line-height: 55px; */
+    /* text-align: center;  */
+    padding: 16px 18px 24px;
+    border-radius: 50%;
+    background-color: #B1B4B3; /* bgc */
+}
+
+/* footer */
