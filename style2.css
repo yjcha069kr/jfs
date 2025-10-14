@@ -10,6 +10,11 @@
 
 /* header */
 /* section */
+#section {
+    display: flex;
+    /* 현재 주축은 row */
+    justify-content: center;
+}
 
 /* card-container */
 /* 배경색: bgc */
@@ -17,22 +22,66 @@
     width: 340px;
     background-color: #DDE3F1;
     /* overflow: hidden;  ->넘친 부분은 숨긴다.(지운다) */
-}
-.card-content {
-    /* 상 좌우 하 */
-    padding: 0 45px 120px;
-}
-/* 좋아요 하트 */
-.like-button {
-    /* 요소의 크기는 지정하면서 줄은 안 바뀌게 */
-    display: inline-block; /* dib */
-    width: 55px;
-    height: 55px;
-    /* line-height: 55px; */
-    /* text-align: center;  */
-    padding: 16px 18px 24px;
-    border-radius: 50%;
-    background-color: #B1B4B3; /* bgc */
+    margin: 20px;
 }
 
+.card-image-wrapper {
+    overflow: hidden; /* o */
+}
+.card-image-wrapper img {
+    transition: 0.3s; /* trs, 0.3초 */
+}
+.card-image-wrapper:hover img {
+    /* transform: scale(너비, 높이), 기본값 1 */
+    transform: scale(1.2, 1.2); /* trf:s */
+}
+
+.card-content {
+    /* 상 좌우 하 */
+    display: flow-root;
+}
+
+/* 배지+좋아요 */
+.card-header {
+    padding-left: 45px; /* pl45 */
+}
+
+.card-header span {
+    /* 인라인 요소를 위로 맞춤 */
+    vertical-align: top; /* vat */
+}
+
+.tag-badge {
+    display: inline-block; /* dib */
+    width: 70px; /* w70 */
+    height: 38px; /* h38 */
+    line-height: 38px; /* lh38px */
+    text-align: center; /* tac */
+    background-color: #0f2244; /* bgc */
+    color: #fff; /* c */
+}
+
+/* 좋아요 하트 */
+.like-button {
+    /* 요소의 크기는 지정하면서 줄은 바뀌지 않는다. */
+    display: inline-block; /* dib */
+    width: 55px; /* w55 */
+    height: 55px; /* h55 */
+    line-height: 55px; /* 줄간격, lh55px */
+    text-align: center; /* 텍스트 좌우 정렬, tac */
+    /* padding: 16px 15px 24px; */
+    border-radius: 50%; /* bdrs50p */
+    margin-top: 20px;
+    margin-left: 145px;
+    background-color: #B1B4B3; /* bgc */
+}
+.like-button i {
+    color: #fff; /* 글자 색, c */
+    font-size: 20px; /* 글자 크기, fz20 */
+}
+
+/* 카드 UI 정보 */
+.card-body {
+    margin: 0 45px 120px; /* m0-45-120 */
+}
 /* footer */

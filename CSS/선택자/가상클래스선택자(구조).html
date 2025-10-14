@@ -7,30 +7,88 @@
     <style>
         /* 
             가상 클래스 선택자 
-                선택자:nth-child(n)
-                선택자:nth-of-type(n)
-                -> n은 숫자, 수열(2n, 2n+1, ...), odd, even
+                자식 요소의 타입을 구분하지 않음.
+                    선택자:nth-child(n)
+                    선택자:nth-last-child(n)
+                    선택자:first-child(n)
+                    선택자:last-child(n)
+                    선택자:only-child(n)
+
+                자식 요소의 타입을 구분함.(예- p, h1, h2, ...)
+                    선택자:nth-of-type(n)       1부터 순서대로
+                    선택자:first-of-type        첫번째 요소
+                    선택자:last-of-type         마지막 요소
+                    선택자:nth-last-of-type(n)  마지막부터 거꾸로
+                    선택자:only-of-type         자식이 하나인 요소
+
+                -> n은
+                    숫자
+                    수열(2n, 2n+1, ...), odd, even
                     홀수 번째: odd 또는 2n+1, 2n-1
                     짝수 번째: even 또는 2n
                     3의 배수 번째: 3n
                     4의 배수 번째: 4n
+
+                    :empty      요소가 없다. 요소는 요소를 선택, 빈 공간 만들고 싶을때
         */
-        p:nth-child(n) {color: red;}
-        h1 + p {color: red}
-        h1 ~ p {border: 1px solid blue;}
+        /* p요소 중 첫 번째 요소 선택 */
+        p:first-of-type {text-decoration: underline;}
+        p:nth-of-type(1) {text-decoration: underline;}
+
+        p:nth-child(1) {font-style: italic;} /* 적용x, 하고싶으면 p->h1*/
+        p:first-child {font-style: italic;} /* 적용x, 하고싶으면 p->h1 */
+
+        /* p요소 중 마지막 번째 요소 선택 */
+        p:last-of-type {text-decoration: underline;}
+        p:nth-last-of-type(1) {text-decoration: underline;}
+
+        p:last-of-type {font-style: italic;}
+        p:nth-last-of-type(1) {font-style: italic;}
+
+        /* p요소 중 짝수 번째 선택 */
+        p:nth-of-type(even) {color: olive;}
+        p:nth-of-type(2n) {color: olive}
+
+        p:nth-child(even) {background-color: lightgoldenrodyellow;}
+        p:nth-child(2n) {background-color: lightgoldenrodyellow;}
+
+        /* p요소 중 홀수 번째 선택 */
+        p:nth-of-type(odd) {color: tomato;}
+        p:nth-of-type(2n+1) {color: tomato;}
+        p:nth-of-type(2n-1) {color: tomato;}
+
+        p:nth-of-type(odd) {font-size: 40px;}
+        p:nth-of-type(2n+1) {font-size: 40px;}
+        p:nth-of-type(2n-1) {font-size: 40px;}
+
+        /* div 자식이 하나인 요소 */
+        div h2:only-of-type {border-left: 30px solid mediumslateblue;}
+        div h2:only-child {border-right: 30px solid hotpink;}
+
+        :empty {
+            display: block;
+            width: 200px;
+            height: 100px;
+            border: 1px solid green
+        }
     </style>
 </head>
 <body>
     <div>
-        <h1>형제관계 선택자</h1>
-        <>형제 선택자</
-            gith2> <!-- 얘가 껴있으면 style에서 p->h2로 바꿔야됨 -->
-        <p>나는 1번째 문단이다.</p>
-        <p>나는 2번째 문단이다.</p>
-        <h2>인접 형제 선택자</h2>
-        <p>나는 3번째 문단이다.</p>
-        <p>나는 4번째 문단이다.</p>
-        <p>나는 5번째 문단이다.</p>
+        <h2>형제 관계 선택자</h2>
+    </div>
+    <div></div>
+    <p></p>
+    <div>
+        <h1>1)가상 클래스 선택자</h1>
+        <h2>2)~of-type</h2> <!-- 얘가 껴있으면 style에서 p->h2로 바꿔야됨 -->
+        <p>3)~of-type은 태그 종류(타입)를 구별함.</p>
+        <p>4)나는 2번째 문단이다.</p>
+        <h2>5)~child</h2>
+        <p>6)~child는 태그 종류(타입)를 구별하지 않음.</p>
+        <p>7)나는 4번째 문단이다.</p>
+        <p>8)나는 5번째 문단이다.</p>
+        <p>9)나는 6번째 문단이다.</p>
     </div>
 </body>
 </html>
