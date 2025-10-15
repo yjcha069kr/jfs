@@ -69,7 +69,17 @@ body {
     /* vh: viewport height */
     height: 100vh;
 }
+/* section1 area */
+#sec1 .outer {
+    display: flex; /* df */
+    justify-content: center;
+    align-items: center;
+}
+#sec1 .counter {
+    display: flex;
+}
 
+/* section2 area */
 #sec2 {
     display: flex;
     /* 현재 주축은 row */
