@@ -1,41 +1,6 @@
-@charset "ut-8";
-/* https://cdnjs.com */
-/* font awesome 소스 코드 */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css'); /* @i */
-/* 1. 웹(외부) 폰트를 CDN으로 연결 */
-/* 눈누 */
-@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
-/* 구글 */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
-
-/* common */
-* {
-    box-sizing: border-box; /* bx */
-}
-img {
-    vertical-align: top; /* vat */
-}
-
-/* 
-    typo/color system    
-        - 큰제목   22px, #333
-        - 배지     15px, #fff
-        - 본문     15px, #9a8b86, 나눔스쿼어, 1.6
-        - 연락처   24px, #0f2244, Noto Sans KR
-
-        font-family: 글꼴;
-        line-height: 줄간격;
-        font-size: 글자크기;
-        color: 글자색;
-        font-weight: 글자굵기;
-*/
-
-/* 
-    구글 폰트
-        https://fonts.google.com/
-    눈누 폰트
-        https://noonnu.cc/
-*/
+@charset "ut-8"; /* @ch */
+@import url(common.css); /* @i */
+@import url(typo.css); 
 
 body {
     /* 2. font-family 속성으로 지정 */
@@ -70,13 +35,34 @@ body {
     height: 100vh;
 }
 /* section1 area */
+/* #sec1 * {
+    outline: 1px solid mediumspringgreen
+} */
 #sec1 .outer {
     display: flex; /* df */
     justify-content: center;
     align-items: center;
+    height: 100%; /* h100p */
+}
+#sec1 .container {
+    /* 너비가 100%이지만, 최대 크기가 1330px */
+    width: 100%; /* w100p */
+    max-width: 1330px; /* maw1330 */
+    /* 인라인 요소(텍스트 포함) 가로 정렬 */
+    text-align: center; /* tac */
 }
 #sec1 .counter {
-    display: flex;
+    display: flex; /* df */
+    justify-content: center;
+}
+#sec1 .counter div {
+    width: 307px;
+    /* height와 line-height가 같으면 텍스트가 수직 중앙 배치된다.❗❗한 줄 텍스트 일때만 가능❗❗ */
+    height: 44px;
+    line-height: 44px; /* lh44px */
+    background-color: rgb(255, 217, 0, .6);
+    border-radius: 20px;
+    margin: 10px;
 }
 
 /* section2 area */
