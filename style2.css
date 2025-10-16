@@ -2,31 +2,6 @@
 @import url(common.css); /* @i */
 @import url(typo.css); 
 
-body {
-    /* 2. font-family 속성으로 지정 */
-    /* 글꼴은 하위 요소에 상속해 준다. */
-    /* font-family: 값1, 값2, 값3, ...; */
-    font-family: 'NanumSquare', sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
-    color: #9a8b86;
-}
-.card-title {
-    font-size: 22px;
-    color: #333;
-    line-height: 27px;
-}
-.card-details p {
-    /* p는 위아래 기본 마진이 있다. 폰트 크기의 1em */
-    margin: 0;
-}
-
-.phone-number {
-    font-family: "Noto Sans KR", sans-serif;
-    font-size: 24px; /* fz24 */
-    color: #0f2244;
-    font-weight: bold; /* fwb */
-}
 /* header */
 /* section */
 /* section common(공통) */
@@ -38,11 +13,17 @@ body {
 /* #sec1 * {
     outline: 1px solid mediumspringgreen
 } */
+#sec1 {
+    position: relative; /* po */
+}
+#sec1 .vid {
+    position: absolute; /* poa */
+}
 #sec1 .outer {
-    display: flex; /* df */
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* h100p */
+    position: absolute; /* poa */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
 #sec1 .container {
     /* 너비가 100%이지만, 최대 크기가 1330px */
@@ -50,6 +31,9 @@ body {
     max-width: 1330px; /* maw1330 */
     /* 인라인 요소(텍스트 포함) 가로 정렬 */
     text-align: center; /* tac */
+}
+#sec1 .container p {
+    margin: 20px 0 100px; /* m20-0-100 */
 }
 #sec1 .counter {
     display: flex; /* df */

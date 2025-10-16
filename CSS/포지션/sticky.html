@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sticky</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+        /* 
+            position: 위치;
+                기본값: static;
+                relative
+                    - static과 같지만 left, top, right, bottom 사용가능
+                    - left, top, right, bottom의 기준은 자기자신 
+                        -> left, top, right, bottom을 지정하지 않았을 때의 위치, 즉 원래 위치
+                absolute
+                    - left, top, right, bottom의 기준은?
+                        -> position이 static이 아닌 조상
+                fixed
+                    - left, top, right, bottom의 기준은 viewport(뷰포트)
+                sticky
+                    - 처음에는 relative처럼 동작하다가 top/left의 위치에 도달하면 fixed와 같아짐.
+
+            left
+            top
+            right
+            bottom
+        */
+        
+        .parent {
+            position: sticky;
+            top: 0;
+            width: 400px;
+            height: 300px;
+            border: solid;
+        }
+
+    </style>
+  </head>
+  <body>
+     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, voluptatem dolorum velit doloribus possimus corrupti nihil vitae et ab omnis, repellat consequuntur officiis tenetur veritatis harum consequatur maxime enim corporis.</p>
+    <div class="parent"></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut deserunt quas reprehenderit recusandae aliquid soluta? Ratione quae incidunt tempore, repudiandae eveniet voluptate veritatis quos harum ducimus vero id voluptatibus magni?</p>
+  </body>
+</html>
