@@ -2,10 +2,16 @@
 @import url(common.css); /* @i */
 @import url(typo.css); 
 
+.card-details p {
+    /* p는 위아래 기본 마진이 있다. 폰트 크기의 1em */
+    margin: 0;
+}
+
 /* header */
 /* section */
 /* section common(공통) */
 .sec {
+    position: relative; /* po */
     /* vh: viewport height */
     height: 100vh;
 }
@@ -14,10 +20,14 @@
     outline: 1px solid mediumspringgreen
 } */
 #sec1 {
-    position: relative; /* po */
+    background-color: olivedrab;
 }
 #sec1 .vid {
     position: absolute; /* poa */
+    width: 100%;
+    height: 100%;
+    /* 박스 크기를 벗어나는 콘텐츠 영역을 숨기는 기능 */
+    overflow: hidden;
 }
 #sec1 .outer {
     position: absolute; /* poa */
