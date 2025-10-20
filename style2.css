@@ -185,9 +185,8 @@
 #sec3 .product {
     position: absolute;
     left: 890px;
-    top: 187px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 880px;
     height: 550px;
 }
-
-/* footer */
