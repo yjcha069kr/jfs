@@ -1,4 +1,6 @@
 @charset "utf-8";
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+
 /* 웹 폰트: 방법I - CDN */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
@@ -19,25 +21,53 @@
 
 /* reset(초기화) */
 * {box-sizing: border-box;}
+:root {
+    /* 스크롤 시 부드럽게 움직이는 효과 */
+    scroll-behavior: smooth;
+}
 body,h1,h2,h3,p,ul {
     margin: 0;
 }
-ul {padding: 0; list-style: none;}
+ul {
+    padding: 0; list-style: none;
+}
+a {
+    text-decoration: none;
+}
 
 /* typography(글자. 타이포그래피) */
+/* :root 는 html태그를 선택함. */
+:root {
+    font-size: 10px;
+}
 body {
-    font-family: "Lato-Regular", sans-serif;
+    /* 
+        단위: rem(:root 에서 지정한 크기의 배수) 
+        이 페이지에서의 예) 10px * 1.5배 = 15px
+    */
+    font: 1.5rem/1.6 "Lato-Regular", sans-serif;
 }
 h2 {
     font-weight: 400;
-    font-size: 24px;
+    font-size: 2.4rem;
     color: #fff;
     /* 자간 */
-    letter-spacing: 10px; /* ls10 */
-    background: #2a2a2a;
-    /* 좌우패딩을 상하패딩보다 많이 줌. 보통 8의배수 */
-    padding: 8px 24px 10px 30px;
+    letter-spacing: 1rem; /* ls10 */
     text-transform: uppercase; /* tt ->전부 대문자로 바꿀 때 */
+}
+footer a, footer p {
+    color: #fff;
+}
+/* a태그는 글자색 직접 지정해야됨 */
+footer .top-btn a {
+    color: #333;
+}
+footer .sns {
+    margin: 24px;
+}
+footer .sns i {
+    font-size: 2.4rem;
+margin: 0 -3px;
 }
 
 
@@ -47,10 +77,32 @@ h2 {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); /* trft */
+    background: #2a2a2a;
+    /* 좌우패딩을 상하패딩보다 많이 줌. 보통 8의배수 */
+    padding: 8px 24px 10px 30px;
 }
 
 #home {
     /* 뷰포트 크기로 높이 지정 */
     height: 100vh;
     background: url(../assets/img/ernest-brillo-Qi8CvonsYnM-unsplash.jpg) no-repeat 50% 50%/cover;
+}
+
+/* footer area */
+footer {
+    background: #444;
+    /* 푸터 안의 인라인 요소를 모두 가운데로 배치 */
+    text-align: center;
+    padding: 100px;
+}
+footer:hover {
+    background: #111;
+}
+footer .top-btn {
+    display: inline-block;
+    background: #ccc;
+    padding: 8px 16px;
+}
+footer .top-btn i {
+    margin-right: 8px;
 }
