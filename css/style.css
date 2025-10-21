@@ -6,12 +6,14 @@
 @font-face {
     /* 사용자 정의 폰트명 */
     font-family: Lato-Regular;
-    src: url(./../assets/font/Lato-Regular.ttf);
+    /* 내 컴퓨터에서는? */
+    src: url(../assets/font/Lato-Regular.ttf);
 }
 @font-face {
     /* 사용자 정의 폰트명 */
     font-family: Lato-Thin;
-    src: url(./../assets/font/Lato-Thin.ttf);
+    /* 절대주소 */
+    src: url(https://yjcha069kr.github.io/jfs/assets/font/Lato-Thin.ttf);
 }
 
 
@@ -32,7 +34,7 @@ h2 {
     color: #fff;
     /* 자간 */
     letter-spacing: 10px; /* ls10 */
-    background: #2b2b2b;
+    background: #2a2a2a;
     /* 좌우패딩을 상하패딩보다 많이 줌. 보통 8의배수 */
     padding: 8px 24px 10px 30px;
     text-transform: uppercase; /* tt ->전부 대문자로 바꿀 때 */
@@ -50,5 +52,5 @@ h2 {
 #home {
     /* 뷰포트 크기로 높이 지정 */
     height: 100vh;
-    background: url(../assets/img/sean-oulashin-KMn4VEeEPR8-unsplash.jpg) no-repeat 50% 50%/cover;
+    background: url(../assets/img/ernest-brillo-Qi8CvonsYnM-unsplash.jpg) no-repeat 50% 50%/cover;
 }
