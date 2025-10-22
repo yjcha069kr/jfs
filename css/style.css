@@ -141,7 +141,7 @@ footer .top-btn i {
 #home {
     /* 뷰포트 크기로 높이 지정 */
     height: 100vh;
-    background: url(../assets/img/ernest-brillo-Qi8CvonsYnM-unsplash.jpg) no-repeat 50% 50%/cover;
+    background: url(../assets/img/ernest-brillo-Qi8CvonsYnM-unsplash.jpg) no-repeat 50% 50%/cover fixed;
 }
 #home h2 {
     background: #2a2a2a;
