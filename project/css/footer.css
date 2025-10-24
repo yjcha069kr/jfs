@@ -1,7 +1,6 @@
 @charset "utf-8";
 
 /* typo */
-/* footer */
 footer {
     /* function(arguments) */
     /* 함수(인자) */
@@ -28,7 +27,7 @@ footer .inquiry .con-btn a {
     font-size: 20px;
 }
 
-/* inquary: 문의 */
+/* inquiry: 문의 */
 footer .inquiry {
     /* 배경이미지 높이: 196px 
        + 컨텐츠 높이: 110px */
@@ -64,7 +63,7 @@ footer .inquiry .faq-btn span {
     background: url(../assets/img/icon_main_inquiry_01.png) no-repeat 0 0/contain;   /* 🟡=🟠 */
     padding-left: 67px;
 }
-/* consolt: 1:1 문의*/
+/* consult: 1:1 문의*/
 footer .inquiry .consult-btn {
     background: #7b7b7b;
     /* padding: 35px 72px;  눈대중으로 */
