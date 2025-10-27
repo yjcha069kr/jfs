@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전환: 시간전환함수</title>
+    <style>
+        /* 
+            https://cubic-bezier.com/#.17,.67,.83,.67
+                linear: 등속
+                ease: 느림-빠름-다시 느림
+                ease-in: 점점 빠르게
+                ease-out: 점점 느리게
+                ease-in-out: 빠름-느림
+                cubic-bezier(n,n,n,n) : 사용자 정의 가속도
+                        - n은 실수(음수도 가능)
+        */
+        div {
+            width: 100px;
+            height: 100px;
+            background: lightseagreen;
+            margin: 10px;
+            transition: 2s; /* duration 필수 */
+        }
+        #div1 {transition-timing-function: linear;}
+        #div2 {transition-timing-function: ease;} /* 기본값 */
+        #div3 {transition-timing-function: ease-in;}
+        #div4 {transition-timing-function: ease-out;}
+        #div5 {transition-timing-function: ease-in-out;}
+        #div6 {transition-timing-function: cubic-bezier(0,1.75,1,-0.9)}
+        
+        div:hover {
+            width: 800px; /* 속성의 변화: 100px -> 800px로 변화 */
+        }
+    </style>
+</head>
+<body>
+    <!-- #div$*5 -->
+    <div id="div1">linear</div>
+    <div id="div2">ease</div>
+    <div id="div3">ease-in</div>
+    <div id="div4">ease-out</div>
+    <div id="div5">ease-in-out</div>
+    <div id="div6">cubic-bezier</div>
+</body>
+</html>

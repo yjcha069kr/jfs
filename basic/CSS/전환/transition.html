@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전환</title>
+    <style>
+        /*  
+            transition-property: all (기본값, all 생략가능)
+            transition-duration (필수)
+            transition-timing-function: ease
+                    -가속
+                      ease
+                      ease=in
+                      ease-out
+                      easr-in-out
+
+                    -등속
+                      linear(선형)
+            transition-delay
+
+            속기속성
+            transition: [속성] 전환시간 [가속도, easing] [지연시간];
+            transition: 전환시간 지연시간; (앞에 쓴 시간: 전환시간, 뒤에 쓴 시간: 지연시간)
+                        - 단위: s(second, 초)
+        */
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: width 2s;
+            transition: all 2s; /* trs, 전환시간 */
+            transition: width 1s 2s; /* 앞: 전환시간, 뒤: 지연시간 */
+
+            transition-property: width; /* trsp */
+            transition-duration: 1s; /* trsd1s */
+            transition-timing-function: ease; /* trst */
+            transition-delay: 2s; /* trsde2s */
+
+            transition: width 1s ease 2s; 
+        }
+
+        div:hover {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>전환</div>
+</body>
+
+</html>

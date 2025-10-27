@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D 회전</title>
+    <style>
+        /* 
+                rotate()        회전
+
+                scaleX()        크기
+                scaleY()
+                scale()
+
+                skewX()         기울기
+                skewY()
+                skew()
+                
+                matrix()        혼합
+        */
+
+        .close {
+            /* background: blue; */
+            line-height: 1;
+            /* 변환은 display 블록레벨 요소에 지정 */
+            display: inline-block;
+            /* transform: rotate();     단위: deg(각도) */
+            transform: rotate(0deg); /* 기본값 */
+            transform-origin: 50% 58%; /* 기본값 50% 50%, 회전값 바꾸는 속성 */
+            transition: .5s;
+            /* 
+                duration 값 작을수록 속도 빨라짐 
+                소수점 앞의 0은 생략 가능
+            */
+        }
+        .close:hover {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <span class="close">❌</span>
+</body>
+
+</html>

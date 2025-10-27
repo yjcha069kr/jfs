@@ -75,14 +75,14 @@ th {
     border-bottom: 1px solid #ddd;
 }
 /* 공지사항 제목에 호버 시 밑줄 */
-.notice td:nth-child(2) a:hover {
-    text-decoration: underline; /* tdu */
+.notice a:hover {
+    text-decoration: underline;
 }
 
 /* pagination */
 .pagination {
     display: flex;
-    justify-self: center;
-    border: 1px solid red;
+    justify-content: center;
+    border: 1px solid tomato;
     margin-top: 50px;
 }
