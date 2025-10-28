@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: 변수</title>
+</head>
+<body>
+    <script>
+        /* 
+            변수(Variable)란?
+                :저장 공간(박스/그릇/폴더)
+
+            변수 이름 정의 규칙
+                1. 문자(영문 권장), 특수문자(_, $)로 시작
+                2. 대소문자 구별
+                3. 예약어(키워드)는 사용 불가
+                    예) var, const, let, true, false, ...
+                    참조: https://www.w3schools.com/js/js_reserved.asp
+
+            표기법
+                - 카멜 표기법: 첫 단어는 대문자❌
+                    예) getElementById
+                    예) userNumber
+                - 파스칼 표기법: 첫 단어부터 대문자
+                    예) UserNumber
+                - 케밥 표기법
+                    예) background-color
+                - 스네이크 표기법: 언더바(_)
+                    예) MAX_VOLUME
+                - 헝가리안 표기법
+        */
+
+        // 변수 선언 키워드: var, let, const
+        // 올바른 사용
+        // 변수 작성 방법
+        // 1. 변수키워드 변수명;
+        var x; // 변수 선언(정의)
+        // undefined 데이터는 변수 선언 후 할당하지 않았을 때 메모리가 가지고 있는 값
+        console.log("x는 " + x + "이다.");
+        // 2. 변수키워드 변수명=값;
+        // =은 할당(대입) 연산자 (오른쪽->왼쪽)
+        // ==은 비교연산자(같다)
+        // ===은 비교연산자(같다)
+
+        var y=10; // 10을 y변수에 할당
+                    // 변수 선언 및 할당(=초기화)
+        y=50; // 재할당
+        // 변수=변수(오른쪽 변수에 있는 값을 왼쪽 변수에 할당=대입)
+        var x=y;
+        // 변수, 변수, 변수;
+        console.log("아래의 x의 값은 " + x + "이다.");
+        var a, b, c;
+        // 변수=값, 변수=값, ...;
+        var a = 10, b=11, c=12; // 띄어써도 상관없음
+        var a=b=c=10; // 10이 c로, c는 b로, b는 a 로 대입됨
+        var name="홍길동", age=25;
+        // 산술 연산자: +, -, *, /
+        var total=a+b+c;
+
+
+        // 잘못 사용
+        // var 7num=100; // 숫자로 시작하면 안됨
+        // var &num=100; // 특수문자는 _, $만 사용해야됨
+        // var true=1; // 예약어(true) 사용불가
+        // var 10=x; // 숫자로 시작하면 안됨, 10이랑 x위치 바뀜
+        // var a+b=20; // 연산식 잘못됨
+        // var "홍길동"=name; // 홍길동이랑 name 위치 바뀜
+        // var get Number=100; // get Number 띄어쓰기하면 안됨
+</script>
+</body>
+</html>
