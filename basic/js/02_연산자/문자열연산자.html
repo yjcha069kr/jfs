@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: 문자열연산자</title>
+</head>
+<body>
+    <script>
+        /* 문자열 데이터는 "" 또는 ''로 묶는다. */
+        // 변수키워드 변수명 = 값;
+        // =은 대입연산자
+        var stdName="HongGilDong";
+        var stdName='HongGilDong';
+
+        // 산술 연산
+        var num=100+10; 
+        // 문자열 연산
+        var st="Hello! "+"Javascript~"; 
+        // 피연산자 하나가 문자열이면 결과는 문자열이 됨
+        var st2="100"+10;
+        
+        // console 출력
+        console.log(num); // 결과 110
+        console.log(st); // 결과 Hello! Javascript~
+        console.log(st2); // 결과 10010
+
+        // 문자열 길이(문자 갯수): length
+        // 문법: 객체.속성
+        // 예) st.length
+        // 변수는 카멜표기법(관례)
+        var stLength=st.length
+        console.log(stLength); // 결과 18
+    </script>
+</body>
+</html>

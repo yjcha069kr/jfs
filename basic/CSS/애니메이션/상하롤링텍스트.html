@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상하롤링텍스트</title>
+    <style>
+        /* 초기화 */
+        body,ul {margin: 0;}
+        ul {padding: 0; list-style: none;}
+
+        img {
+            vertical-align: top;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 슬라이드 */
+        .slider {
+            width: 450px;
+            height: 45px;
+            overflow: hidden;
+            margin: 50px auto;
+            border: 2px solid cornflowerblue;
+        }
+        .slides {
+            height: calc(100% * 4);
+            animation: slideRoll 9s infinite ease-in-out;
+        }
+        @keyframes slideRoll {
+            0% {transform: translateY(0);}
+            11.11% {transform: translateY(-25%);}
+            33.33% {transform: translateY(-25%);}
+            44.44% {transform: translateY(-50%);}
+            66.66% {transform: translateY(-50%);}
+            77.77% {transform: translateY(-75%);}
+            100% {transform: translateY(-75%);}
+        }
+        .slider li {
+            display: flex;
+            align-items: center;
+            height: 25%;
+            padding-left: 8px;
+        }
+        
+        /* ...(더보기) 표시 방법. 3가지 다 써야함 */
+        .slider li span {
+            text-overflow: ellipsis; /* txo, 생략 */
+            white-space: nowrap; /* whs, 줄바꿈 없이 한 줄로 */
+            overflow: hidden; /* oh, 넘치는 부분 숨기기*/
+        }
+
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <ul class="slides">
+            <li><span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto incidunt dolores, eligendi commodi sint esse cumque tempore asperiores. Odio repellat provident vero ratione assumenda fugit reiciendis corrupti saepe quaerat quia!</span></li>
+            <li><span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum quisquam odit illum, voluptatum laudantium quaerat doloribus doloremque illo nihil similique rem, eos facilis. Accusantium modi quos quod voluptatibus dolor minus.</span></li>
+            <li><span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique id maiores mollitia quos totam necessitatibus repudiandae praesentium adipisci hic explicabo facere velit aliquam dolorum nihil iste, consequuntur voluptate, possimus deleniti.</span></li>
+            <li><span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto incidunt dolores, eligendi commodi sint esse cumque tempore asperiores. Odio repellat provident vero ratione assumenda fugit reiciendis corrupti saepe quaerat quia!</span></li>
+        </ul>
+    </div>
+</body>
+</html>

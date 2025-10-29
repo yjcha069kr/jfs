@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: 비교연산자</title>
+</head>
+<body>
+    <script>
+        /* 
+            산술연산자
+                >     크다
+                <     작다
+                >=    크거나 같다
+                <=    작거나 같다
+                ==    같다(값 비교)
+                ===   같다(값, 타입 모두 비교)
+                !=    다르다(값 비교)
+                !==   다르다(값, 타입 모두 비교)
+        */
+
+        // 변수 선언 키워드: var, let(재할당 하면), const(재할당 안하면)
+        // 변수 사용 시 const 사용하고 재할당이 필요하면 let 사용
+
+        // 변수 선언
+        const num = 5;
+        const str = '5';
+
+        // 출력
+        // 비교(논리) 연산의 결과는 boolean 데이터(true 또는 false)이다.
+        document.write("5 > '5' = " + (num > str) + '<br>');      // 5 > '5' = false
+        document.write("5 < '5' = " + (num < str) + '<br>');      // 5 < '5' = false
+        document.write("5 >= '5' = " + (num >= str) + '<br>');      // 5 >= '5' = true
+        document.write("5 <= '5' = " + (num <= str) + '<br>');      // 5 <= '5' = true
+        document.write("5 == '5' = " + (num == str) + '<br>');      // 5 == '5' = true
+        document.write("5 === '5' = " + (num === str) + '<br>');      // 5 === '5' = false
+        document.write("5 != '5' = " + (num != str) + '<br>');      // 5 != '5' = false
+        document.write("5 !== '5' = " + (num !== str) + '<br>');      // 5 !== '5' = true
+
+    </script>
+</body>
+</html>
