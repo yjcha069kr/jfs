@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>드롭다운 Nav.</title>
+    <style>
+        @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+        /* reset */
+        html {font-size: 10px;}
+        body, h1, ul {margin: 0;}
+        ul {padding: 0; list-style: none;}
+        a {text-decoration: none; color: #333;}
+
+        /* common */
+        body {
+            font: 1.5rem/1.6 'NanumSquare';
+            background: #406dbd;
+        }
+
+        /* header */
+        #header {
+            background: #0F2244;
+        }
+        #header::after {
+            content: ''; /* ::after에선 내용없다고 비우면 안됨. */
+            color: #fff;
+            display: block;
+            opacity: 0;
+            width: 100%;
+            height: 0px;  
+            background: #fff;
+            transition: .8s time;
+            overflow: hidden;
+        }
+        #header:hover::after {
+            height: 200px;
+        }
+        #header a {
+            color: #fff;
+        }
+        .container {
+            position: relative;
+            padding: 0 50px;
+            height: 95px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* background: lightcoral; */
+        }
+
+        /* logo */
+
+        /* gnb */
+        #gnb {
+            align-self: flex-start;
+            position: absolute;
+            left: 50%;
+            top: 33px;
+            transform: translateX(-50%);
+            /* background: lightgreen; */
+        }
+
+        /* 1depth: Main Menu */
+        .main {
+            width: 600px;
+            display: flex;
+            /* background: lightblue; */
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .main li {
+            width: 150px;
+        }
+
+        /* 메인 메뉴 하단 바 */
+        .main>li>a::after {
+            content: '';
+            display: block;
+            width: 0px;
+            height: 2px;
+            background: #bbb;
+            margin: auto;
+            /* border-bottom: 3px solid red; */
+            /* transform: scaleX(0); */
+            transition: .3s;
+        }
+        .main>li>a:hover::after {
+            transform: scaleX(1);
+            width: 100px;
+        }
+        #header .main a:hover {
+            color: #bbb;
+        }
+
+        /* 메인메뉴에 :hover 시 서버 메뉴 나타내는 방법 */
+        .main:hover .sub {
+            /* display: block; */
+            /* visibility: visible;
+            opacity: 1;
+            transition: .8s; */
+        }
+
+        /* 2depth: Sub Menu */
+        .sub {
+            /* display: none; */
+            /* visibility: hidden; 
+            opacity: 0; */
+            font-size: 1.6rem;
+            line-height: 2;
+            font-weight: 400;
+            margin-top: 45px;
+            background: #fff;
+        }
+        /* a태그 글자색은 반드시 a태그에 직접 지정해야됨 */
+        #header .sub a {
+            color: #333;
+        }
+        /* SNS, 로그인, 회원가입 */
+
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <!-- 로고 -->
+            <!-- h1.logo>a[href=index.html] -->
+            <h1 class="logo"><a href="index.html">경남아너스빌</a></h1>
+            <!-- 글로벌 내비게이션바: gnb -->
+            <nav id="gnb">
+                <ul class="main">
+                    <li><a href="#">분양단지</a>
+                        <ul class="sub">
+                            <li><a href="#">분양중인 단지</a></li>
+                            <li><a href="#">분양예정 단지</a></li>
+                            <li><a href="#">분양완료 단지</a></li>
+                            <li><a href="#">연간분양계획</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">브랜드</a>
+                        <ul class="sub">
+                            <li><a href="#">브랜드 스토리</a></li>
+                            <li><a href="#">브랜드 아이덴티티</a></li>
+                            <li><a href="#">특화아이템</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">아너스빌 멤버스</a>
+                        <ul class="sub">
+                            <li><a href="#">아너스빌 소식</a></li>
+                            <li><a href="#">청약가이드</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">마이 아너스빌</a>
+                        <ul class="sub">
+                            <li><a href="#">자주 묻는 질문</a></li>
+                            <li><a href="#">1:1 문의</a></li>
+                            <li><a href="#">A/S 문의</a></li>
+                            <li><a href="#">관심단지 관리</a></li>
+                            <li><a href="#">개인정보 변경</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="util">
+                <a href="#">SNS</a>
+                <a href="#">로그인</a>
+                <a href="#">회원가입</a>
+            </div>
+        </div><!-- .container -->
+    </header>
+</body>
+
+</html>

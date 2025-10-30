@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: 논리연산자</title>
+</head>
+<body>
+    <script>
+        /* 
+            논리연산자
+                && 그리고(and), 논리곱
+                || 또는(or), 논리합
+                !  아니다(not), 논리부정
+            값1 && 값2
+
+        2항 연산자
+            true && true -> true
+            true && false -> false
+            false && true -> false
+            false && false -> false
+
+            true || true -> true
+            true || false -> true
+            false || true -> true
+            false || false -> false
+
+        단항 연산자
+            !true -> false
+            !false -> true
+
+            true && true && true && true && false -> false
+        
+            값은 true 또는 false가 될 수 있는 값
+        */
+
+        // 변수 선언
+        const x = 5;
+        const y = 7;
+        // const 변수 선언 시 반드시 초기화 해야됨. 아니면 오류뜸
+        // const는 변수 선언 동시에 값을 할당해야함. 
+        // const 안될때 let으로
+        // const result; // Uncaught SyntaxError: Missing initializer in const declaration
+        let result;
+
+        // 출력
+        // 연산의 우선순위
+        // () > 산술 > 비교 > 논리
+        /* 
+            ( )
+            !
+            +
+            <, >
+            &&
+        */
+        document.write('true && true =' + (true && true) + '<br>'); //true
+        document.write('true && false =' + (true && false) + '<br>'); //false
+        document.write('false && true =' + (false && true) + '<br>'); //false
+        document.write('false && false =' + (false && false) + '<br>'); //false
+        document.write('<br>')
+        document.write('true || true =' + (true || true) + '<br>'); //true
+        document.write('true || false =' + (true || false) + '<br>'); //true
+        document.write('false || true =' + (false || true) + '<br>'); //true
+        document.write('false || false =' + (false || false) + '<br>'); //false
+        document.write('<br>')
+        document.write('!true =' + !true + '<br>'); //false
+        document.write('!false =' + !false + '<br>'); //true
+        document.write('<br>')
+        // 예시
+        document.write('x<10 && y>10 =' + (x<10 && y>10) + '<br>'); //false
+        document.write('x<10 || y>10 =' + (x<10 || y>10) + '<br>'); // true
+        document.write('!(x<10 && y>10) =' + !(x<10 && y>10)); // true
+
+    </script>
+</body>
+</html>
