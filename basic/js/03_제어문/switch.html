@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS switch문</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            🧡💛switch~case문🧡💛
+                switch (표현식) {
+                    case 값1: 
+                        코드; 
+                        break;
+                    case 값2: 코드; break;
+                    case 값3: 코드; break;
+                    case 값4: 코드; break;
+                    case 값5: 코드; break;
+                    case 값6: 코드; break;
+                    default: 코드;
+                }
+        */
+
+        /* 
+            내장 객체
+                window
+                document
+                location
+                console
+
+            Date 객체는 new 연산자를 사용하여 객체를 생성하여 사용한다.
+                예) const date = new Date();
+        */
+
+        document.write(new Date() + '<br>'); // Fri Oct 31 2025 12:25:38 GMT+0900 (한국 표준시)
+
+
+        function digitalClock() {
+
+            // 변수 선언
+            const date = new Date();
+            let day; // 요일을 담을 변수
+
+            // 처리: 숫자(5) 요일을 문자 요일(금)로 변환
+            // switch (date.getDay()) {
+            //     case 0:
+            //         day = '일';
+            //         break; // break를 만나면 switch문을 빠져나온다.
+            //     case 1:
+            //         day = '월';
+            //         break;
+            //     case 2:
+            //         day = '화';
+            //         break;
+            //     case 3:
+            //         day = '수';
+            //         break;
+            //     case 4:
+            //         day = '목';
+            //         break;
+            //     case 5:
+            //         day = '금';
+            //         break;
+            //     default:
+            //         day = '토';
+            // }
+
+            // 비교 연산자의 ==대신 ===을 쓰자!
+            if (date.getDay() === 0) {
+                day = '일';
+            } else if (date.getDay() === 1) {
+                day = '월';
+            } else if (date.getDay() === 2) {
+                day = '화';
+            } else if (date.getDay() === 3) {
+                day = '수';
+            } else if (date.getDay() === 4) {
+                day = '목';
+            } else if (date.getDay() === 5) {
+                day = '금';
+            } else if (date.getDay() === 6) {
+                day = '토';
+            }
+
+            // 출력
+            document.write(date.getFullYear() + '년<br>'); // 년
+            document.write(date.getMonth() + 1 + '월<br>'); // 월+1(0~11)
+            document.write(date.getDate() + '일<br>'); // 일
+            document.write(day + '요일<br>'); // 요일(0:일~6:토)
+            document.write(date.getHours() + ':'); // 시
+            document.write(date.getMinutes() + ':'); // 분
+            document.write(date.getSeconds() + '<br>'); // 초
+
+        }
+
+        // setInterval(함수, 시간);
+        // 자바스크립트는 시간을 밀리초 단위로 표현한다.
+        // setInterval(digitalClock, 1000);
+
+        // 변수 선언
+        let text;
+        const date=new Date();  // 날짜와 시간    
+        console.log(date);  // Mon Nov 03 2025 14:48:52 GMT+0900 (한국 표준시)
+        // 게터(Getter): 설정된 값을 가져온다.
+        // 세터(Setter): 값을 설정(setting)한다.
+        const week=date.getDay();  // 0(일요일)~6(토요일)  
+
+        switch(week) {
+            case 1:    // 월요일
+            case 2:    // 화요일
+                text="HTML5";
+                break; // 제어문
+            case 3:    // 수요일
+            case 4:    // 목요일
+                text="자바스크립트";
+                break;
+            case 5:    // 금요일 
+	        case 6:    // 토요일
+                text="영어";
+                break;
+            case 0:    //일요일
+	        default:
+                text="수영";
+        }
+	    document.write("오늘은 <b>" + text + "</b> 학습하는 날입니다. <p/>");
+    </script>
+</body>
+
+</html>
