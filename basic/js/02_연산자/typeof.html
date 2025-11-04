@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: typeof</title>
+</head>
+<body>
+    <script>
+        /* 
+            데이터의 타입
+                - 기본
+                    - number(숫자)
+                        - 정수, 실수
+                        - 64비트 부동 소수점
+                    - string(문자열)
+                    - boolean
+                    - undefined
+                    - null
+                    - bitint (ver. ES2020)
+                        - 큰 정수, 무한대
+                        - 예) 123456789123456789n
+                    - Symbol (ver. ES2015)
+                - 참조(객체)
+                    - function(함수)(){}
+                    - array(배열): []
+                    - object(객체): {}
+
+            typeof 연산자
+                - 데이터의 타입 확인
+        */
+
+        document.write('123: ' + typeof 123 + '<br>');
+        document.write('12.3: ' + typeof 12.3 + '<br>');
+        document.write('123n: ' + typeof 123n + '<br>');
+        document.write('hello: ' + typeof hello + '<br>');
+        document.write('true: ' + typeof true + '<br>');
+        document.write('10>2: ' + typeof (10>2) + '<br>'); // 연산에선 괄호로 꼭 묶어줘야됨
+        document.write('undefined: ' + typeof undefined + '<br>');
+        document.write('x: ' + typeof x + '<br>');
+        document.write('function(함수): ' + typeof function(){} + '<br>');
+        document.write('array(배열): ' + typeof [] + '<br>');
+        document.write('object(객체): ' + typeof {} + '<br>');
+    </script>
+</body>
+</html>

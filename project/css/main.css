@@ -1,5 +1,6 @@
 @charset "utf-8"; /* @ch */
 @import url(common.css); /* @i */
+@import url(header.css);
 @import url(footer.css);
 
 /* typo */
@@ -26,7 +27,6 @@
     color: var(--sub-color);
 }
 
-
 /* section2 area */
 .card-title {
     font-size: 22px;
@@ -40,6 +40,7 @@
     color: #0f2244;
     font-weight: bold; /* fwb */
 }
+
 
 /* section3 area */
 #sec3 .intro {
@@ -238,10 +239,9 @@
     transform: translateY(-50%);
     width: 380px;
     height: 520px;
-    /* background: rgb(221, 185, 85); */
-    text-align: right;
+    text-align: right; /* tar */
 }
-#sec3 .intro h2 span{
+#sec3 .intro h2 span {
     display: block;
 }
 #sec3 .intro p:first-of-type {

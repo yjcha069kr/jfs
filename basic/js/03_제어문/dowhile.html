@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: do~while문</title>
+</head>
+<body>
+    <script>
+        /* 
+            // 최소 1회는 실행 
+            🧡💛do~while문 기본형식💛🧡
+                do {
+                    코드;
+                } while (조건식)
+        */
+       
+        // 1~100까지 합
+        let x = 1, sum = 0;
+        do {
+            sum += x;
+            x++;
+        } while (x <= 100)
+
+        document.write('1~100까지 합: ' + sum + '<br>')
+    </script>
+</body>
+</html>
