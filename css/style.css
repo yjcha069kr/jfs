@@ -45,6 +45,10 @@ iframe {
 }
 button {
     border: none;
+    cursor: pointer;
+}
+button:hover {
+    background: #ccc;
 }
 
 
@@ -59,6 +63,7 @@ body {
         이 페이지에서의 예) 10px * 1.5배 = 15px
     */
     font: 1.5rem/1.6 "Lato-Regular", sans-serif;
+    color: #666;
 }
 h2 {
     font-weight: 400;
@@ -67,6 +72,9 @@ h2 {
     /* 자간 */
     letter-spacing: 1rem; /* ls10 */
     text-transform: uppercase; /* tt ->전부 대문자로 바꿀 때 */
+}
+h3 {
+    font-size: 2.4rem;
 }
 header a {
     color: #f1f1f1;
@@ -84,6 +92,18 @@ footer .sns {
 footer .sns i {
     font-size: 2.4rem;
 margin: 0 -3px;
+}
+#contact h2 {
+    font-size: 3.6rem;
+}
+#contact a {
+    color: #777;
+}
+#contact button {
+    color: #fff;
+}
+#contact .addr {
+    font-size: 1.8rem;
 }
 textarea {
     font: 1.5rem/1.6 "Lato-Regular", sans-serif;
@@ -198,6 +218,7 @@ button {
     background: #F1F1F1;
     padding: 12px 24px;
     margin-top: 10px;
+    border-radius: 5px;
 }
 
 
@@ -207,10 +228,14 @@ button {
 }
 #work .portfolio {
     display: flex;
+    gap: 16px;
 }
 #work .portfolio li {
     width: 216px;
     height: 162px;
+}
+#work button {
+    margin: 64px 0 0;
 }
 
 
@@ -257,7 +282,6 @@ button {
 }
 #contact button {
     background: #111;
-    color: #F1F1F1;
 }
 #contact i {
     margin-right: 8px;
