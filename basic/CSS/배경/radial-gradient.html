@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그라디언트(Gradient)</title>
+    <style>
+        /* 
+            1️⃣radial-gradient() 함수
+            🔻background-image: radial-gradient([모양], [크기] [at 위치], 색1, 색2, ...);
+                *모양
+                    - ellipse: 타원(기본값)
+                    - circle: 원
+                *크기
+                    - farthest-corner: 코너에서 가장 먼(기본값)
+                    - closest-side: 사이드에서 가장 가까운
+                    - farthest-side: 사이드에서 가장 먼
+                    - closest-corner: 코너에서 가장 가까운
+                *위치: x위치 y위치
+                    - 기본값: 50% 50% = 원의 중심
+                    예) farthest-corner at 70% 60%
+                *색 뒤의 %는 색의 위치
+        */
+
+        p {
+            width: 500px;
+            height: 200px;
+            color: #fff;
+        }
+        #grad1 {
+            /* 정지선 자연스럽게 */
+            background-image: radial-gradient(red, yellow, green);
+        }
+        #grad2 {
+            /* 정지선 명확하게 구분 / circle: 모양 동그랗게 */
+            background-image: radial-gradient(circle, red 5%, yellow 15%, green 60%);
+        }
+        #grad3 {
+            /* 기본값: farthest-corner */
+            background-image: radial-gradient(farthest-corner at 70% 60%, red, yellow, black);
+        }
+        #grad4 {
+            background-image: radial-gradient(farthest-side at 70% 60%, red, yellow, black);
+        }
+        #grad5 {
+            background-image: radial-gradient(closest-corner at 70% 60%, red, yellow, black);
+        }
+        #grad6 {
+            background-image: radial-gradient(closest-side at 70% 60%, red, yellow, black);
+        }
+        
+
+        /* 
+            2️⃣repeating radial gradien()
+        */
+        #grad7 {
+            background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+        }
+
+    </style>
+</head>
+
+<body>
+    <p id="grad1">background-image: linear-gradient(to bottom, red, yellow);</p>
+    <p id="grad2">background-image: linear-gradient(to bottom, red, yellow);</p>
+    <p id="grad3">farthest-corner</p>
+    <p id="grad4">farthest-side</p>
+    <p id="grad5">closest-corner</p>
+    <p id="grad6">closest-side</p>
+    <p id="grad7">background-image: linear-gradient(to bottom, red, yellow);</p>
+    
+</body>
+
+</html>

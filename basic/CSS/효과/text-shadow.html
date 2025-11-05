@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그림자 효과</title>
+    <style>
+        p {
+            font-size: 70px;
+        }
+        .p1 {
+            /* 
+                emmit: ts
+                개별속성, 값의 순서가 있음
+                text-shadow: x위치 y위치 [흐림] [색];  
+                text-shadow: 0 0 0 글자색; 기본값  
+                */
+            /* 색깔, 흐림효과 그림자 */
+            text-shadow: 0px 0px 3px red;
+        }
+        .p2 {
+            /* 색깔, 흐림효과, 위치이동된 그림자 */
+            color: white;
+            text-shadow: 2px 2px 4px #000;
+        }
+        .p3 {
+            /* multiple shadow(2가지) */
+            text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+        }
+        .p4 {
+            /* multiple shadow(3가지 이상) */
+            /* text-shadow: x위치 y위치 [흐림] [색], x위치 y위치 [흐림] [색], ...;  */
+            color: white;
+            text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+        }
+        .p5 {
+            /* 글자에 테두리 */
+            color: coral;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="p1">ext-shadow: 2px 2px;</p>
+    <p class="p2">ext-shadow: 2px 2px;</p>
+    <p class="p3">ext-shadow: 2px 2px;</p>
+    <p class="p4">ext-shadow: 2px 2px;</p>
+    <p class="p5">ext-shadow: 2px 2px;</p>
+</body>
+
+</html>

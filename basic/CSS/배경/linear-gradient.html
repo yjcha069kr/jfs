@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그라디언트(Gradient)</title>
+    <style>
+        /* 
+            1️⃣linear-gradient() 함수
+            🔻background-image: linear-gradient([방향], 색1, 색2 %, ...);
+                *방향
+                    - to 위치1 [위치2]
+                    - 기본값: to bottom = 위→아래(색1→색2→...)
+                    - 정방향: to top, to left, to right
+                    - 대각선: to top left, to top right, to bottom left, to bottom right
+                              to left top, to right top, to left bottom, to right bottom
+                *색 뒤의 %는 색의 위치
+        */
+
+        p {
+            width: 500px;
+            height: 200px;
+        }
+        #grad1 {
+            /* top to bottom: 색1→색2→... */
+            background-image: linear-gradient(lightcoral, lightgoldenrodyellow, lightblue);
+        }
+        #grad2 {
+            /* bottom to top: 색1→색2→... */
+            background-image: linear-gradient(to top, lightcoral, lightgoldenrodyellow, lightblue);
+        }
+        #grad3 {
+            /* diagonal(대각선): 색1→색2→... */
+            background-image: linear-gradient(to top left, lightcoral, lightgoldenrodyellow, lightblue);
+        }
+
+        /* 
+            2️⃣방향 대신 각도로 표시
+            🔻background-image: linear-gradient(각도, 색1, 색2);
+                *각도: 기본값: 180deg
+        */
+        #grad4 {
+            background-image: linear-gradient(180deg, lightcoral, lightblue); /* to bottom */
+            background-image: linear-gradient(90deg, lightcoral, lightblue); /* to right */
+            background-image: linear-gradient(270deg, lightcoral, lightblue); /* to left */
+            background-image: linear-gradient(0deg, lightcoral, lightblue); /* to top */
+            background-image: linear-gradient(360deg, lightcoral, lightblue); /* to top */
+            background-image: linear-gradient(720deg, lightcoral, lightblue); /* to top */
+            background-image: linear-gradient(-90deg, lightcoral, lightblue); /* to left */
+        }
+        #grad5 {
+            background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+        }
+
+        /* 
+            3️⃣repeating-linear-gradient()
+        */
+        #grad6 {
+            background-image: repeating-linear-gradient(lightcoral, lightgoldenrodyellow 10%, lightblue 20%);
+        }
+
+        /* 투톤 배경 */
+        #grad7 {
+            background-image: linear-gradient(lightgoldenrodyellow 50%, lightgreen 50%);
+        }
+
+    </style>
+</head>
+
+<body>
+    <p id="grad1">background-image: linear-gradient(to bottom, red, yellow);</p>
+    <p id="grad2">background-image: linear-gradient(to bottom, red, yellow);</p>
+    <p id="grad3">background-image: linear-gradient(to bottom, red, yellow);</p>
+    <p id="grad4">background-image: linear-gradient(to bottom, red, yellow);</p>
+    <p id="grad5">background-image: linear-gradient(to bottom, red, yellow);</p>
+    <p id="grad6">background-image: linear-gradient(to bottom, red, yellow);</p>
+    <p id="grad7">background-image: linear-gradient(to bottom, red, yellow);</p>
+    
+</body>
+
+</html>
