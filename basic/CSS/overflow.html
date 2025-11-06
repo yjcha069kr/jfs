@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS overflow 속성</title>
+    <style>
+        /* 
+            overflow 속성
+                1. visible
+                    - 기본값, 오버플로는 잘리지 않음
+                    - 콘텐츠는 요소의 상자 밖으로 렌더링
+                2. hidden
+                    - 오버플로는 잘리고 나머지 콘텐츠는 숨겨짐
+                3. scroll
+                    - 스크롤바가 추가
+                4. auto
+                    - scroll과 유사
+                    - 콘텐츠가 넘치는 경우에만 스크롤바 추가
+                5. clip (ver.CSS3)
+                    - 오버플로는 잘리고 나머지 콘텐츠는 숨겨짐
+
+            overflow-x: 가로 스크롤
+            overflow-y: 세로 스크롤
+        */
+
+        .wrap {
+            display: flex;
+            gap: 30px;
+        }
+        .wrap div {
+            width: 300px;
+            height: 150px;
+            background-color: lightskyblue;
+        }
+        .div1 {overflow: visible;} /* o:v, 기본값 */
+        .div2 {overflow: hidden;} /* o */
+        .div3 {overflow: scroll;} /* o:s */
+        .div8 {
+            overflow: scroll;
+            overflow-x: hidden; /* ox */
+        }
+        .div9 {
+            overflow: scroll;
+            overflow-y: hidden; /* oy */
+            white-space: nowrap; /* wh, 박스 안에서 줄바꿈 안되게 하는 기능 */
+        }
+        .div4 {overflow: auto;} /* o:a */
+        .div5 {overflow: clip;} 
+        .div6 {overflow: scroll;} 
+        .div7 {overflow: auto;} 
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="div1">visible Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus delectus, dicta, in animi veniam expedita tempore voluptas obcaecati excepturi illo placeat optio. Dolorem nisi dignissimos earum iste explicabo, illum veniam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui et itaque incidunt tempora explicabo delectus iste cumque fugiat. Quo nostrum dolorum, incidunt minima debitis atque autem adipisci odio labore ratione.</div>
+        <div class="div2">hidden Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus delectus, dicta, in animi veniam expedita tempore voluptas obcaecati excepturi illo placeat optio. Dolorem nisi dignissimos earum iste explicabo, illum veniam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui et itaque incidunt tempora explicabo delectus iste cumque fugiat. Quo nostrum dolorum, incidunt minima debitis atque autem adipisci odio labore ratione.</div>
+        <div class="div3">scroll Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus delectus, dicta, in animi veniam expedita tempore voluptas obcaecati excepturi illo placeat optio. Dolorem nisi dignissimos earum iste explicabo, illum veniam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui et itaque incidunt tempora explicabo delectus iste cumque fugiat. Quo nostrum dolorum, incidunt minima debitis atque autem adipisci odio labore ratione.</div>
+        <div class="div8">scroll Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus delectus, dicta, in animi veniam expedita tempore voluptas obcaecati excepturi illo placeat optio. Dolorem nisi dignissimos earum iste explicabo, illum veniam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui et itaque incidunt tempora explicabo delectus iste cumque fugiat. Quo nostrum dolorum, incidunt minima debitis atque autem adipisci odio labore ratione.</div>
+        <div class="div9">scroll Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus delectus, dicta, in animi veniam expedita tempore voluptas obcaecati excepturi illo placeat optio. Dolorem nisi dignissimos earum iste explicabo, illum veniam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui et itaque incidunt tempora explicabo delectus iste cumque fugiat. Quo nostrum dolorum, incidunt minima debitis atque autem adipisci odio labore ratione.</div>
+        <div class="div4">auto Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus delectus, dicta, in animi veniam expedita tempore voluptas obcaecati excepturi illo placeat optio. Dolorem nisi dignissimos earum iste explicabo, illum veniam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui et itaque incidunt tempora explicabo delectus iste cumque fugiat. Quo nostrum dolorum, incidunt minima debitis atque autem adipisci odio labore ratione.</div>
+        <div class="div5">clip Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus delectus, dicta, in animi veniam expedita tempore voluptas obcaecati excepturi illo placeat optio. Dolorem nisi dignissimos earum iste explicabo, illum veniam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui et itaque incidunt tempora explicabo delectus iste cumque fugiat. Quo nostrum dolorum, incidunt minima debitis atque autem adipisci odio labore ratione.</div>
+        <div class="div6">scroll Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolores laboriosam laudantium.</div>
+        <div class="div7">auto Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolores laboriosam laudantium.</div>
+    </div>
+</body>
+</html>

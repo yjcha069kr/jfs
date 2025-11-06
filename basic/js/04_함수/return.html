@@ -28,8 +28,8 @@
             // 2️⃣${변수|표현식|함수호출문}
             // 3️⃣불필요한 문자열(+, ', ") 삭제
             // 4️⃣HTML 태그를 인식함.
-            document.write(`<br>${name}이 숫자 <b style="color:red;">${num}</b>을 입력하였습니다.<br> 1부터 ${num}까지의 합은 `);
-            let sum = 0; // 전역변수
+            document.write(`${name}이 숫자<b style="color:red;">${num}</b>을 입력하였습니다. 1부터 ${num}까지의 합은 `);
+            sum = 0; // 전역변수
             console.log(sum);
             for (let i=1; i<=num; i++) {
                 sum += i;
@@ -40,8 +40,9 @@
         let result = add('홍길동', 10); // 전역변수
         document.write(result + '입니다.');
 
-        document.write(add('박길동', 100) + '입니다. <br>');
+        document.write(add('박길동', 100) + '입니다.');
 
+        console.log(sum);
 
         // 덧셈 연산 함수
         function add(x, y) {
@@ -59,12 +60,13 @@
         function divide(x, y) {
             return x / y
         }
-        
+
         // 출력
-        document.write('-------------------------------------<br>');
-        document.write(add(5, 2) + '<br>');
+        document.write('----------------------<br>');
+        document.write(add(5, 2)+'<br>');
         const addition = add;
         document.write(`${addition(5, 2)}<br>`);
+
     </script>
 </body>
 </html>

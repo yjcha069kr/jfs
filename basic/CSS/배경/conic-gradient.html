@@ -9,55 +9,57 @@
         /* 
             1️⃣conic-gradient() 함수
             🔻background-image: conic-gradient([from 각도] [at 위치,] 색 [degree], 색 [degree], ...);
-                *색 뒤의 %는 색의 위치
+                - from 각도: 회전각도(기본값: from 0deg)
+                - at 위치: 중심점 위치(기본값: at 50% 50%)
+
+                *색 뒤의 deg는 색의 분포
         */
 
         p {
             width: 500px;
             height: 200px;
             color: #fff;
+            font-size: 20px;
         }
         #grad1 {
-            /* 정지선 자연스럽게 */
-            background-image: radial-gradient(red, yellow, green);
+            background-image: conic-gradient(red, yellow, green);
         }
         #grad2 {
-            /* 정지선 명확하게 구분 / circle: 모양 동그랗게 */
-            background-image: radial-gradient(circle, red 5%, yellow 15%, green 60%);
+            background-image: conic-gradient(red 45deg, yellow 90deg, green 210deg);
         }
         #grad3 {
-            /* 기본값: farthest-corner */
-            background-image: radial-gradient(farthest-corner at 70% 60%, red, yellow, black);
+            background-image: conic-gradient(red 0deg, red 90deg, yellow 90deg, yellow 180deg, green 180deg, green 270deg, blue 270deg);
         }
         #grad4 {
-            background-image: radial-gradient(farthest-side at 70% 60%, red, yellow, black);
+            background-image: conic-gradient(from 90deg, red, yellow, green);
         }
         #grad5 {
-            background-image: radial-gradient(closest-corner at 70% 60%, red, yellow, black);
+            background-image: conic-gradient(at 60% 45%, red, yellow, green);
         }
-        #grad6 {
-            background-image: radial-gradient(closest-side at 70% 60%, red, yellow, black);
-        }
-        
-
+    
         /* 
-            2️⃣repeating radial gradien()
+            2️⃣repeating conic-gradient()
         */
+        #grad6 {
+            background-image: repeating-conic-gradient(red 10%, yellow 20%);
+        }
         #grad7 {
-            background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+            /* 참고사이트: https://cssgradient.io/ 에서 표현하고싶은 색 지정해서 할 수 있음 */
+            background: #EEAECA;
+            background: linear-gradient(52deg, rgba(238, 174, 202, 1) 0%, rgba(181, 208, 218, 1) 51%, rgba(233, 148, 200, 1) 100%);
         }
 
     </style>
 </head>
 
 <body>
-    <p id="grad1">background-image: linear-gradient(to bottom, red, yellow);</p>
-    <p id="grad2">background-image: linear-gradient(to bottom, red, yellow);</p>
-    <p id="grad3">farthest-corner</p>
-    <p id="grad4">farthest-side</p>
-    <p id="grad5">closest-corner</p>
-    <p id="grad6">closest-side</p>
-    <p id="grad7">background-image: linear-gradient(to bottom, red, yellow);</p>
+    <p id="grad1">background-image: conic-gradient(red, yellow, green);</p>
+    <p id="grad2">background-image: conic-gradient(red, yellow, green);</p>
+    <p id="grad3">background-image: conic-gradient(red, yellow, green);</p>
+    <p id="grad4">background-image: conic-gradient(red, yellow, green);</p>
+    <p id="grad5">background-image: conic-gradient(red, yellow, green);</p>
+    <p id="grad6">background-image: conic-gradient(red, yellow, green);</p>
+    <p id="grad7">background-image: conic-gradient(red, yellow, green);</p>
     
 </body>
 
