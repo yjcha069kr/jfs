@@ -206,8 +206,25 @@ footer .top-btn i {
 #about .basic p {
     text-align: left;
 }
+#about .basic strong {
+    text-decoration: underline 2px wavy rgba(0,0,255,0.5);
+}
+#about .basic b {
+    display: inline-block;
+    margin-bottom: 36px;
+}
+#about .basic img {
+    height: 280px;
+    border-radius: 5px;
+    filter: opacity(50%);
+}
+#about .basic img:hover {
+    filter: none;
+}
 #about .basic .inner {
     display: flex;
+    gap: 48px;
+    margin: 48px 0 130px;
 }
 #about .basic .inner div {
     flex: 50%;
@@ -215,6 +232,52 @@ footer .top-btn i {
 #about .basic .inner p {
     flex: 50%;
 }
+
+/* skill area */
+#about .skill>p {
+    margin-bottom: 36px;
+    font-size: 1.8rem;
+}
+#about .skill .inner p {
+    text-align: left; /* ta */
+    letter-spacing: 1rem;
+    margin: 12px 0;
+}
+#about .progressbar {
+    background: #F1F1F1;
+    color: #fff;
+}
+#about .progressbar div {
+    /* 한 줄 텍스트일 때 height와 line-height가 같으면 수직중앙배치 */
+    /* height: 35px;
+    line-height: 35px; */
+    padding: 6px;
+    background: #616161;
+}
+#about .progressbar:nth-of-type(1) div {
+    width: 80%;
+
+}
+#about .progressbar:nth-of-type(2) div {
+    width: 70%;
+}
+/* count area */
+#about .count ul {
+    display: flex;
+    text-align: center;
+    background: #616161;
+    color: #fff;
+    padding: 36px;
+}
+#about .count ul li {
+    /* flex: [grow|shrink|basis]; */
+    flex: 25%;
+}
+#about .count span {
+    display: block;
+    font-size: 2.4rem;
+}
+
 
 
 
