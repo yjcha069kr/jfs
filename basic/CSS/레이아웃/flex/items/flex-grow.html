@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 플렉스 아이템</title>
+    <style>
+
+        .flex-container {
+            display: flex;
+            background: dodgerblue;
+            font-size: 30px;
+            text-align: center;
+        }
+        .flex-container div {
+            background: #F1F1F1;
+            margin: 10px;
+            width: 100px;
+            padding: 10px;
+        }
+        /* 
+            flex-grow: 숫자;
+                - 숫자는 0이상
+                - 숫자가 클수록 더 크게 성장
+                - 0은 성장 안함
+        */
+        /* 3개의 아이템 박스가 1:1:4 비율로 성장 */
+        .flex-container div:nth-child(1) {flex-grow: 1;}
+        .flex-container div:nth-child(2) {flex-grow: 1;}
+        .flex-container div:nth-child(3) {flex-grow: 4;}
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+
+</html>

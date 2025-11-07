@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 플렉스 아이템</title>
+    <style>
+
+        .flex-container {
+            display: flex;
+            background: dodgerblue;
+            font-size: 30px;
+            text-align: center;
+        }
+        .flex-container div {
+            background: #F1F1F1;
+            margin: 10px;
+            width: 100px;
+            padding: 10px;
+        }
+        /* 
+            flex-basis: 숫자(단위);
+                - 기본값은 auto
+                - 단위: px, em, rem, % ...
+        */
+        /* 3개의 아이템 박스가 1:1:2:1:1:1 비율로 성장 */
+        /* length(길이) 단위: px, em, rem */
+        .flex-container div:nth-child(3) {flex-basis: 250px;}
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+
+</html>

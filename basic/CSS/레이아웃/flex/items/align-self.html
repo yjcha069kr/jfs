@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 플렉스 아이템</title>
+    <style>
+
+        .flex-container {
+            display: flex;
+            background: dodgerblue;
+            font-size: 30px;
+            text-align: center;
+            height: 200px;
+            /* 🔸align-items: center; */
+        }
+        .flex-container div {
+            background: #F1F1F1;
+            margin: 10px;
+            width: 100px;
+            padding: 10px;
+        }
+        
+        /* 
+            align-self
+                - align-items와 속성값 같음
+                - 개별 아이템의 교차축 정렬
+                - 🔸align-items와 동시에 적용하면 align-self가 적용됨
+        */
+        .flex-container div:nth-child(3) {
+            align-self: flex-start; /* asfs */
+            align-self: flex-end; /* asfe */
+            align-self: center; /* asc */
+            /* 🔸align-self: stretch; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+
+</html>

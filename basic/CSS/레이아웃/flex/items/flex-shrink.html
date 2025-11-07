@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 플렉스 아이템</title>
+    <style>
+
+        .flex-container {
+            display: flex;
+            background: dodgerblue;
+            font-size: 30px;
+            text-align: center;
+        }
+        .flex-container div {
+            background: #F1F1F1;
+            margin: 10px;
+            width: 100px;
+            padding: 10px;
+        }
+        /* 
+            flex-shrink: 숫자;
+                - 기본값은 1
+                - 숫자는 0이상
+                - 숫자가 클수록 더 크게 수축
+                - 0은 수축 안함
+        */
+        /* 6개의 아이템 박스가 1:1:2:1:1:1 비율로 성장 */
+        .flex-container div:nth-child(3) {flex-shrink: 2;}
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+</body>
+
+</html>
