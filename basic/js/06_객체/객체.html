@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 연관배열</title>
+</head>
+<body>
+    <script>
+        /* 
+            🔶객체(Object)?
+                - 현실 세계의 모든 것(유형, 무형)을 객체로 표현
+                - 키와 값의 쌍으로 구성
+
+            🔶객체 유형
+                - 내장 객체 
+                    - 전역 객체: Date, Array, String, ...
+                    - BOM(Browser Object Model)
+                        : window
+                            - document(DOM: Document Object Model)
+                            - screen, location, navigator, history, frames, XMLHttoRequest
+                - 사용자 정의 객체
+
+            🔶객체(Object) 생성(선언)
+                const 변수 = {
+                        속성: 속성값, 
+                        메서드: function(){}, 
+                        ..., 
+                        속성:값
+                }
+
+            🔶객체 참조(조회)
+                🔹변수 ['키']
+                🔹변수.키
+            
+            객체.속성
+            객체.메서드()
+                Array.length
+                Array.foreach()
+        */
+
+    // 1️⃣객체 생성(선언)
+    const data = {
+        'f0':100,
+        'f1':200,
+        'f2':300
+    };
+    // 2️⃣객체 참조(조회)
+    document.write(data + '<br>'); // [object Object]
+    document.write(data['f0'] + '<br>'); // 100
+    document.write(data["f1"] + '<br>'); // 200
+    document.write(data.f2 + '<br>'); // 300
+    // 3️⃣객체 추가(삽입)
+    data['f3'] = 400;
+    data.f4 = 500;
+    document.write(data["f3"] + '<br>'); // 400
+    document.write(data.f4 + '<br>'); // 500
+    // 4️⃣객체 변경(수정)
+    data.f2 = 500;
+    document.write(data.f2 + '<br>'); // 500
+
+    </script>
+</body>
+</html>

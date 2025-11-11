@@ -26,7 +26,7 @@
                 15) lastIndexOf
         */
 
-        // 🔶1) join
+        // 🔶join
         let result;
         const cities = ['서울', '경기', '인천'];
         // 배열.join() : ,
@@ -43,7 +43,7 @@
 
         document.write('-----------------------------------<br>')
 
-        // 🔶2) concat
+        // 🔶concat
         const fruits = ['사과', '딸기', '포도'];
         const names = ['홍길동', '박길동', '김길동'];
         // 배열.concat(값, 값, ...)
@@ -57,7 +57,7 @@
 
         document.write('-----------------------------------<br>')
 
-        // 🔶3) reverse
+        // 🔶reverse
         const nums = [9,8,7,6,5,4,3,2,1];
 
         result = nums.join();
@@ -73,7 +73,7 @@
 
         document.write('-----------------------------------<br>')
 
-        // 🔶4) sort
+        // 🔶sort
         const ndata1=[19, 38, 67, 26, 55, 24, 53, 12, 31]; 
         const ndata2=[132, 2, 41, 123, 45, 1234, 6, 29, 4567]; 
         const edata=['Apple', 'Html', 'Game', 'Computer', 'Java']; 
@@ -102,105 +102,173 @@
         document.write('-----------------------------------<br>')
         
 
-        // 🔶5) slice(인덱스1, 인덱스2)
+        // 🔶slice(인덱스1, 인덱스2)
         // 인덱스1에서 (인덱스2-1)까지의 값을 새로운 배열로 반환
         kdata=['서울', '부산', '구포', '대구', '인천', '대전', '세종'];
-        result = kdata.slice(0, 4) ;
+        result = kdata.slice(0, 4);
         document.write(result + '<br>'); // ['서울', '부산', '구포', '대구']
-        result = kdata.slice(-2, -1) ;
+        result = kdata.slice(-2, -1);
         document.write(result + '<br>'); // ['대전']
-        result = kdata.slice(-4, -2) ;
+        result = kdata.slice(-4, -2);
         document.write(result + '<br>'); // ['대구', '인천']
-        document.write(typeof result + '<br>'); 
-        document.write(kdata + '<br>'); 
+        document.write(typeof result + '<br>'); // ['대구', '인천']
+        document.write(kdata + '<br>'); // ['대구', '인천']
 
+        document.write('---------------------<br>');
+
+        document.write(kdata + '<br>'); // [서울,부산,구포,대구,인천,대전,세종]
+        // 🔶splice
+        // 배열명.splice(시작index, [삭제개수], [요소1, 요소2, ...])
+        // - 기존 배열이 변경된다.
+
+        // 요소 삭제 
+        // - 1번 인덱스부터 2개를 삭제하여 반환
+        document.write(kdata.slice(1, 3) + '<br>');
+        result = kdata.splice(1, 2);
+        document.write(result + '<br>'); // [부산,구포]
+        document.write(kdata + '<br>'); // [서울,대구,인천,대전,세종]
+
+        // 요소 추가
+        // 1번 인덱스에 새로운 요소를 추가
+        result = kdata.splice(1, 0, "수원", "용인");
+        document.write('요소 추가: ' + result + '<br>'); // 
+        document.write('kdata: ' + kdata + '<br>'); // [서울,수원,용인,대구,인천,대전,세종]
+
+        // 요소 삭제 - 음수 인덱스
+        result = kdata.splice(-2, 1);
+        document.write('요소 삭제: ' + result + '<br>'); // [대전]
+        document.write('kdata: ' + kdata + '<br>'); // [서울,수원,용인,대구,인천,세종]
+
+        // 2번 인덱스부터 배열의 끝 인덱스까지 반환
+        document.write(kdata.slice(2) + '<br>'); // [용인,대구,인천,세종]
+        // result = kdata.splice(2, Number.MAX_VALUE); // 4이상의 수를 쓰면 결과는 같다.
+        result = kdata.splice(2, 4);
+        // 자바스크립트에서 표현할 수 있는 가장 큰 숫자
+        console.log(Number.MAX_VALUE); // 1.7976931348623157e+308
+        document.write(result + '<br>'); // [용인,대구,인천,세종]
+        document.write(kdata + '<br>'); // [서울,수원]
 
         // 모든 요소 삭제
-        // result = kdata.splice(0, 2);
-        // result = kdata.splice(0, Number.Max_VALUE);
+        //result = kdata.splice(0, 2);
+        //result = kdata.splice(0, Number.MAX_VALUE);
         result = kdata.splice(0);
-        document.write(result + '<br>') // [서울, 수원]
-        document.write('배열갯수: ' + kdata.length + '<br>'); // 배열갯수: 0
+        document.write(result + '<br>'); // [서울,수원]
+        document.write('배열 개수: ' + kdata.length + '<br>'); // 배열 개수: 0
 
-
-        kdata=['서울', '부산', '구포', '대구', '인천']; 
-        // 🔸7) push(값, 값, ...)
+        kdata = ['서울', '부산', '구포', '대구', '인천'];
+        // 🔶push(값, 값, ...)
         // 요소 추가 - 배열의 맨 끝에 추가
-        // 스텍(stack): FILD(First In Last Out) - 먼저 입력된 데이터가 나중에 출력됨
-        result=kdata.push('청주', '세종');
-        document.write('배열 갯수: ' + result + '<br>'); // 배열 갯수: 7
+        // 스텍(Stack): FILO(First In Last Out) - 먼저 입력된 데이터가 나중 출력된다.
+        result = kdata.push('청주', '세종');
+        document.write('배열 개수: ' + result + '<br>'); // 배열 개수: 7
         document.write(kdata + '<br>'); // [서울,부산,구포,대구,인천,청주,세종]
 
-        // 🔸8) pop()
-        // 요소 삭제 - 베열의 맨 끝 요소를 하나씩 삭제
-        result=kdata.pop();
-        document.write('삭제한 요소: ' + result + '<br>'); // 삭제한 요소: 세종
+        // 🔶pop()
+        // 요소 삭제 - 배열의 맨 끝 요소를 하나씩 삭제
+        result = kdata.pop();
+        document.write('삭제한 요소: ' + result + '<br>'); // 세종
         document.write(kdata + '<br>'); // [서울,부산,구포,대구,인천,청주]
 
-        // 🔸unshift(값, 값, ...)
+        // 🔶unshift(값, 값, ...)
         // 요소 추가 - 배열의 맨 앞에 추가
-        result=kdata.unshift('경기', '세종');
-        document.write('배열 갯수: ' + result + '<br>'); // 배열 갯수: 8
+        result = kdata.unshift('경기', '세종');
+        document.write('배열 개수: ' + result + '<br>'); // 배열 개수: 8
         document.write(kdata + '<br>'); // [경기,세종,서울,부산,구포,대구,인천,청주]
 
-        // 🔸shift()
+        // 🔶shift()
         // 요소 삭제 - 배열의 맨 앞 요소를 하나씩 삭제
-        result=kdata.shift();
-        document.write('삭제할 요소: ' + result + '<br>'); // 삭제한 요소: 경기
+        result = kdata.shift();
+        document.write('삭제할 요소: ' + result + '<br>'); // 삭제할 요소: 경기
         document.write(kdata + '<br>'); // [세종,서울,부산,구포,대구,인천,청주]
 
-        // // 🔸delete 키워드로 삭제한 요소는 undefined를 반환
-        // // 요소의 갯수는 변함없음
-        // delete kdata[0];
-        // // delete kdata[1];
-        // delete kdata[2];
-        // // delete kdata[3];
-        // delete kdata[4];
-        // // delete kdata[5];
-        // delete kdata[6];
-        // fot (let i=0; i<kdata.length; i++) {
-        //     document.write(`배열 데이터[${i}] = ${kdata[i]}<br>`);
-        // }
-        // document.write('배열의 갯수: ' + kdata.length + '<br>'); // 배열의 갯수: 7
-        // document.write(kdata + '<br>'); // [,,,,,,]
+        // delete 키워드로 삭제한 요소는 undefined를 반환
+        // 요소의 개수는 변함이 없다.
+        delete kdata[0];
+        //delete kdata[1];
+        delete kdata[2];
+        //delete kdata[3];
+        delete kdata[4];
+        //delete kdata[5];
+        delete kdata[6];
+        for (let i = 0; i<kdata.length; i++) {
+            document.write(`배열 데이터[${i}] = ${kdata[i]}<br>`);
+        }
+        document.write('배열 개수: ' + kdata.length + '<br>'); // 배열 개수: 7
+        document.write(kdata + '<br>'); // [,,,,,,]
 
-        document.write('-----------------------------------<br>')
-        kdata=['서울', '부산', '청주', '대구'];
-        
+        document.write('--------------------------------<br>')
+        kdata=['서울', '부산', '청주', '대구']; 
+
         // 일반 for
-        for (let index = 0; index < array.length; index++) {
-            document.write(`일반 for [${i}] : ${kdata(i)} <br>`);
+        document.write(`일반 for ------------- <br>`);
+        for (let i = 0; i < kdata.length; i++) {
+            document.write(`배열 데이터 [${i}] : ${kdata[i]} <br>`);   
         }
 
-        // for~of: index가 없음
+        // for~of: index가 없다.
         // for (const 변수 of 배열) {
-        for (const i of kdata) {
-            document.write(`for~of [${i}] : ${kdata(i)} <br>`);
+        document.write(`for ~ of ------------- <br>`);
+        for (const val of kdata) {
+            document.write(`배열 데이터 : ${val} <br>`);
         }
 
-        // 🔸forEach(콜백함수) 
-        //   배열명.forEach(function(val, idx, [arr]) {
-        //      코드;
-        //   })
-            
-        // - 배열을 반복하며 지정된 데이터를 조회
-        // 배열의 index를 사용함
-        document.write('-----------------------------------<br>')
-        kdata.forEach(function (val, idx){
-            document.write(`배열 데이터 [${index}] : ${val} <br>`);
+        // 🔶forEach(콜백함수)
+        // 배열명.forEach(function(val, idx, [arr]){
+        //     코드;
+        // });
+        // - 배열을 반복하며 저장된 데이터를 조회
+        // 배열의 index를 사용!
+        document.write(`forEach() ------------- <br>`);
+        kdata.forEach(function (val, idx) {
+            document.write(`배열 데이터 [${idx}] : ${val} <br>`);
         });
-        
-        // 1~10까지의 합
-        let sum=0;
-        let datas=[1,2,3,4,5,6,7,8,9,10];
+
+        // 10개의 배열 요소 합
+        let datas = [1,2,3,4,5,3,7,8,3,10];
+        let sum = 0;
         datas.forEach(function (val) {
             sum += val;
         });
-        document.write(`1~10까지의 합 [${index}] : ${val} <br>`);
+        document.write(`10개의 배열 요소 합: ${sum} <br>`); // 46
+        console.log(datas);
 
-        // map() - 새 배열 생성
+        document.write(`map() ------------- <br>`);
+        // 🔶map() - 새 배열 생성
+        // map(콜백함수)
+        // 배열명.map(function(val, [idx], [arr]){});
+        result = datas.map(function(val){
+            return val * val;
+        });
+        document.write(`기존 배열: ${datas} <br>`); // [1,2,3,4,5,3,7,8,3,10]
+        document.write(`새 배열: ${result} <br>`); // [1,4,9,16,25,9,49,64,9,100]
 
-        // 
+
+        document.write(`filter() ------------- <br>`);
+        // 🔶filter() - 새 배열 생성
+        // filter(콜백함수)
+        // 배열명.filter(function(val, [idx], [arr]){
+        //       return 조건식;
+        // });
+        result = datas.filter(function(val){
+            return val >= 6;
+        });
+        document.write(`기존 배열: ${datas} <br>`); // [1,2,3,4,5,3,7,8,3,10]
+        document.write(`새 배열: ${result} <br>`); // [7,8,10]
+
+        document.write(`indexOf()/lastIndexOf() ------------- <br>`);
+        // 🔶indexOf(val, [fromIdx]) 
+        // - val에 대한 인덱스 반환, 앞에서 부터
+        // - fromIdx: 검색을 시작할 인덱스
+        // 🔶lastIndexOf(val, [fromIdx]) 
+        // - val에 대한 인덱스 반환, 뒤에서 부터
+
+        // 처음에서 첫 번째로 찾은 3의 인덱스를 반환
+        document.write('인덱스: ' + datas.indexOf(3) + '<br>'); // 인덱스: 2
+        // 숫자3 중에서 처음부터 2번째 3의 인덱스를 반환
+        document.write('인덱스: ' + datas.indexOf(3, 3) + '<br>'); // 인덱스: 5
+        // 끝에서 첫 번째로 찾은 3의 인덱스를 반환
+        document.write('인덱스: ' + datas.lastIndexOf(3) + '<br>'); // 인덱스: 8
+        document.write('인덱스: ' + datas.lastIndexOf(3, 3) + '<br>'); // 인덱스: 2
     </script>
 </body>
 </html>
