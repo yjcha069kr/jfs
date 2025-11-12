@@ -264,10 +264,12 @@
 
         // 처음에서 첫 번째로 찾은 3의 인덱스를 반환
         document.write('인덱스: ' + datas.indexOf(3) + '<br>'); // 인덱스: 2
-        // 숫자3 중에서 처음부터 2번째 3의 인덱스를 반환
+        // // [1,2,3,4,5,3,7,8,3,10]
+        // 3번 인덱스부터 끝방향으로 3을 찾아 인덱스를 반환
         document.write('인덱스: ' + datas.indexOf(3, 3) + '<br>'); // 인덱스: 5
         // 끝에서 첫 번째로 찾은 3의 인덱스를 반환
         document.write('인덱스: ' + datas.lastIndexOf(3) + '<br>'); // 인덱스: 8
+        // 3번 인덱스부터 시작방향으로 3을 찾아 인덱스를 반환
         document.write('인덱스: ' + datas.lastIndexOf(3, 3) + '<br>'); // 인덱스: 2
     </script>
 </body>
