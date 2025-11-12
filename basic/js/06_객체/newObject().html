@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 객체</title>
+</head>
+<body>
+    <p id="var1">아이디</p>
+    <p class="var1">클래스</p>
+    <script>
+        // 🔸DOM 객체 선택(select)
+        const var1 = document.getElementById('var1');
+        const var2 = document.getElementsByClassName('var1')[0];
+
+
+        /* 
+            객체 선언(생성)
+                1️⃣리터럴
+                      const 객체명 = {};
+                2️⃣new 생성자함수
+                      const 객체명 = new Object();
+
+            참고: 생성자 함수명은 첫 글자로 대문자로 씀(관례)
+        */
+
+        let a;
+        // 1️⃣리터럴
+        /* 
+        const car = {
+            name: '소나타',
+            speed: 100,
+            color: '흰색',
+            msg: function(){return `내 차는 ${this.color} ${this.name} 입니다.`}
+        }; 
+        */
+        const car = {};
+        car.name = '소나타';
+        car.speed = 120;
+        car.color = '흰색';
+        car.msg = function(){
+            return `내 차는 ${this.color} ${this.name} 입니다.`
+        };
+
+        // 2️⃣new 생성자함수: new Object()
+        // 서로 다른 객체는 속성이 같아도 적용됨
+        const car2 = new Object();
+        car2.name = '포르쉐';
+        car2.speed = 120;
+        car2.color = '검정색';
+        car2.msg = function(){
+            return `내 차는 ${this.color} ${this.name} 입니다.`
+        };
+
+        
+        // 🔸DOM 객체의 내용 수정(update)
+        var1.innerHTML = car2.name;
+        var2.innerHTML = car2.msg();
+    </script>
+</body>
+</html>

@@ -5,7 +5,17 @@
     <p id="var2"></p>
     <p id="var3"></p>
     <script>
+        // var car={
+        //     'name': 'Sonata', 
+        //     "speed": 100, 
+        //     color: 'white'
+        // };
         var car={name: 'Sonata', speed: 100, color: 'white'}; 
+        // DOM객체(p태그) 선택
+        // id가 var1인 HTML태그를 선택해서 DOM의 HTML 객체로 바꿔 var1변수에 저장
+        const var1 = document.getElementById("var1");
+        // innerHTML은 HTML태그에 내용 지정(setter)/가져오기(getter)
+        var1.innerHTML="자동차 이름 : " + car['name'];
         document.getElementById("var1").innerHTML="자동차 이름 : " + car['name'];
         document.getElementById("var2").innerHTML="자동차 속도 : " + car.speed;
         document.getElementById("var3").innerHTML="자동차 색상 : " + car.color;

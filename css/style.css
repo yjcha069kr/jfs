@@ -172,9 +172,19 @@ footer .top-btn i {
 #home {
     position: relative;
     /* 뷰포트 크기로 높이 지정 */
-    height: 100vh;
     overflow: hidden;
-    background: url(../assets/img/ernest-brillo-Qi8CvonsYnM-unsplash.jpg) no-repeat 50% 50%/cover fixed;
+}
+#home .bgimg {
+    height: 100vh;
+    background: url(../assets/img/light.jpg) no-repeat 50% 50% / cover fixed;
+}
+#home.dark .bgimg {
+    filter: brightness(40%);
+    background-image: url(../assets/img/dark.jpg);
+}
+#home.dark h2 {
+    color: rgba(255,255,255,.5);
+    text-shadow: 1px 1px 2px lightgoldenrodyellow, 0 0 25px lightcoral, 0 0 35px lightgoldenrodyellow;
 }
 #home h2 {
     /* background: #2a2a2a; */
@@ -183,6 +193,7 @@ footer .top-btn i {
 }
 .circle_ani {
     position: absolute;
+    top: 0;
     right: 0;
     width: 135px;
     height: 136px;

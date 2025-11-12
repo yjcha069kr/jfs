@@ -26,21 +26,30 @@
             부트스크랩 사이트  https://getbootstrap.kr/
         */
 
+        
         /* 🔻모든장치: 폰(393px) */
         body {
-            background: lightsalmon;
+            background: lightblue;
+        }
+        /* orientation: portrait (기본값, 세로) */
+        /* orientation: landscape (가로) */
+        /* '최대 767px 이하의 장치 + 가로방향으로 들었을때' */
+        @media (max-width: 767px) and (orientation: landscape) {
+            body {
+                background: lightseagreen;
+            }
         }
 
         /* 🔻테블릿(768px), 데스크탑(1920px)🔻 */
         /* 최소 768px -> 768px 이상의 장치 */
         @media (min-width: 768px) {
             /* CSS기록 */
-            body {background: lightgoldenrodyellow;}
+            body {background: lightcoral;}
         }
         /* 최소 1024px -> 1024px 이상의 장치*/
         @media (min-width:1024px) {
             /* CSS기록 */
-            body {background: lightskyblue;}
+            body {background: lightgoldenrodyellow;}
         }
     </style>
 </head>
