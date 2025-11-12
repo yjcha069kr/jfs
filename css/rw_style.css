@@ -1,0 +1,267 @@
+@charset "utf-8";
+
+/* 웹 폰트 지정 */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@font-face {
+    font-family: Lato-Regular;
+    src: url(../assets/font/Lato-Regular.ttf);
+}
+@font-face {
+    font-family: Lato-Thin;
+    src: url(https://yjcha069kr.github.io/jfs/assets/font/Lato-Thin.ttf);
+}
+
+/* reset(초기화) */
+* {box-sizing: border-box;}
+:root {
+    scroll-behavior: smooth;
+}
+body,h1,h2,h3,p,ul {
+    margin: 0;
+}
+ul {
+    padding: 0; list-style: none;
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+a {
+    text-decoration: none;
+}
+iframe {
+    width: 100%;
+    height: 100%;
+}
+button {
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background: #ccc;
+}
+
+
+/* 폰트 설정 */
+:root {
+    font-size: 10px;
+}
+body {
+    font: 1.5rem/1.6 "Lato-Regular", sans-serif;
+    color: #666;
+}
+h2 {
+    font-weight: 400;
+    font-size: 3.6rem;
+    color: #fff;
+    letter-spacing: 1rem; 
+    text-transform: uppercase; /* tt ->전부 대문자로 바꿀 때 */
+}
+h3 {
+    font-size: 2.4rem;
+}
+header a {
+    color: #f1f1f1;
+}
+footer a, footer p {
+    color: #f1f1f1;
+}
+/* a태그는 글자색 직접 지정해야됨 */
+footer .top-btn a {
+    color: #333;
+}
+footer .sns {
+    margin: 24px;
+}
+footer .sns i {
+    font-size: 2.4rem;
+margin: 0 -3px;
+}
+#contact a {
+    color: #777;
+}
+#contact button {
+    color: #fff;
+}
+#contact .addr {
+    font-size: 1.8rem;
+}
+textarea {
+    font: 1.5rem/1.6 "Lato-Regular", sans-serif;
+}
+::placeholder {
+    font: 1.5rem/1.6 "Lato-Regular", sans-serif;
+    color: #ccc;
+}
+
+
+/* common(공통) */
+h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* trft */
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+h3 {
+    text-align: center;
+    margin: 64px 0 10px;
+}
+h3+p {
+    text-align: center;
+}
+
+
+/* header area */
+header {
+    z-index: 99999;
+    position: fixed;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb li a {
+    display: inline-block;
+    padding: 8px 16px;
+}
+header .gnb li a:hover {
+    background: #333;
+}
+header .gnb li i {
+    margin-right: 8px;
+}
+
+
+/* footer area */
+footer {
+    background: #444;
+    /* 푸터 안의 인라인 요소를 모두 가운데로 배치 */
+    text-align: center;
+    padding: 100px;
+}
+footer:hover {
+    background: #111;
+}
+footer .top-btn {
+    display: inline-block;
+    background: #ccc;
+    padding: 8px 16px;
+}
+footer .top-btn i {
+    margin-right: 8px;
+}
+
+
+/* about + work + contact section common area */
+.parallax-bg {
+    position: relative;
+    height: 400px;
+    background: no-repeat 50% 50%/cover fixed;
+}
+.container {
+    width: 900px;
+    margin: 48px auto 96px;
+    text-align: center;
+}
+button {
+    background: #F1F1F1;
+    padding: 12px 24px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+
+/* 🔻모든장치: 데스크탑(1920px) */
+/* work section area: work.html */
+#work .parallax-bg {
+    background-image: url(/jfs/assets/img/parallax2.jpg)
+}
+#work .portfolio {
+    display: flex;
+    gap: 16px;
+}
+#work .portfolio li {
+    flex: 25%;
+    height: 162px;
+}
+#shadow {
+    margin: 64px 0 0;
+    width: 200px;
+    height: 50px;
+    background: inherit; /* '부모 속성을 그대로 받는다' */
+    /* background: transparent; */ /* 위의 p에 transparent 있어서 */
+    color: #000;
+    box-shadow: none; /* '평상시엔 안한다' */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    transition: .2s ease-out;
+}
+#shadow:hover {
+    box-shadow: 0 0 6px rgba(35, 173, 278, 1);
+}
+
+/* 🔻테블릿(768px), 폰(393px)🔻 */
+/* 최대 1024px -> 1024px 이하의 장치 */
+@media (max-width: 1024px) {
+    body {
+        /* 뷰포트 단위: vw, vh, vmax, vmin */
+        font-size: 2vw;
+    }
+    h2 {
+        font-size: 6vw;
+    }
+    h3 {
+        font-size: 4vw;
+    }
+    button {
+        font-size: 2.5vw;
+    }
+    .top-btn {
+        font-size: 2.5vw;
+    }
+    footer .sns a i {
+        font-size: 4vw; 
+    }
+    .container {
+        width: 100%;
+    }
+    #work .portfolio {
+        flex-wrap: wrap;
+        padding: 0 24px;
+    }
+    #work .portfolio li {
+        flex: 48%;
+        height: 240px;
+    }
+}
+
+/* 최대 767px -> 767px 이하의 장치: 폰(393px) */
+@media (max-width: 767px) {
+    body {
+        /* 뷰포트 단위: vw, vh, vmax, vmin */
+        font-size: 3.5vw;
+    }
+    h2 {
+        font-size: 10vw;
+    }
+    h3 {
+        font-size: 7vw;
+    }
+    button {
+        font-size: 4vw;
+    }
+    .top-btn {
+        font-size: 4.5vw;
+    }
+    footer .sns a i {
+        font-size: 6.5vw; 
+    }
+    footer {
+    padding: 100px 0;
+    }
+    #work .portfolio li {
+        flex: 100%;
+    }
+}
