@@ -54,9 +54,10 @@
     </div>
 
     <script>
-        const body = document.body;
-        const info = document.getElementById("info");
-        const toggleBtn = document.getElementById("toggle-btn");
+        // const body = document.body;
+        const body = document.querySelector('body');
+        const info = document.getElementById('info');
+        const toggleBtn = document.getElementById('toggle-btn');
 
         // 현재 시각에 따라 자동 적용
         function applyThemeByTime() {
@@ -64,20 +65,21 @@
             const hour = now.getHours();
 
             // 19시(7PM) ~ 7시(7AM) 사이는 다크모드
-            if (hour >= 16 || hour < 7) {
+            if (hour >= 15 || hour < 7) {
                 /* 
-                    const 변수 = 객체.classList;
-                    변수.add(): 클래스 추가
-                    변수.remove(): 클래스 제거
-                    변수.toggle(): add와 remove를 번갈아 적용
-                    변수.contains()
+                    객체.classList.add('클래스'): 클래스 추가
+                    객체.classList.remove('클래스'): 클래스 제거
+                    객체.classList.toggle('클래스'): add와 remove를 번갈아 적용!
+                    객체.classList.contains('클래스'): 
                         - 클래스 포함 여부 확인
                         - 클래스가 존재하면 true, 아니면 false
                 */
+                // <body class="dark"> 
                 body.classList.add('dark');
                 info.textContent = `현재 시각: ${hour}시 → 다크모드 자동 적용 🌙`;
                 toggleBtn.textContent = '☀️ 라이트 모드 전환';
             } else {
+                // <body class="">
                 body.classList.remove('dark');
                 info.textContent = `현재 시각: ${hour}시 → 라이트모드 적용 ☀️`;
                 toggleBtn.textContent = '🌙 다크 모드 전환';
@@ -85,9 +87,14 @@
         }
 
         // 수동 전환 (자동 모드와 별개)
-        // 이벤트 종류: click
-        // 형식) 객체.addEventListener('이벤트명', 함수);
-        // 버튼 클릭하면 함수 실행
+        // 이벤트 처리
+        // 이벤트의 종류: click
+        // 이벤트 형식: 객체.addEventListener();
+        // 이벤트 형식: 객체.addEventListener(인자1, 인자2);
+        // 이벤트 형식: 객체.addEventListener(이벤트명, 콜백함수);
+        // 이벤트 형식: 객체.addEventListener('이벤트명', funciton(){});
+        // 이벤트 형식: 객체.addEventListener('이벤트명', ()=>{});
+        // 버튼을 클릭하면 함수를 실행~
         toggleBtn.addEventListener('click', () => {
             // <body class="">
             body.classList.toggle('dark');

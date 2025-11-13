@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/* 웹 폰트 지정 */
+/* 웹 폰트 */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @font-face {
@@ -12,7 +12,7 @@
     src: url(https://yjcha069kr.github.io/jfs/assets/font/Lato-Thin.ttf);
 }
 
-/* reset(초기화) */
+/* 초기화 */
 * {box-sizing: border-box;}
 :root {
     scroll-behavior: smooth;
@@ -21,7 +21,8 @@ body,h1,h2,h3,p,ul {
     margin: 0;
 }
 ul {
-    padding: 0; list-style: none;
+    padding: 0; 
+    list-style: none;
 }
 img {
     width: 100%;
@@ -97,7 +98,7 @@ textarea {
 }
 
 
-/* common(공통) */
+/* 공통 - 전체 */
 h2 {
     position: absolute;
     left: 50%;
@@ -114,7 +115,7 @@ h3+p {
 }
 
 
-/* header area */
+/* 헤더 */
 header {
     z-index: 99999;
     position: fixed;
@@ -134,16 +135,16 @@ header .gnb li i {
 }
 
 
-/* footer area */
+/* 푸터 */
 footer {
     background: #444;
-    /* 푸터 안의 인라인 요소를 모두 가운데로 배치 */
     text-align: center;
     padding: 100px;
 }
 footer:hover {
     background: #111;
 }
+/* 푸터 - to the top button */
 footer .top-btn {
     display: inline-block;
     background: #ccc;
@@ -154,7 +155,7 @@ footer .top-btn i {
 }
 
 
-/* about + work + contact section common area */
+/* 공통 - 섹션 */
 .parallax-bg {
     position: relative;
     height: 400px;
@@ -173,10 +174,91 @@ button {
 }
 
 
-/* 🔻모든장치: 데스크탑(1920px) */
-/* work section area: work.html */
+/* about section area: about.html */
+#about .parallax-bg {
+    background-image: url(/jfs/assets/img/parallax1.jpg);
+    /* background-position: 50% 70%; */
+}
+#about .basic p {
+    text-align: left;
+}
+#about .basic strong {
+    text-decoration: underline 2px wavy rgba(0,0,255,0.5);
+}
+#about .basic b {
+    display: inline-block;
+    margin-bottom: 32px;
+}
+#about .basic img {
+    height: 280px;
+    border-radius: 5px;
+    filter: opacity(50%);
+}
+#about .basic img:hover {
+    filter: none;
+}
+#about .basic .inner {
+    display: flex;
+    gap: 48px;
+    margin: 48px 0 130px;
+}
+#about .basic .inner div {
+    flex: 50%;
+}
+#about .basic .inner p {
+    flex: 50%;
+}
+
+/* about 섹션 -> skill 섹션 */
+#about .skill>p {
+    margin-bottom: 36px;
+    font-size: 1.8rem;
+}
+#about .skill .inner p {
+    text-align: left; 
+    letter-spacing: 1rem;
+    margin: 12px 0;
+}
+#about .progressbar {
+    background: #F1F1F1;
+    color: #fff;
+}
+#about .progressbar div {
+    /* 한 줄 텍스트일 때 height와 line-height가 같으면 수직중앙배치 */
+    /* height: 35px;
+    line-height: 35px; */
+    padding: 6px;
+    background: #616161;
+}
+#about .progressbar:nth-of-type(1) div {
+    width: 80%;
+
+}
+#about .progressbar:nth-of-type(2) div {
+    width: 70%;
+}
+
+/* about 섹션 - count */
+#about .count ul {
+    display: flex;
+    text-align: center;
+    background: #616161;
+    color: #fff;
+    padding: 36px 0;
+}
+#about .count ul li {
+    /* flex: [grow|shrink|basis]; */
+    flex: 25%;
+}
+#about .count span {
+    display: block;
+    font-size: 4vw;
+}
+
+
+/* work 섹션 */
 #work .parallax-bg {
-    background-image: url(/jfs/assets/img/parallax2.jpg)
+    background-image: url(/jfs/assets/img/parallax2.jpg);
 }
 #work .portfolio {
     display: flex;
@@ -193,7 +275,7 @@ button {
     background: inherit; /* '부모 속성을 그대로 받는다' */
     /* background: transparent; */ /* 위의 p에 transparent 있어서 */
     color: #000;
-    box-shadow: none; /* '평상시엔 안한다' */
+    box-shadow: none; 
     border: 1px solid #ccc;
     border-radius: 3px;
     transition: .2s ease-out;
@@ -202,11 +284,10 @@ button {
     box-shadow: 0 0 6px rgba(35, 173, 278, 1);
 }
 
-/* 🔻테블릿(768px), 폰(393px)🔻 */
-/* 최대 1024px -> 1024px 이하의 장치 */
+/* 테블릿(768px) */
 @media (max-width: 1024px) {
+    /* 타이포 */
     body {
-        /* 뷰포트 단위: vw, vh, vmax, vmin */
         font-size: 2vw;
     }
     h2 {
@@ -224,9 +305,22 @@ button {
     footer .sns a i {
         font-size: 4vw; 
     }
+
+    /* 공통 섹션 */
     .container {
-        width: 100%;
+        margin: 48px 24px 96px;
     }
+
+    /* about 섹션 - counter */
+    #about .count ul {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    #about .count ul li {
+        flex: calc(50% - 8px);
+    }
+
+    /* work 섹션 */
     #work .portfolio {
         flex-wrap: wrap;
         padding: 0 24px;
@@ -237,10 +331,10 @@ button {
     }
 }
 
-/* 최대 767px -> 767px 이하의 장치: 폰(393px) */
+/* 폰 */
 @media (max-width: 767px) {
+    /* 타이포 */
     body {
-        /* 뷰포트 단위: vw, vh, vmax, vmin */
         font-size: 3.5vw;
     }
     h2 {
@@ -252,15 +346,29 @@ button {
     button {
         font-size: 4vw;
     }
+    #about .count span {
+        display: block;
+        font-size: 8vw;
+    }
     .top-btn {
         font-size: 4.5vw;
     }
     footer .sns a i {
         font-size: 6.5vw; 
     }
-    footer {
-    padding: 100px 0;
+    /* 공통 - 요소 숨기기 */
+    .ele-hide {
+        display: none;
     }
+    /* 푸터 */
+    footer {
+        padding: 100px 0;
+    }
+    #about .count ul li {
+        flex: calc(100% - 8px);
+    }
+
+    /* work 섹션 */
     #work .portfolio li {
         flex: 100%;
     }

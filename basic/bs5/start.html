@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap 5 Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 부트스트랩 라이브러리를 CDN으로 연결 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css">
+</head>
+
+<body>
+<!-- 부트스크랩 프레임워크에서 class 이름을 미리 정의해 놓음 -->
+<!-- 부트스크랩에 대해 어떤 공부?
+    - 어떤 class 이름이 있나?
+    - class 이름 붙이면 어떻게 동작하나?
+-->
+    <!-- 컨테이너 클래스
+        - container-fluid(100% 가로 크기)
+        - container(width: 1290px; padding: 0 12px;)
+            🔸중단점(576이하(xs), 576(sm), 768(md), 992(lg), 1200(xl), 1400(xxl)) 기준으로 최대 크기가 정해져있음
+            🔸컨테이너는 row, col로 나뉨
+            🔸col-[*]-[*]은 최대 12개로 구성
+                - 첫번째 *은 중단점
+                - 두번째 *은 1~12중 숫자 하나
+
+    -->
+    <!--
+        색깔:
+        bg-primary(파랑), bg-secondary(회색), bg-success(초록), bg-danger(빨강), bg-warning(노랑), bg-info(하늘), bg-light(하양이랑 비슷한 밝은색), bg-dark(검정), bg-white(하양), bg-tranparent(투명)
+    -->
+    <div class="container-fluid p-5 bg-primary text-white text-center">
+        <h1>My First Bootstrap Page</h1>
+        <p>Resize this responsive page to see the effect!</p>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 col-xl-3">
+                <h3>Column 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <h3>Column 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <h3>Column 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <h3>Column 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
