@@ -258,7 +258,7 @@ button {
 
 /* work 섹션 */
 #work .parallax-bg {
-    background-image: url(/jfs/assets/img/parallax2.jpg) 50%/cover fixed;
+    background-image: url(/jfs/assets/img/parallax2.jpg);
 }
 #work .portfolio {
     display: flex;
@@ -347,7 +347,6 @@ button {
         font-size: 4vw;
     }
     #about .count span {
-        display: block;
         font-size: 8vw;
     }
     .top-btn {
@@ -365,7 +364,7 @@ button {
         padding: 100px 0;
     }
     #about .count ul li {
-        flex: calc(100% - 8px);
+        flex: 100%;
     }
 
     /* work 섹션 */
