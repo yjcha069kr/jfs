@@ -335,7 +335,7 @@ button {
 @media (max-width: 767px) {
     /* 타이포 */
     body {
-        font-size: 3.5vw;
+        font-size: 4.5vw;
     }
     h2 {
         font-size: 10vw;
@@ -347,7 +347,7 @@ button {
         font-size: 4vw;
     }
     #about .count span {
-        font-size: 8vw;
+        font-size: 7vw;
     }
     .top-btn {
         font-size: 4.5vw;

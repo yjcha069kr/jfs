@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM</title>
+    <style>
+        button {
+            display: block;
+        }
+
+        .bgc {
+            background-color: lightpink;
+        }
+        .dn {
+            display: none;
+        }
+        .db {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>돔</h1>
+    <p class="'bgc">여기는 돔 설명하는 곳입니다.</p>
+    <script>
+        /* 
+            🔸DOM(Document Object Model, 문서 객체 모델)
+                - 웹 문서를 메모리로 읽어들여 트리(Tree) 구조로 변환
+                - 요소
+                    - 요소 노드: div
+                    - 텍스트 노드: 내용
+                    - 속성 노드: class (존재하지만 이제는 사용 x)
+
+            🔸어디에 사용?
+                1. 구조
+                    - 요소 노드: createElement('태그명')
+                2. 내용
+                    - 텍스트 노드: createTextNode('텍스트') 
+                    - innerHTML, textContent
+                3. 스타일
+
+            0️⃣선택
+                - document.getElementById('아이디')
+                - document.getElementByClassName('클래스')
+                - document.getElementByTagName('태그')
+                - document.querySelector('선택자')
+                - document.querySelectorAll('선택자')
+            1️⃣생성
+                - document.createElement('태그명')
+                - document.createTextNode('텍스트')
+            2️⃣연결
+                - 객체(부모노드).appendChild(자식노드);
+                    예) const div = document.createElement('div');
+                    예) const h1 = document.createElment('h1');
+                    예) document.body.appendChild(div);
+                    예) div.appendChild(h1객체);
+            3️⃣속성 지정하기
+                - DOM객체.HTML속성명 = HTML속성값;
+                - DOM객체.setAttribute('HTML속성명', 'HTML속성값');
+            4️⃣속성 가져오기
+                - DOM객체.HTML속성;
+                - DOM객체.setAttribute('HTML속성명', 'HTML속성값');
+            5️⃣스타일
+                - 객체.style.CSS속성="CSS속성값";
+            이벤트
+                - 객체on이벤트명 = 콜백함수;
+                - 객체.addEventListener('이벤트명', 콜백함수);
+
+            <div class="값">텍스트</div>
+        */
+    
+        // 요소 생성
+        const p2 = document.createElement('p');
+        const img = document.createElement('img');
+        const img2 = document.createElement('img');
+        const btn = document.createElement('button');
+        // 요소복제
+        const btn2 = btn.cloneNode();
+        const btn3 = btn.cloneNode();
+
+        // 텍스트 노드 생성
+        const text = document.createTextNode('보이세요?');
+        // p1 선택
+        const p1 = document.querySelector('p');
+
+        // p1에 자식으로 p2추가
+        document.body.appendChild(p2);
+        document.body.appendChild(img);
+        document.body.appendChild(img2);
+        document.body.appendChild(btn);
+        document.body.appendChild(btn2);
+        document.body.appendChild(btn3);
+        p1.appendChild(text);
+        btn.textContent = '숨기기';
+        btn2.textContent = '보이기';
+        btn3.textContent = '보이기/숨기기';
+
+        // 이미지 추가
+        img.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png';
+        img2.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png';
+        img.setAttribute('width', '150px');
+        const w100 = img.getAttribute('width');
+        img2.setAttribute('width', w100);
+
+        // 이미지에 테두리 긋기
+        img.style.border = '5px solid red';
+
+        // 이벤트
+        // <img class="dn">
+        btn.addEventListener('click', ()=>{
+            // img.style.display = 'none';
+            img.classList.add('dn');
+        });
+        // <img class>
+        btn2.addEventListener('click', ()=>{
+            // img.style.display = 'none';
+            img.classList.remove('dn');
+        });
+        btn3.onclick = ()=>{
+            // img.style.display = 'none';
+            img.classList.toggle('dn');
+        };
+
+        // 'p1 요소가 .bgc 클래스를 가지고 있나?' 의 뜻
+        // 맞으면 true, 아니면 false
+        if (p1.classList.contains('bgc')) {
+            p1.classList.remove('bgc');
+        } else {
+            p1.classList.add('bgc');
+        }
+    </script>
+</body>
+</html>
