@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 이벤트</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        /* 
+            이벤트의 종류
+                1. window: resize(반응형), scroll
+                2. document: ready
+                3. mouse: click, mouseenter, mouseleave, mousedown, mouseup, mousemove, ...
+                4. keyboard: keydown, keyup
+                5. form: submit, focus, blur, change, select
+        */
+       // 요소선택
+            // DOM 요소를 선택할 때 대체로 문자열로 표기
+            // $(document), $(window)
+            // $(this)는 자기자신
+            // $('body'), $('html')
+            // $('선택자')
+            // $("button")
+
+            /* 
+                메서드 유형
+                    1. 이벤트 메서드: click()
+                        이벤트명(콜백함수)
+                    2. 효과 메서드: hide()
+                    3. 탐색 메서드
+                    4. HTML/CSS 메서드: attr()
+            */
+
+        // $jQuery(document).ready(function(){});
+        // $(function(){});
+        $(()=>{
+            // 버튼 선택 - 객체.메서드();
+            // 'p를 숨긴다'
+            $('p').hide();
+
+            $('#a1').click(function(){
+                // 'p를 보여준다'
+                $('p:nth-of-type(1)').show();
+            });
+            $('.a2').click(()=>{
+                // 'p를 보여준다'
+                $('p:nth-of-type(2)').show();
+            });
+
+            // 'p를 클릭하면'
+            $('p').click(function(){
+                // 'p를 숨긴다'
+                // $('p').hide();
+                // '자기 자신을 숨긴다'
+                // 참고:: 화살표함수에서 $(this)는 자기자신이 $(window)
+                console.log($(this));
+                $(this).hide();
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <h1>퀴즈</h1>
+    <h2>문제1. 대한민국의 수도는?</h2>
+    <button type="button" id="a1">정답</button>
+    <p>서울입니다.</p>
+    <h2>문제2. 대한민국의 국보1호는?</h2>
+    <button type="button" class="a2">정답</button>
+    <p>숭례문입니다.</p>
+</body>
+</html>

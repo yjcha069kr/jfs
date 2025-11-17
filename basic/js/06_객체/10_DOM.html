@@ -25,49 +25,66 @@
     <p class="'bgc">여기는 돔 설명하는 곳입니다.</p>
     <script>
         /* 
-            🔸DOM(Document Object Model, 문서 객체 모델)
-                - 웹 문서를 메모리로 읽어들여 트리(Tree) 구조로 변환
-                - 요소
-                    - 요소 노드: div
-                    - 텍스트 노드: 내용
-                    - 속성 노드: class (존재하지만 이제는 사용 x)
+            DOM(Document Object Model, 문서 객체 모델)
+                - 웹 문서를 메모리로 읽어 들여 트리(Tree) 구조로 변환
+            
+            어디에 사용? 
+                - HTML 구조와 내용, CSS 스타일 변경에 사용
 
-            🔸어디에 사용?
-                1. 구조
-                    - 요소 노드: createElement('태그명')
-                2. 내용
-                    - 텍스트 노드: createTextNode('텍스트') 
-                    - innerHTML, textContent
-                3. 스타일
-
-            0️⃣선택
+            1. 요소 선택
                 - document.getElementById('아이디')
-                - document.getElementByClassName('클래스')
-                - document.getElementByTagName('태그')
+                - document.getElementsByClassName('클래스')
+                - document.getElementsByTagName('태그')
                 - document.querySelector('선택자')
                 - document.querySelectorAll('선택자')
-            1️⃣생성
+
+            2. 요소 생성 + 연결
                 - document.createElement('태그명')
                 - document.createTextNode('텍스트')
-            2️⃣연결
-                - 객체(부모노드).appendChild(자식노드);
-                    예) const div = document.createElement('div');
-                    예) const h1 = document.createElment('h1');
-                    예) document.body.appendChild(div);
-                    예) div.appendChild(h1객체);
-            3️⃣속성 지정하기
-                - DOM객체.HTML속성명 = HTML속성값;
-                - DOM객체.setAttribute('HTML속성명', 'HTML속성값');
-            4️⃣속성 가져오기
-                - DOM객체.HTML속성;
-                - DOM객체.setAttribute('HTML속성명', 'HTML속성값');
-            5️⃣스타일
-                - 객체.style.CSS속성="CSS속성값";
-            이벤트
-                - 객체on이벤트명 = 콜백함수;
-                - 객체.addEventListener('이벤트명', 콜백함수);
+                - 부모요소.appendChild(자식요소);
 
-            <div class="값">텍스트</div>
+            2-1 요소 복제
+                - 요소.cloneNode(deep)
+                    -> deep: true이면 자식까지 복제, (깊은 복제) 
+                             false이면 선택한 요소만 복제 (기본값, 얕은 복제)
+
+            3. 요소 내용
+                - 요소.innerHTML;
+                - 요소.textContent;
+                - 요소.innerHTML = '텍스트';
+                - 요소.textContent = "텍스트";
+
+            4. 속성(Attribute) 지정하기
+                - 요소.HTML속성 = HTML속성값;
+                - 요소.setAttribute('HTML속성', 'HTML속성값');
+                예) div.className = "div1";
+                예) img.src = "경로/이미지명";
+                예) div.setAttribute('class', 'div1');
+                예) img.setAttribute('src', '경로/이미지명');
+
+            5. 속성 가져오기
+                - 요소.HTML속성;
+                - 요소.getAttribute('HTML속성');
+
+            6. 스타일: 요소의 스타일과 값을 지정
+                - 객체.style.CSS속성="CSS속성값";
+                - 객체.style.cssText=`속성:값; 속성:값; ...`;
+
+            7. 스타일: 클래스 이름만 정의 + CSS로 속성과 값을 지정
+                - 클래스추가
+                    객체.classList.add('클래스명1, 클래스명2, ...')
+                - 클래스 제거
+                    객체.classList.remove('클래스명')
+                - 클래스 추가/제거
+                    객체.classList.toggle('클래스명')
+                - 클래스 유무 확인: 있으면 true, 없으면 false
+                    객체.classList.contains('클래스명')
+            
+            8. 이벤트
+                객체.on이벤트명 = 콜백함수;
+                객체.on이벤트명 = function(){};
+                객체.on이벤트명 = () => {};
+                객체.addEventListener('이벤트명', 콜백함수);
         */
     
         // 요소 생성
@@ -125,9 +142,9 @@
         // 'p1 요소가 .bgc 클래스를 가지고 있나?' 의 뜻
         // 맞으면 true, 아니면 false
         if (p1.classList.contains('bgc')) {
-            p1.classList.remove('bgc');
+            document.body.style.background = 'yellow';
         } else {
-            p1.classList.add('bgc');
+            document.body.style.background = 'lightblue';
         }
     </script>
 </body>
