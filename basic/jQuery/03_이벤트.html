@@ -8,7 +8,7 @@
     <script>
         /* 
             이벤트의 종류
-                1. window: resize(반응형), scroll
+                1. window: resize, scroll
                 2. document: ready
                 3. mouse: click, mouseenter, mouseleave, mousedown, mouseup, mousemove, ...
                 4. keyboard: keydown, keyup
@@ -17,6 +17,7 @@
        // 요소선택
             // DOM 요소를 선택할 때 대체로 문자열로 표기
             // $(document), $(window)
+            // $('선택자:eq(n)') -> n은 0,1,2,...
             // $(this)는 자기자신
             // $('body'), $('html')
             // $('선택자')
@@ -24,11 +25,23 @@
 
             /* 
                 메서드 유형
-                    1. 이벤트 메서드: click()
-                        이벤트명(콜백함수)
-                    2. 효과 메서드: hide()
+                    1. 이벤트 메서드 
+                        - click(): '요소를 클릭한다'
+                        - mouseenter(): '요소 안으로 마우스가 들어간다'
+                        - mouseleave(): '요소 밖으로 마우스가 나간다'
+                        - mousedown(): '요소를 마우스로 누르고 있다'
+                        - mouseup(): '요소를 mousedown 후에 마우스를 뗀다'
+
+                    2. 효과 메서드
+                        - hide(): '요소를 숨긴다'
+                        - show(): '요소를 보여준다'
+
                     3. 탐색 메서드
-                    4. HTML/CSS 메서드: attr()
+                        - eq()
+
+                    4. HTML/CSS 메서드
+                        - text(): 'HTML의 내용을 가져온다/지정한다'
+                        - html(): 'HTML의 내용을 가져온다/지정한다'(태그인식)
             */
 
         // $jQuery(document).ready(function(){});

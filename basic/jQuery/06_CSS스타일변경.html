@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 CSS 스타일 변경</title>
+    <style>
+        .important {
+            font-weight: bold;
+            /* 
+                xx-small(10px), x-small(10px), small(13px), smaller(13.3333px)
+                medium(16px)
+                large(18px), larger(19.2px), x-large(24px), xx-large(32px)
+            */
+            font-size: xx-large;
+        }
+        .blue {
+            color: blue;
+        }
+        .red {
+            color: red;
+	        border: 1px solid blue;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        /* 
+            CSS 스타일 변경
+                .addClass('클래스명'): 클래스 추가
+                .removeClass('클래스명'): 클래스 제거
+
+        */
+
+        // 준비 이벤트
+        // jQuery(document).ready(function(){});
+        $(()=>{
+            // 'h1,h2,p 첫번째를 선택해서'
+            // 글자색을 파란색으로 지정
+            /* 
+            --------- JAVAscript --------------------   ------------------ jQuery -------------
+            객체.style.color='blue';                      객체.css('color','blue');
+            객체.style.border='1px solid red';              객체.css('border','1px solid red');
+            객체.style.cssText='                            객체.css({ 
+                    color:blue;                                  color:blue,
+                    border:1px solid red';                       border:1px solid red
+                                                            });
+             */
+
+            // $('h1,h2,p:first').css('color','violet');
+            // '.blue클래스를 추가한다'
+            $('h1,h2,p:first').addClass('blue');
+            // '두번째 p를 선택하여'
+            // '글자 크기를 xx-large로, 긁기는 bold로 지정한다'
+            // $('p:last').css('font-size', 'xx-large');
+            // $('p:last').css('font-weight', 'bold');
+            $('p:last').css({
+                // 속성명은 카멜표기법 사용시 '' 생략가능함!
+                fontSize: 'xx-large', 
+                fontWeight: 'bold'
+            });
+            // '두번째 p를 선택하여'
+            // 'important 클래스를 지정한다'
+            $('p:last').addClass('important');
+
+            // 이벤트 작성
+            // '첫번째 버튼을 클릭하면'
+            $('button:first').click(function(){
+                // 'h1,h2,첫번째p를 선택하여 blue클래스를 추가'
+                $('h1,h2,p:first').addClass('blue red');
+                // '마지막p를 선택하여 important클래스를 추가'
+                $('p:last').addClass('important');
+            });
+            // '두번째 버튼을 클릭하면'
+            $('button').eq(1).click(function(){
+                // 'h1,h2,첫번째p를 선택하여 blue클래스를 제거'
+                $('h1,h2,p:first').removeClass('blue');
+                // '마지막p를 선택하여 important클래스를 제거'
+                $('p:last').removeClass('important');
+            });
+            // '세번째 버튼을 클릭하면'
+            $('button').eq(2).click(function(){
+                // 'h1,h2,첫번째p를 선택하여 red클래스를 적용 또는 번갈아'
+                $('h1,h2,p').toggleClass('red');
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <h1>HTML5</h1>
+    <h2>CSS3</h2>
+    <p>자바스크립트</p>
+    <p>제이쿼리</p>
+    <button type="button">addClass</button>
+    <button type="button">removeClass</button>
+    <button type="button">toggleClass</button>
+</body>
+</html>

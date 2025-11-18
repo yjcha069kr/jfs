@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* 웹 아이콘(폰트어썸 */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+
+/* 웹 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+@font-face {
+    font-family: Lato-Regular;
+    src: url(../assets/font/Lato-Regular.ttf);
+}
+@font-face {
+    font-family: Lato-Thin;
+    src: url(https://yjcha069kr.github.io/jfs/assets/font/Lato-Thin.ttf);
+}
+
+/* 공통 */
+.container {
+    max-width: 980px;
+}
+
+/* 배경 이미지 */
+#home .bgimg {
+    height: 100vh;
+    background: url(/jfs/assets/img/light.jpg) no-repeat 50% 50% / cover fixed;
+}
+#home.dark .bgimg {
+    filter: brightness(40%);
+    background-image: url(/jfs/assets/img/dark.jpg);
+}
+.parallax-bg {
+    height: 400px;
+    background: no-repeat 50% 50%/cover fixed;
+}
+#about .parallax-bg {
+    background-image: url(/jfs/assets/img/parallax1.jpg);
+}
+#work .parallax-bg {
+    background-image: url(/jfs/assets/img/parallax2.jpg);
+}
+#contact .parallax-bg {
+    background-image: url(/jfs/assets/img/parallax3.jpg);
+    background-position: 50% 80%;
+}
+
+/* 애니메이션 */
+.circle_ani {
+    width: 135px;
+    height: 136px;
+    transition: linear 5s;
+    animation: circle 50s linear infinite;
+}
+@keyframes circle {
+    0% {
+        transform: rotate(0deg) scale(3);
+    }
+    100% {
+        transform: rotate(720deg) scale(3);
+    }
+}
+
+/* 텍스트 그림자 */
+#home.dark h2 {
+    text-shadow: 1px 1px 2px lightgoldenrodyellow, 0 0 25px lightcoral, 0 0 35px lightgoldenrodyellow;
+}
+
+/* 나의 사진 */
+.myimg {
+    width: 425px;
+    height: 280px;
+}
+
