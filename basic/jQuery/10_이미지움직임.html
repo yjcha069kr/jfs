@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 효과메서드</title>
+    <style> 
+        .moving {
+            border:1px solid #000000;
+            margin: 20px auto 0 auto;
+            text-align: right;
+            width: 550px;
+        }
+        .moving img {
+            cursor: pointer;
+            position: relative; 
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+        $(()=>{
+            // 변수 선언
+            const img=$('img');
+            // 이미지 가로크기를 150으로 지정(set)
+            // <img src="이미지" width="150">
+            const imgObj=$('img').width(150); 
+            const imgWidth=imgObj.width();
+            // .moving 박스 가로 크기를 가져오기(get)
+            const boxWidth=$('.moving').width(); 
+            console.log(imgWidth);
+            console.log(boxWidth);
+
+            function move(e, speed){
+                // '이미지가 왼쪽으로 움직임'
+                $(e.currentTarget).animate({left: -boxWidth+imgWidth}, speed);
+            }
+
+            // '이미지를 클릭하면'
+            img.eq(0).on('click', e => move(e, 1000));
+            img.eq(1).on('click', e => move(e, 800));
+            img.eq(2).on('click', e => move(e, 2000));
+            
+            // '초기화 버튼을 클릭하면'
+            $('button').on('click', ()=>{
+                // '이미지가 제자리로 돌아감(=오른쪽으로 움직임)'
+                $('img').animate({left: 0});
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="init">
+        <button type="button">초기화</button><br>
+    </div>
+    <div class="moving">
+        <img src="https://i.pinimg.com/236x/c7/5e/81/c75e81f175a77ed533657c0b9115187d.jpg" alt="이미지1"><br>
+        <img src="https://png.pngtree.com/png-clipart/20230330/original/pngtree-cute-dog-illustration-png-image_9009549.png" alt="이미지2"><br>
+        <img src="https://marketplace.canva.com/u9sCY/MAGv2-u9sCY/1/tl/canva-gray-cartoon-cat-MAGv2-u9sCY.png" alt="이미지3"><br>
+    </div>
+</body>
+</html>

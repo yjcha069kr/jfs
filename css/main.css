@@ -1,8 +1,7 @@
 @charset "utf-8";
-/* 웹 아이콘(폰트어썸 */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
 
-/* 웹 폰트 */
+/* 타이포 */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 @font-face {
@@ -12,6 +11,11 @@
 @font-face {
     font-family: Lato-Thin;
     src: url(https://yjcha069kr.github.io/jfs/assets/font/Lato-Thin.ttf);
+}
+
+.ls10px {
+    /* 10/16px = 0.625rem */
+    letter-spacing: 0.625rem; /* ls0.625rem */
 }
 
 /* 공통 */
@@ -70,3 +74,22 @@
     height: 280px;
 }
 
+/* 진행률 바(progress-bar) */
+.progress {
+    height: 35px;
+}
+.progress:first-of-type .progress-bar {
+    width: 80%;
+}
+.progress:last-of-type .progress-bar {
+    width: 70%;
+}
+
+/* 폼(양식) */
+input {
+    height: 45px;
+}
+textarea {
+    height: 200px;
+    resize: none;
+}
