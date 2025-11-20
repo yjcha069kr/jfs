@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 HTML 메서드</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+        /* 
+            HTML/CSS 관련 메서드
+                🔻get(가져오기)
+                $(selector).text()
+                $(selector).html()
+                $(selector).val()
+
+                🔻set(지정하기)
+                $(selector).text('content')
+                $(selector).html('content')
+                $(selector).val(value)
+
+                
+                🔸<태그 attribute="value">내용</태그>
+                $(selector).attr(attribute)         : value 가져오기
+
+                $(selector).attr(attribute, value)  : value 로 지정하기
+                $(selector).attr({attribute:value, attribute:value, ...})
+
+                🔸선택자{property:value}
+                $(selector).css(property)           : value 가져오기
+                
+                $(selector).css(property,value)     : value로 지정하기
+                $(selector).css({property:value, property:value, ...})
+
+        */
+        // <태그 속성="값">내용</태그>
+        $(() => {
+            console.log("Text: " + $("#test1").text());
+            console.log("HTML: " + $("#test2").html());
+            console.log("val: " + $("#test3").val());
+            console.log("val: " + $("#test4").val());
+            console.log($("#w3s").attr("href"));
+
+            $("#btn1").click(function () {
+                // 태그를 문자열로 인식
+                $("#test1").text("<b>Hello world!</b>");
+            });
+            $("#btn2").click(function () {
+                // 태그를 태그로 인식 -> 굵은 글자로 표시
+                $("#test2").html("<b>Hello world!</b>");
+            });
+            $("#btn3").click(function () {
+                $("#test3").val("Dolly Duck");
+            });
+            $("#btn4").click(function () {
+                $("#w3s").attr("href", "https://www.w3schools.com/jquery/");
+                console.log($("#w3s").attr("href"));
+            });
+            $("button").click(function () {
+                $("#w3s").attr({
+                    "href": "https://www.w3schools.com/jquery/",
+                    "title": "W3Schools jQuery Tutorial"
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="btn1" type="button">text() 버튼1</button>
+    <button id="btn2" type="button">html() 버튼2</button>
+    <button id="btn3" type="button">val() 버튼3</button>
+    <button id="btn4" type="button">attr() 버튼4</button>
+    <button id="btn5" type="button">attr() 버튼5</button>
+
+    <p id="test1">가져오기1</p>
+    <p id="test2">가져오기2</p>
+    <p>Name: <input type="text" id="test3" value="Mickey Mouse"></p>
+    <p>textarea: <textarea name="" id="test4">텍스트 영역 입력중</textarea></p>
+
+    <a href="https://www.w3schools.com" id="w3s">링크</a>
+</body>
+
+</html>

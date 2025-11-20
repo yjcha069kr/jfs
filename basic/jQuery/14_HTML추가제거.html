@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 추가메서드</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+        /*
+            🔸위치
+            앞<p>시작 content 끝</p>뒤
+
+            🔸어디에 추가?
+                요소.append(내용, 내용, ...)- 선택된 요소의 '끝'에 내용 삽입
+                요소.prepend(내용, 내용, ...)- 선택된 요소의 '시작' 부분에 내용 삽입
+                요소.after(내용, 내용, ...)- 선택된 요소 '뒤'에 내용 삽입
+                요소.before(내용, 내용, ...)- 선택된 요소 '앞'에 내용 삽입
+
+            요소 제거
+                요소.remove()- 선택한 요소(및 해당 자식 요소)를 제거
+                요소.empty()- 선택된 요소에서 자식 요소를 제거
+        */
+
+        $(() => {
+            $("p").append("append");
+            $("p").prepend("prepend");
+            $("p").after("after");
+            $("p").before("before");
+
+            // HTML 요소로 생성 
+            const txt1 = "<p>Text.</p>";                
+            // jQuer로 생성 
+            const txt2 = $("<p></p>").text("Text.");   
+            // DOM으로 생성
+            const txt3 = document.createElement("p");  
+            // DOM으로 생성 후 값 지정
+            txt3.innerHTML = "Text.";
+
+            $("body").append(txt1, txt2, txt3);      
+
+            // #div1 요소를 지운다(내용도 같이 지워짐)
+            $("#div1").remove();
+            // #div2 요소의 내용만 지운다.
+            $("#div2").empty();
+        });
+    </script>
+</head>
+
+<body>
+    <p>나는 문장이다.</p>
+    <div>나는 <span id="div1">문장</span>이다.</div>
+    <div>나는 <span id="div2">문장</span>이다.</div>
+    
+</body>
+
+</html>
