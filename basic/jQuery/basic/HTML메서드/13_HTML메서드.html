@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 HTML 메서드</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+        /* 
+            HTML/CSS 관련 메서드
+                🔻get(가져오기, 반환(return))
+                    $(선택자).text()
+                    $(선택자).html()
+                    $(선택자).val() -> 폼 요소
+                    $(선택자).attr(HTML속성명): HTML 속성 값
+                    $(선택자).css(CSS속성명): CSS 속성 값
+
+                🔻set(지정하기, 설정)
+                    $(선택자).text('내용')
+                    $(선택자).text(function(인덱스,'현재텍스트'))
+                    $(선택자).html('내용')
+                    $(선택자).html(function(인덱스,'현재텍스트'))
+                    $(선택자).val(값)
+                    $(선택자).val(function(인덱스,현재값))
+                    $(선택자).attr(HTML속성명,값)
+                    $(선택자).attr({속성1:값1, 속성2:값2,...})
+                    $(선택자).css(CSS속성명,값)
+                    $(선택자).css({속성:값, 속성:값,...})
+        */
+        $(() => {
+            $("#btn1").click(function () {
+                $("#test1").text(function (i, origText) {
+                    return "old " + origText + " new (index: " + i + ")";
+                });
+            });
+
+            $("#btn2").click(function () {
+                $("#test2").html(function (i, origText) {
+                    return "old " + origText + " new (index: " + i + ")";
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p id="test1"><b>text</b></p>
+    <p id="test2"><b>html</b></p>
+
+    <button id="btn1">text()</button>
+    <button id="btn2">html()</button>
+</body>
+
+</html>

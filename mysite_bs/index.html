@@ -18,10 +18,10 @@
 
 <body>
     <!-- header -->
-    <header id="header" class="container-fluid p-0">
-        <nav class="navbar navbar-expand-sm bg-light fixed-top">
+    <header id="header" class="container-fluid p-0 fixed-top">
+        <nav class="navbar navbar-expand-sm">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#home">Home</a>
+                <a class="navbar-brand text-warning" href="#home">Home</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
@@ -48,7 +48,7 @@
         <div class="bgimg vh-100"></div>
         <h2 id="clock" class="position-absolute top-50 start-50 translate-middle text-light shadow-lg ls10px">You-jin
             Cha</h2>
-        <div class="circle_ani position-absolute top-0 end-0"><img src="./assets/img/portfolio.svg" alt="나의작품"></div>
+        <div class="circle_ani position-absolute top-0 end-0"><img src="assets/img/portfolio.svg" alt="나의작품"></div>
     </div><!-- #home -->
 
     <!-- about section -->
@@ -70,7 +70,7 @@
                     <div class="col text-center">
                         <b class="d-block mb-5">차유진</b>
                         <div class="myimg"><img class="w-100 h-100 object-fit-cover"
-                                src="/jfs/assets/img/avatar_hat.jpg" alt="나"></div>
+                                src="assets/img/avatar_hat.jpg" alt="나"></div>
                     </div>
                     <p class="col ele-hide">Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do
                         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -87,18 +87,18 @@
                 <div class="inner">
                     <p class="ls10px">Front-end</p>
                     <div class="progress rounded-0">
-                        <div class="progress-bar bg-info"><span>80%</span></div>
+                        <div class="progress-bar bg-info"><span>60%</span></div>
                     </div>
                     <p class="ls10px">Back-end</p>
                     <div class="progress rounded-0">
-                        <div class="progress-bar bg-info"><span>70%</span></div>
+                        <div class="progress-bar bg-info"><span>55%</span></div>
                     </div>
                 </div>
             </div><!-- .skill -->
         </div><!-- .container -->
 
         <!-- counter -->
-        <div class="container-fluid bg-secondary count py-5">
+        <div id="counter" class="container-fluid bg-secondary count py-5">
             <ul class="row text-center py-2 list-unstyled">
                 <li class="col text-white"><span class="fs-2 d-block">3+</span>Partners</li>
                 <li class="col text-white"><span class="fs-2 d-block">3+</span>Projects Done</li>
@@ -118,17 +118,17 @@
         <div class="container">
             <ul class="row portfolio list-unstyled">
                 <li class="col motion position-relative"><a href="#"><img class="w-100 h-100 object-fit-cover"
-                            src="/jfs/assets/img/p1.jpg" alt="팀 작품(필수)"></a></li>
-                <li class="col motion position-relative"><a href="/jfs/project" target="_blank"><img
-                            class="w-100 h-100 object-fit-cover" src="/jfs/assets/img/project2_thumb.png"
+                            src="assets/img/p1.jpg" alt="팀 작품(필수)"></a></li>
+                <li class="col motion position-relative"><a href="project" target="_blank"><img
+                            class="w-100 h-100 object-fit-cover" src="assets/img/project2_thumb.png"
                             alt="개인 따라하기 작품"></a></li>
                 <li class="col motion position-relative"><a href="#"><img class="w-100 h-100 object-fit-cover"
-                            src="/jfs/assets/img/p3.jpg" alt="개인 스스로 작품"></a></li>
+                            src="assets/img/p3.jpg" alt="개인 스스로 작품"></a></li>
                 <li class="col motion position-relative"><a href="#"><img class="w-100 h-100 object-fit-cover"
-                            src="/jfs/assets/img/p4.jpg" alt="준비중"></a></li>
+                            src="assets/img/p4.jpg" alt="준비중"></a></li>
             </ul>
             <div class="text-center py-5"><button type="button" id="shadow"
-                    class="btn btn-outline-dark px-3 rounded-1">더보기</button></div>
+                    class="btn btn-warning px-3 rounded-1 position-relative">프로젝트 내용 보기</button></div>
         </div><!-- .container -->
     </div><!-- #work -->
 

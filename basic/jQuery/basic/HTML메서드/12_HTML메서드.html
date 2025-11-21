@@ -11,28 +11,20 @@
         /* 
             HTML/CSS 관련 메서드
                 🔻get(가져오기)
-                $(selector).text()
-                $(selector).html()
-                $(selector).val()
+                    $(선택자).text()
+                    $(선택자).html()
+                    $(선택자).val() -> 폼 요소
+                    $(선택자).attr(HTML속성명): HTML 속성 값
+                    $(선택자).css(CSS속성명): CSS 속성 값
 
                 🔻set(지정하기)
-                $(selector).text('content')
-                $(selector).html('content')
-                $(selector).val(value)
-
-                
-                🔸<태그 attribute="value">내용</태그>
-                $(selector).attr(attribute)         : value 가져오기
-
-                $(selector).attr(attribute, value)  : value 로 지정하기
-                $(selector).attr({attribute:value, attribute:value, ...})
-
-                🔸선택자{property:value}
-                $(selector).css(property)           : value 가져오기
-                
-                $(selector).css(property,value)     : value로 지정하기
-                $(selector).css({property:value, property:value, ...})
-
+                    $(선택자).text('내용')
+                    $(선택자).html('내용')
+                    $(선택자).val(값)
+                    $(선택자).attr(HTML속성명,값)
+                    $(선택자).attr({속성1:값1, 속성2:값2,...})
+                    $(선택자).css(CSS속성명,값)
+                    $(선택자).css({속성:값, 속성:값,...})
         */
         // <태그 속성="값">내용</태그>
         $(() => {

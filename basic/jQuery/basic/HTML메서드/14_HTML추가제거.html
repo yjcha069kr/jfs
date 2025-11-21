@@ -29,20 +29,22 @@
             $("p").after("after");
             $("p").before("before");
 
-            // HTML 요소로 생성 
-            const txt1 = "<p>Text.</p>";                
-            // jQuer로 생성 
-            const txt2 = $("<p></p>").text("Text.");   
-            // DOM으로 생성
-            const txt3 = document.createElement("p");  
-            // DOM으로 생성 후 값 지정
+            // HTML 요소로 생성
+            const txt1 = "<p>Text.</p>";
+            // jQuery 로 생성
+            const txt2 = $("<p></p>").text("Text.");
+            // DOM 으로 생성
+            const txt3 = document.createElement("p");
+            // DOM 생성 후 값 지정
             txt3.innerHTML = "Text.";
 
-            $("body").append(txt1, txt2, txt3);      
+            $("body").append(txt1, txt2, txt3);
 
-            // #div1 요소를 지운다(내용도 같이 지워짐)
+            // #div1 요소를 지운다. (그 내용도 함께 지워진다.)
             $("#div1").remove();
-            // #div2 요소의 내용만 지운다.
+            $('p').remove('.test');
+            $('p').remove('.test, .demo');
+            // #div1 요소의 내용만 지운다.
             $("#div2").empty();
         });
     </script>
@@ -50,9 +52,12 @@
 
 <body>
     <p>나는 문장이다.</p>
-    <div>나는 <span id="div1">문장</span>이다.</div>
-    <div>나는 <span id="div2">문장</span>이다.</div>
-    
+    <div id="div1">나는 <span>문장</span>이다.</div>
+    <div id="div2">나는 <span>문장</span>이다.</div>
+
+    <p class="test">This is p element with class="test".</p>
+    <p class="test">This is p element with class="test".</p>
+    <p class="demo">This is p element with class="demo".</p>
 </body>
 
 </html>

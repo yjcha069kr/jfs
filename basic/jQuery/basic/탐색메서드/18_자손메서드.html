@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 탐색 메서드</title>
+    <style>
+        div {
+            margin: 20px;
+        }
+        body > div /* .ancestors div, .descendants div */{
+            width: 500px;
+        }
+        .ancestors * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+        .descendants * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        /* 
+            탐색 메서드
+                🔶조상🔶
+                    filter와 stop 인자는 조상(부모 포함) 요소로 지정해야됨
+
+                    요소.parent([filter])
+                        - 요소의 부모 선택
+                    요소.parents([filter])
+                        - 요소의 모든 조상 선택
+                    요소.parentsUntil([stop], [filter])
+                        - 요소~선택자까지 선택(요소, 선택자는 제외)
+                        - 인자 모두 생략하면 parents()와 같음
+                🔶자손🔶
+                    요소.children([filter])
+                        - 요소의 자식 선택
+                    요소.find()    🔸🔸🔸많이 사용함🔸🔸🔸
+                        - 요소의 하위 요소 선택
+                🔶형제🔶
+                    siblings()
+                    next()
+                    nextAll()
+                    nextUntil()
+                    prev()
+                    prevAll()
+                    prevUntil()
+                🔶필터🔶
+                    first() 
+                    last()
+                    eq() 
+                    filter()
+                    not()
+        */
+        $(() => {
+            // div의 자식 선택, 테두리 지정
+            // $('ul').children().css({ border: '2px solid red' });
+            // div의 자식 중 .first 클래스를 가진 p만 선택, 테두리 지정
+            // $('div').children('p.first').css({ border: '2px solid red' });
+            // div의 하위 요소 중 span 이면서 first 클래스를 가진 요소 선택, 테두리 지정
+            $('div').find('span.first').css({ border: '2px solid blue' });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="descendants">div (current element)
+        <p class="first">p (child)
+            <span>span (grandchild)</span>
+        </p>
+        <p class="second">p (child)
+            <span class="first">span (grandchild)</span>
+        </p>
+    </div>
+    <!-- ------------------------------------------------ -->
+    <div class="ancestors">
+        <div>div (great-grandparent)
+            <ul>ul (grandparent)
+                <li>li (direct parent)
+                    <span>span</span>
+                </li>
+            </ul>
+        </div>
+        <!-- ------------------------------------------------ -->
+        <div>div (grandparent)
+            <p>p (direct parent)
+                <span>span</span>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
