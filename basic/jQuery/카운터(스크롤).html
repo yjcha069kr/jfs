@@ -45,43 +45,44 @@
 
     <section>
         <div id="counters">
-            <div class="counter" data-target="100">32</div>
-            <div class="counter" data-target="200">80</div>
-            <div class="counter" data-target="300">200</div>
+            <div class="counter" data-target="17">0</div>
+            <div class="counter" data-target="28">0</div>
+            <div class="counter" data-target="4">0</div>
         </div>
     </section>
 
     <script>
         $(function () {
-            let counted = false; // 한 번만 실행
+            // 한 번만 실행
+            let counted = false; 
 
             function runCounter() {
                 const scrollTop = $(window).scrollTop(),
                     windowHeight = $(window).height(),
                     countersTop = $("#counters").offset().top;
 
-                    
-                    if (!counted && scrollTop + windowHeight > countersTop + 100) {
-                        counted = true;
+                if (!counted && scrollTop + windowHeight > countersTop + 100) {
+                    counted = true;
 
                     console.log('windowHeight:', windowHeight);
                     console.log('countersTop:', countersTop);
 
                     $(".counter").each(function () {
-                        const $this = $(this)
+                        const $this = $(this);
                         const target = parseInt($this.attr("data-target"));
                         const speed = 50;
                         let count = 0;
-
+                        
                         $this.addClass("active");
-
-                        var counterInterval = window.setInterval(() => {
-                            count += Math.ceil(target / 100);
+                        
+                        var counterInterval = window.setInterval(()=>{
+                            // count += Math.ceil(target / 100);
+                            count++;
                             if (count >= target) {
-                                count = target;
+                                //count = target;
                                 clearInterval(counterInterval);
                             }
-                            // 숫자.toFixes(소숫점자리수)
+                            // 숫자.toFixed(소숫점자릿수)
                             $this.text(count);
                             console.log($(this));
                         }, speed);
