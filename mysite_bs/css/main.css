@@ -95,7 +95,7 @@
 
 /* 내비게이션 버튼 클릭해서 섹션 이동시
 섹션의 제목 영역이 헤더에 가려지는 현상 해결 */
-#counter {
+#counterWrap {
     /* 카운터와 #work 섹션 사이의 떨어진(흰색) 부분 해결 */
     transform: translateY(56px);
 }
@@ -104,6 +104,12 @@
     content: '';
     /* ::before 높이을 헤더의 높이만큼 지정 */
     height: 56px;
+}
+
+/* 프로필 소개 문단 */
+.basic p {
+    text-align: justify;
+    word-break: break-all;
 }
 
 /* 나의 사진 */
@@ -121,6 +127,24 @@
 }
 .progress:last-of-type .progress-bar {
     width: 55%;
+}
+
+/* 카운터 */
+.counter {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+.counter::after {
+    content: '+';
+}
+.counter.active {
+    opacity: 1;
+}
+
+/* 작품 크기 */
+.portfolio li {
+    /* aspect-ratio: 가로/세로; */
+    aspect-ratio: 9/6;
 }
 
 /* 맵(지도) */
@@ -142,5 +166,5 @@ textarea {
     resize: none;
 }
 #btnForm {
-    width: 28%;
+    width: auto;
 }
