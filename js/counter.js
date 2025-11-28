@@ -1,41 +1,46 @@
 $(function () {
+    function runCounter($counter) {
+        var target = parseInt($counter.attr("data-target")),
+            count = 0,
+            speed = 50;
 
-            function runCounter($counter) {
-                var target = parseInt($counter.attr("data-target")),
-                    count = 0,
-                    speed = 50;
+        $counter.text(0);
 
-                $counter.text(0);
+        var counterInterval = setInterval(function () {
+            count++;
+            if (count >= target) {
+                clearInterval(counterInterval);
+            }
+            // 바 증가
+            $counter.parent().css("width", count + "%");
+            // 숫자(퍼센트) 증가
+            $counter.text(count);
+        }, speed);
+    } // function runCounter($counter) end
 
-                var counterInterval = setInterval(function () {
-                    count++;
-                    if (count >= target) {
-                        clearInterval(counterInterval);
-                    }
-                    $counter.text(count);
-                }, speed);
-            } // function runCounter($counter) end
+    function checkScroll() {
+        const scrollTop = $(window).scrollTop(),
+            windowHeight = $(window).height(),
+            elementTop = $(".counters").offset().top;
 
-            function checkScroll() {
-                const scrollTop = $(window).scrollTop(),
-                    windowHeight = $(window).height(),
-                    elementTop = $('#counters').offset().top;
+        $(".counter").each(function () {
+            const $this = $(this);
+            //console.log($this);
 
-                $(".counter").each(function () {
-                    const $this = $(this);
+            if (scrollTop + windowHeight > elementTop + 100) {
+                if (!$this.hasClass("active")) {
+                    $this.addClass("active");
+                    runCounter($this);
+                }
+            } else {
+                $this.removeClass("active");
+                $this.text(0);
+            }
+        });
+        //console.log($(window).scrollTop());
+    } // function checkScroll() end
 
-                    if (scrollTop + windowHeight > elementTop + 100) {
-                        if (!$this.hasClass("active")) {
-                            $this.addClass("active");
-                            runCounter($this);
-                        }
-                    } else {
-                        $this.removeClass("active");
-                        $this.text(0);
-                    }
-                });
-            } // function checkScroll() end
+    $(window).on("scroll", $.throttle(100, checkScroll));
+    checkScroll();
 
-            $(window).on("scroll", $.throttle(100, checkScroll));
-            checkScroll();
-        }); // $(document).ready() end
+}); // $(document).ready() end
