@@ -1,25 +1,25 @@
 @charset "utf-8";
-        
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css);
+
 /* reset */
 @font-face {
-    font-family: 'NanumBarunGothic';
-    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    font-family: "NanumBarunGothic";
+    src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
     font-weight: 400;
     font-display: swap;
 }
 @font-face {
-    font-family: 'NanumBarunGothic';
-    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    font-family: "NanumBarunGothic";
+    src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot");
     font-weight: 700;
     font-display: swap;
 }
 @font-face {
-    font-family: 'NanumBarunGothic';
-    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    font-family: "NanumBarunGothic";
+    src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot");
     font-weight: 300;
     font-display: swap;
 }
-
 * {
     box-sizing: border-box;
 }
@@ -30,9 +30,10 @@ body,h1,ul {
 ul {
     list-style: none;
 }
+
 /* 단위변환사이트 https://sitero.co.kr/fontsize */
 body {
-    font: 0.9375rem/1.6 'NanumBarunGothic', sans-serif;
+    font: 0.9375rem/1.6 "NanumBarunGothic", sans-serif;
     background: #111;
 }
 a {
@@ -41,4 +42,7 @@ a {
 }
 img {
     vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
