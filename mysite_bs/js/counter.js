@@ -40,7 +40,8 @@ $(function () {
         //console.log($(window).scrollTop());
     } // function checkScroll() end
 
-    $(window).on("scroll", $.throttle(100, checkScroll));
+    // $(window).on("scroll", $.throttle(100, checkScroll));
+    $(window).on("scroll", $.throttle ? $.throttle(100, checkScroll) : checkScroll);
     checkScroll();
 
 }); // $(document).ready() end

@@ -139,10 +139,10 @@
         ${data.screenTypes[2] === undefined ? "" : `<img src="${data.screenTypes[2]}" alt="dolby atmos">`} 
         */
 
-        // datas.each(([인덱스], [요소])=>{});
-        
         // datas.forEach(([요소], [인덱스], [배열])=>{});
-        datas.forEach(data=>{
+        // datas.forEach(data=>{
+        // $(datas).each(([인덱스], [요소])=>{});
+        $(datas).each((idx, data)=>{
             // datas.map(([요소], [인덱스], [배열])=>{});
             const screenImgs = data.screenTypes.map(ele=>`<img src="${ele}" alt="Screen Types">`).join('');
 
@@ -172,7 +172,7 @@
 
             $('.box_office').append(card);
 
-        }); // ForEach()
+        }); // each()
 
     </script>
 </body>

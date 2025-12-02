@@ -142,9 +142,102 @@
 }
 
 /* 작품 크기 */
-.portfolio li {
-    /* aspect-ratio: 가로/세로; */
-    aspect-ratio: 9/6;
+.portfolio_card {
+    position: relative;
+    /* width: 245px; */
+}
+
+/* 영화순위 */
+.rank {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 300;
+    font-style: italic;
+    text-shadow: 2px 2px 2px #000;
+}
+/* 포스터 */
+.poster {
+    height: 352px;
+}
+
+/* 작업시간 */
+.worktime {
+    position: absolute;
+    width: calc(100% - 48px);
+    text-align: center;
+    bottom: 30px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 8px;
+}
+.worktime span {
+    color: #59bec9;
+    font-size: 1.5rem;
+    margin-left: 16px;
+}
+
+/* 버튼 */
+.portfolio .btn {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    gap: 8px;
+    margin-top: 8px;
+    height: 34px;
+}
+/* 작업 유형 */
+.worktype {
+    background: transparent;
+    border: 1px solid #111;
+    border-radius: 5px;
+    width: 60px;
+    line-height: 30px;
+}
+
+/* 사이트 바로가기 버튼 */
+.sitelink {
+    width: 100%;
+    border-radius: 5px;
+    line-height: 30px;
+}
+
+/* y축 회전 */
+.inner {
+    position: relative;
+    height: 352px;
+    perspective: 1000px; /* 원근감 */
+}
+.inner:hover {
+    cursor: pointer; 
+}
+.front, .back {
+    border-radius: 5px;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: .5s;
+}
+.front {
+    transform: rotateY(0deg);
+}
+.back {
+    transform: rotateY(180deg);
+    padding: 24px;
+    color: #fff;
+    background: rgba(0,0,0,0.8);
+    backface-visibility: hidden; /* 3d에서 뒷면 숨기기 */
+}
+/* 호버시 뒤집기 */
+.inner:hover .front {
+    transform: rotateY(180deg);
+}
+.inner:hover .back {
+    transform: rotateY(360deg);
 }
 
 /* 맵(지도) */
@@ -154,7 +247,6 @@
 
 /* 폼(양식) */
 input {
-    width: 48%;
     height: 45px;
 }
 #name, #email {
