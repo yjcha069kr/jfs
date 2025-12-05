@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+    <style>
+        /* 
+            그리드 아이템
+                grid-column-start
+                    - 그리드 항목이 시작될 열 행을 지정
+                grid-column-end
+                    - 그리드 항목이 끝나는 열 줄을 지정
+                grid-column:  start / span 숫자
+                grid-row-start
+                    - 그리드 항목이 시작될 행 줄을 지정
+                grid-row-end
+                    - 그리드 항목이 끝나는 행 줄을 지정
+                grid-row: start end 의 약어 속성
+
+                위 속성들의 속성 값
+                    - auto(기본값), 숫자
+                
+                1. justify-self
+                    - 셀 내의 수평 정렬 지정
+                2. align-self
+                    - 셀 내의 수직 정렬 지정
+                3. place-self <align> <justify>;
+                    - 하나의 값만 사용하면 수직/수평이 같은 값으로 지정
+
+                    위 속성들의 속성값
+                        -stretch(기본값), start, center, end
+
+                grid-area: 이름;
+
+                justify-self
+                    - 셀 내의 수평 정렬을 지정
+                    *auto(기본값)
+                    *normal
+                    *stretch
+                    *start
+                    *left
+                    *center
+                    *end
+                    *right
+                align-self
+                    - 셀 내의 수직 정렬을 지정
+                place-self
+                    align-self, justify-self의 약어 속성
+
+            그리드 컨데이너
+                grid-template-areas: 이름 이름 이름;
+        */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            gap: 5px;
+            background-color: palevioletred;
+            padding: 5px;
+            height: 400px;
+        }
+
+        /* 그리드 아이템(item) */
+        .container div {
+            background-color: #f1f1f1;
+            border: 1px solid black;
+            padding: 10px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        /* 아이템별 수평 정렬 */
+        .item1 {justify-self: auto;} /* jsa */
+        .item2 {justify-self: stretch;} /* jsse */
+        .item3 {justify-self: start;} /* js */
+        .item4 {justify-self: end;} /* jse */
+        .item5 {justify-self: center;} /* jsc */
+
+        /* 아이템별 수직 정렬 */
+        .item1 {align-self: auto;} /* asa */
+        .item2 {align-self: stretch;} /* asse */
+        .item3 {align-self: start;} /* as */
+        .item4 {align-self: end;} /* ase */
+        .item5 {align-self: center;} /* asc */
+
+        /* place-self 수직 수평 */
+        .item7 {place-self: end start;} /* ps */
+        .item9 {place-self: center;} /* ps */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>  
+        <div class="item4">4</div>
+        <div class="item5">5</div>
+        <div class="item6">6</div>
+        <div class="item6">7</div>
+        <div class="item6">8</div>
+        <div class="item6">9</div>
+</div>
+</body>
+
+</html>

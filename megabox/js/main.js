@@ -1,11 +1,12 @@
-// section
-// 카드 영역
-$(datas).each((idx, data) => {
-  const screenImgs = data.screenTypes
-    .map((ele) => `<img src="${ele}" alt="Screen Types">`)
-    .join("");
+// main.js
 
-  const card = `<div class="box_office_card">
+// Movie Card UI
+$(datas).each((idx, data) => {
+    const screenImgs = data.screenTypes
+        .map((ele) => `<img src="${ele}" alt="Screen Types">`)
+        .join("");
+
+    const card = `<div class="box_office_card">
             <div class="inner">
                 <div class="front">
                     <span class="rank">${data.rank}</span>
@@ -29,15 +30,13 @@ $(datas).each((idx, data) => {
             </div>
         </div>`;
 
-  $(".box_office").append(card);
-});
+    $(".box_office").append(card);
+}); // each()
 
-// footer
-// 극장찾기
-
+// footer - looking for theater
 $(".btn_looking_theater").on("click", () => {
-  $(".theater").addClass("active");
+    $(".theater").addClass("active");
 });
 $(".closed").on("click", () => {
-  $(".theater").removeClass("active");
+    $(".theater").removeClass("active");
 });
