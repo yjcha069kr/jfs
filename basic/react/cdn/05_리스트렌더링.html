@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리액트 리스트렌더링</title>
+    <!-- 리액트 CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- 바벨: JSX 문법을 JS로 변환 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.28.4/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function App() {
+            return (
+                <div>
+                    <FruitList />
+                    <FruitList2 />
+                    <User />
+                    <User2 />
+                </div>
+            );
+        }
+    // --------------------🍎🍌🍇--------🍓🥝🍍-----------------------
+        // 배열을 JSX로 렌더링
+        // 배열을 목록으로 출력할 경우 map()을 사용
+        const fruits = ['🍎 Apple', '🍌 Banana', '🍇 Grape'];
+
+        function FruitList() {
+            return (
+                <ul>
+                    {/* 배열.map(함수) */}
+                    {/* 배열.map(([요소], [인덱스], [배열])=>{})) */}
+                    {fruits.map((fruit, index) => (
+                        // key는 유일한 값으로 지정
+                        <li key={index}>{fruit}</li>
+                    ))}
+                </ul>
+            );
+        }
+    // -------------------------------------------
+        // 자식 컴포넌트
+        // Fruit 컴포넌트는 하나의 과일 이름을 <li> 태그로 렌더링
+        function Fruit({ name }) {
+            return <li>{name}</li>;
+        }
+        // 부모 컴포넌트
+        // FruitList 컴포넌트는 과일 리스트 전체를 렌더링
+
+        function FruitList2() {
+            const fruits = ['🍓 Strawberry', '🥝 Kiwi', '🍍 Pineapple'];
+
+            return (
+                <ul>
+                    {fruits.map((fruit, i) => (
+                        <Fruit key={i} name={fruit} />
+                    ))}
+                </ul>
+            );
+        }
+
+    // ---------------------------------👩‍🦰👨‍🦰----------------------------------
+        function User() {
+            const users = [
+                { id: 'u1', name: 'Alice' },
+                { id: 'u2', name: 'Bob' },
+            ];
+            return (
+                <ul>
+                    {users.map(user => (
+                        // key는 유일한 값, index는 임시로만 사용
+                        <li key={user.id}>{user.name}</li>
+                    ))}
+                </ul>
+            );
+        }
+        // --------------------------------------------
+        // map() + 삼항 연산자
+        function User2() {
+            const items = [
+                // 아래 둘 내용없으면 No items found.
+                { id: 'u1', name: 'Alice' },
+                { id: 'u2', name: 'Bob' },
+            ];
+            return (
+                <ul>
+                    {items.length > 0 ? (
+                        items.map(item => <li key={item.id}>{item.name}</li>)
+                    ) : (
+                        <p>No items found.</p>
+                    )}
+                </ul>
+            );
+        }
+
+        // 렌더링(출력)
+        const root = ReactDOM.createRoot(document.querySelector('#root'));
+        root.render(<App />);
+    </script>
+</body>
+
+</html>

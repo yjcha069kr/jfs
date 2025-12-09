@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSX 스타일</title>
+    <link rel="stylesheet" href="App.css">
+    <style>
+        #box {
+            background: lightcoral;
+        }
+
+        .box {
+            padding: 20px;
+            border: 1px solid red;
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+        .alert {
+            background: yellow;
+        }
+    </style>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.28.4/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const styleObj = {
+            color: 'blue',
+            backgroundColor: 'lightgray',           // 카멜케이스
+            // 'background-color': 'lightpink',     // 케밥케이스(적용은 되지만 좋은 방법은 아님)
+            fontSize: '20px',
+            padding: '10px',
+        };
+        const isError = false;
+        /* 
+            🔹1. 인라인 스타일(Inline Style)
+                형식: 
+                    <태그 style={{속성: 값, 속성: 값, ...}}>
+                - 속성은 카멜 표기법으로
+                - 값의 단위 표기
+        */
+        // 컴포넌트 이름은 파스칼 표기법
+        function InlineStyle() {
+            return (
+                <div>
+                    {/* JSX 내부에서는 JS문(statement) 사용 불가 */}
+                    {/* const isError = false; */}
+                    {/* 조건부 스타일 */}
+                    <h1 style={{ color: isError ? 'red' : 'green' }}>
+                        {isError ? '오류 발생' : '정상'}
+                    </h1>
+                    <div style={styleObj}>인라인 스타일</div>
+                    {/* return <div style={{fontSize: '120px'}}>스타일이 적용된 박스</div>; */}
+                </div>
+            );
+        }
+    // --------------------------------------------------------------------
+        /* 
+            🔹2. 외부 스타일(External Style)
+                    (여기서는)
+                - CDN: <link rel="stylesheet" href="App.css">
+                - CRA, Vite: import "./App.css"
+        */
+        function ExternalStyle() {
+            return (
+                // class가 아닌 className으로 작성
+                    <h1 className="title">외부 스타일</h1>
+            );
+        }
+    // --------------------------------------------------------------------
+        /* 
+            🔹3. 내부 스타일(Internal Style)
+                - CDN: <style>CSS정의</style>
+                - CDN, CRA, Vite: JSX영역 내에서 <style>{'CSS정의'}</style>
+        */
+        function InternalStyle() {
+            return (
+                <div>
+                    <style>
+                        {`
+                            .internal {
+                                font-style: italic;
+                                text-shadow: 0 0 5px lightblue;
+                                border-radius: 50px;
+                            }
+                        `}
+                    </style>
+                    <h1 className="box internal" id="box">내부 스타일</h1>
+                    <Alert type="error" />
+                </div>
+            );
+        }
+    // --------------------------------------------------------------------
+        // 🔹3-1. 조건부(삼항 연산자) 스타일 적용하기
+        function Alert({ type }) {
+            const className = type === 'error' ? 'alert error' : 'alert success';
+
+            return <div className={className}>알림 메시지 - 내부스타일</div>;
+        }
+
+
+        // 루트 컴포넌트
+        function App() {
+            return (
+                <>
+                    <h1>JSX 안에서 스타일 적용</h1>
+                    <InlineStyle />
+                    <ExternalStyle />
+                    <InternalStyle />
+                </>
+            );
+        }
+
+
+        // 출력
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+
+</html>

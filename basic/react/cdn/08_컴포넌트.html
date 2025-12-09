@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>컴포넌트</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.28.4/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        // 🔶함수형 컴포넌트
+        // -> 컴포넌트 이름은 파스칼 표기법 사용
+            // 🔹선언적함수
+        function App1() {
+            return (
+                <h1>Hello React</h1>
+            );
+        }
+            // 🔹익명함수
+        const App2 = function () {
+            return (
+                <h1>Hello React</h1>
+            );
+        };
+            // 🔹화살표함수
+        const App3 = () => {
+            return (
+                <h1>Hello React</h1>
+            );
+        };
+
+        const App4 = () => <h1>Hello React</h1>;
+
+
+        // 🔶클래스 컴포넌트
+        class App5 extends React.Component {
+            render() {
+                return <h1>Hello</h1>;
+            }
+        }
+
+
+        function App() {
+            return (
+                <>
+                    <App1 />
+                    <App2 />
+                    <App3 />
+                    <App4 />
+                    <App5 />
+                </>
+            );
+        }
+
+        // 출력
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+        // root.render(<><App1 /><App2 /><App3 /></>);
+    </script>
+</body>
+
+</html>
