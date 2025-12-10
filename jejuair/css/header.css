@@ -1,0 +1,47 @@
+/* header */
+.top_link {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    justify-content: right;
+    margin-right: 25%;
+    padding: 8px;
+}
+.top_link a, .top_link button {
+    background-color: #fff;
+    font-size: 11px;
+    margin-left: 20px;
+    color: #666;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.menu {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    align-items: center;
+    justify-content:center;
+    padding: 25px;
+    background-color: #fff;
+    border-top: 1px solid #f1f1f1;
+}
+.menu .logo img {
+    width: 102px;
+    height: 20px; 
+    margin-right: 90px;
+}
+.menu ul {
+    list-style: none;
+    display: flex;
+}
+.menu ul li a {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    padding: 0 26px; 
+    display: block;
+}
+.my_page img {
+    width: 31px;
+    height: 30px;
+    margin-left: 90px;
+}
