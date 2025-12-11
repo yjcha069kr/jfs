@@ -3,11 +3,10 @@
     display: grid;
     grid-template-columns: repeat(6, auto);
     justify-content: right;
-    margin-right: 25%;
+    margin-right: 30px;
     padding: 8px;
 }
 .top_link a, .top_link button {
-    background-color: #fff;
     font-size: 11px;
     margin-left: 20px;
     color: #666;
@@ -15,19 +14,18 @@
     background: none;
     cursor: pointer;
 }
+
 .menu {
     display: grid;
-    grid-template-columns: repeat(6, auto);
+    grid-template-columns: repeat(8, auto);
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     padding: 25px;
-    background-color: #fff;
-    border-top: 1px solid #f1f1f1;
+    border-top: 1px solid #f3f3f3;
 }
 .menu .logo img {
     width: 102px;
-    height: 20px; 
-    margin-right: 90px;
+    margin: 0 40px;
 }
 .menu ul {
     list-style: none;

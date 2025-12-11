@@ -83,8 +83,7 @@ address {
     padding: 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-#header.active::before {
-    content: "";
+#header.active .subbar {
     position: absolute;
     width: 100%;
     height: 48px;
@@ -188,6 +187,10 @@ address {
     display: none;
     /* 마지막 메뉴(혜택 메뉴)의 영역이 부족하여 줄 바꿈되는 현상 제거 */
     text-wrap: nowrap;
+}
+#gnb .sub.active {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
 }
 #gnb .sub a {
     padding: 0 8px;

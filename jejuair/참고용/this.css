@@ -1,0 +1,266 @@
+/* style.css */
+
+/* ==================================== */
+/* 0. 공통 및 중앙 정렬 기본 설정 */
+/* ==================================== */
+html, body {
+    height: 100%; 
+    margin: 0;
+    padding: 0;
+    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+    background-color: #fff;
+}
+
+/* Sticky Footer를 위한 전체 페이지 랩퍼 */
+#wrap {
+    display: flex;
+    flex-direction: column; 
+    min-height: 100vh; /* 화면 꽉 채우기 (여백 제거) */
+}
+
+/* 전체 내용을 담는 중앙 컨테이너 */
+.container {
+    width: 1200px; /* 전체 내용 너비 제한 */
+    margin: 0 auto; /* ✨ 필수: 가로 중앙 정렬 */
+    padding: 0 20px;
+}
+
+/* 메인 콘텐츠 영역: 남은 공간 채우기 */
+#main-content {
+    flex-grow: 1; 
+    padding: 40px 0; /* 위아래 여백 */
+}
+
+/* 섹션 제목 중앙 정렬 */
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center; /* ✨ 필수: 제목 텍스트 중앙 정렬 */
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0 0;
+}
+
+
+/* ==================================== */
+/* 1. HEADER 영역 스타일 */
+/* ==================================== */
+#header {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    position: relative;
+}
+.header-top, .header-main {
+    width: 1200px; 
+    margin: 0 auto; /* ✨ 중앙 정렬 */
+}
+.header-top {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 10px 0;
+    text-align: right;
+}
+.header-main {
+    padding: 10px 0;
+    display: flex; 
+    align-items: center;
+    position: relative;
+}
+#logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* ✨ 정확한 중앙 정렬 */
+    z-index: 10;
+    margin: 0;
+}
+#gnb {
+    display: flex;
+    width: 100%;
+    justify-content: space-between; 
+    margin-top: 15px; 
+    padding: 0 50px; 
+}
+.main-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.main-menu li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 18px; 
+    display: block;
+}
+
+
+/* ==================================== */
+/* 2. QUICK LINKS 섹션 스타일 */
+/* ==================================== */
+.quick-links {
+    background-color: #f8f8f8; 
+    padding: 40px 0;
+}
+.quick .link {
+    width: auto;
+    margin: 0 auto;
+    display: flex; 
+    list-style: none;
+    padding: 0;
+    justify-content: center; /* ✨ 핵심: 항목 중앙에 모아 배치 */
+    gap: 25px; 
+}
+.quick .link li {
+    text-align: center;
+    flex-basis: 100px;
+}
+.quick .link li img {
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%; /* 원형 이미지 */
+    display: block;
+    margin: 0 auto 10px; 
+    object-fit: cover; 
+}
+
+
+/* ==================================== */
+/* 3. 특별 혜택 섹션 (이미지 겹치기) */
+/* ==================================== */
+.special {
+    display: flex;
+    justify-content: center; /* ✨ 핵심: 3개 카드를 중앙에 모아 배치 */
+    gap: 20px;
+    margin: 20px auto; 
+}
+.special > div {
+    flex: 0 0 380px; /* 고정 크기로 유지 */
+    max-width: 380px; 
+    height: 250px; 
+    position: relative; /* 글씨 위치의 기준점 */
+    overflow: hidden;
+    border-radius: 10px; 
+    background-size: cover; 
+    background-position: center; 
+}
+/* 이미지 경로 예시 */
+.special > div:nth-child(1) { background-image: url('이미지1_경로.png'); background-color: #def2f7; }
+.special > div:nth-child(2) { background-image: url('이미지2_경로.png'); background-color: #6daaa2; }
+.special > div:nth-child(3) { background-image: url('이미지3_경로.png'); background-color: #c9e8fb; }
+
+.special > div p {
+    position: absolute; /* ✨ 필수: 부모 div를 기준으로 절대 위치 지정 */
+    top: 25px; 
+    left: 25px; 
+    color: #222; 
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.5; 
+}
+
+
+/* ==================================== */
+/* 4. 여행 편의 섹션 */
+/* ==================================== */
+.tabs {
+    text-align: center; /* ✨ 필수: 버튼들 중앙 정렬 */
+    margin-bottom: 30px;
+}
+.tabs .button {
+    height: 30px;
+    width: 100px;
+    border: none;
+    background: #f2f2f2;
+    font-size: 16px;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+.tabs .button.active {
+    background-color: #FF7F00;
+    color: white;
+}
+
+.seat-info {
+    display: flex;
+    justify-content: center; /* ✨ 필수: 전체 레이아웃 중앙 정렬 */
+    gap: 20px; 
+    max-width: 900px; 
+    margin: 0 auto; /* seat-info 전체를 중앙 정렬 */
+}
+.seat-card {
+    flex: 2; 
+    position: relative;
+    height: 300px; 
+    border-radius: 10px;
+    background-color: #ccc; /* 배경 이미지 대신 색상 예시 */
+}
+.seat-image {
+    background-image: url('/imgs/section_travel_t1_01.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+}
+.option {
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    gap: 20px; 
+}
+.option-item {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    height: 100%; 
+}
+.option-item .option-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* ==================================== */
+/* 5. FOOTER 영역 스타일 */
+/* ==================================== */
+#footer {
+    background: #f2f2f2;
+    padding: 20px 0;
+    margin-top: 60px;
+}
+.footer-inner {
+    width: 1100px;
+    margin: 0 auto; /* ✨ 중앙 정렬 */
+    padding: 0 50px; 
+}
+/* ... (나머지 footer 스타일 유지) ... */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) auto; 
+    gap: 40px 20px;
+    margin-bottom: 30px; 
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ddd; 
+}
+.footer-bottom {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start;
+}
