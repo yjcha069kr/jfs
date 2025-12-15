@@ -14,6 +14,10 @@
     <div class="slider">
         <div class="slides">
             <img src="/imgs/20251021091007781.jpg" alt="이미지1">
+            <img src="/imgs/20250922133649145.jpg" alt="이미지2">
+            <img src="/imgs/20250908161003044.jpg" alt="이미지3">
+            <img src="/imgs/20250801181553945.jpg" alt="이미지4">
+            <img src="/imgs/20250731072356272.jpg" alt="이미지5">
         </div>
     </div>
     
@@ -72,9 +76,9 @@
             <section class="comfort">
                 <h1>여행에 편리함을 더해보세요.</h1>
                 <div class="tabs">
-                    <button class="button">여행 전</button>
-                    <button class="button">기내에서</button>
-                    <button class="button">여행 동반</button>
+                    <button class="button" onclick="">여행 전</button>
+                    <button class="button" onclick="">기내에서</button>
+                    <button class="button" onclick="">여행 동반</button>
                 </div>
                 <div class="seat-info">
                     <div class="seat-card">
@@ -85,20 +89,24 @@
                         </div>
                     </div>
                     <div class="option">
-                        <div class="option-item business">
-                            <img src="/imgs/section_travel_t1_02.jpg" alt="비즈니스 좌석" class="option-img">
-                            <div class="text">
-                                <h3>비즈니스 라이트</h3>
-                                <p>넓고 편안한 좌석이 준비되어 있어요.</p>
+                        <a href="#">
+                            <div class="option-item business">
+                                <img src="/imgs/section_travel_t1_02.jpg" alt="비즈니스 좌석" class="option-img">
+                                <div class="text">
+                                    <h3>비즈니스 라이트</h3>
+                                    <p>넓고 편안한 좌석이 준비되어 있어요.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="option-item baggage">
-                            <img src="/imgs/section_travel_t1_03.jpg" alt="수하물" class="option-img">
-                            <div class="text">
-                                <h3>사전 수하물</h3>
-                                <p>현장보다 저렴하게 구매해 보세요.</p>
+                        </a>
+                        <a href="#">
+                            <div class="option-item baggage">
+                                <img src="/imgs/section_travel_t1_03.jpg" alt="수하물" class="option-img">
+                                <div class="text">
+                                    <h3>사전 수하물</h3>
+                                    <p>현장보다 저렴하게 구매해 보세요.</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -106,25 +114,92 @@
             <section class="member">
                 <h1>J 멤버스 전용 혜택을 만나보세요.</h1>
                 <div class="benefit-cards">
-                    <div class="card rank-card">
-                        <div class="content">
-                            <h3>J 멤버스 등급제도 개편</h3>
-                            <p>#더욱 강력해진 등급 혜택을 제공</p>
+                    <a href="#">
+                        <div class="card rank-card">
+                            <div class="content">
+                                <h3>J 멤버스 등급제도 개편</h3>
+                                <p>#더욱 강력해진 등급 혜택을 제공</p>
+                            </div>
+                            <img src="/imgs/section_member_01.png" alt="돋보기" class="icon">
                         </div>
-                        <img src="/imgs/section_member_01.png" alt="돋보기" class="icon">
-                    </div>
-                    <div class="card point-card">
-                        <div class="content">
-                            <h3>떠날수록 쌓이는 J 포인트</h3>
-                            <p>#포인트로 떠나는 여행</p>
+                    </a>
+                    <a href="#">
+                        <div class="card point-card">
+                            <div class="content">
+                                <h3>떠날수록 쌓이는 J 포인트</h3>
+                                <p>#포인트로 떠나는 여행</p>
+                            </div>
+                            <img src="/imgs/section_member_02.png" alt="p코인" class="icon">
                         </div>
-                        <img src="/imgs/section_member_02.png" alt="p코인" class="icon">
-                    </div>
+                    </a>
                 </div>
             </section>
 
             <section class="popular">
 
+            </section>
+
+            <section class="experience">
+                <div class="expeience-header">
+                    <h1>J 멤버스 혜택존을 경험해 보세요.</h1>
+                    <a href="#" class="view-all">전체보기</a>
+                </div>
+                <div class="card-section">
+                    <a href="#">
+                        <div class="ex-card">
+                            <img src="imgs/section_discount_02.jpg" alt="렌터카">
+                            <div class="card-text">
+                                <h2>렌터카</h2>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div class="ex-card">
+                            <img src="imgs/section_discount_01.jpg" alt="호텔/숙소">
+                            <div class="card-text">
+                                <h2>호텔/숙소</h2>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div class="ex-card">
+                            <img src="imgs/section_discount_03.jpg" alt="금융/여행자보험">
+                            <div class="card-text">
+                                <h2>금융/여행자보험</h2>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div class="ex-card">
+                            <img src="imgs/section_discount_04.jpg" alt="골프/투어">
+                            <div class="card-text">
+                                <h2>골프/투어</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="notice">
+                <div class="notice-header">
+                    <h1>공지사항을 확인해 주세요.</h1>
+                    <a href="#" class="view-all">전체보기</a>
+                </div>
+
+                <ul class="notice-list">
+                    <li class="notice-item">
+                        <a href="#">중국 전자 입국 신고서 시행 안내</a>
+                    </li>
+                    <li class="notice-item">
+                        <a href="#">인도네시아 도착 비자 (VOA/Visa On Arrival) 이용 안내</a>
+                    </li>
+                    <li class="notice-item">
+                        <a href="#">국내선 유류할증료 (2025년 12월)</a>
+                    </li>
+                </ul>
             </section>
 
         </div><!-- //.container -->

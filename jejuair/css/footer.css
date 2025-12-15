@@ -1,7 +1,7 @@
 /* footer */
 #footer {
     background: #f2f2f2;
-    padding: 20px 0;
+    padding: 60px;
 }
 .footer-inner {
     width: 1100px;
@@ -15,10 +15,6 @@
     margin-bottom: 30px; 
     padding-bottom: 30px;
     border-bottom: 1px solid #ddd; 
-}
-.footer-banner img {
-    width: 51px;
-    height: 51px;
 }
 .item h4 {
     font-size: 16px;

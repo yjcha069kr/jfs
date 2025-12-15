@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/rentcar/rent.css">
+</head>
+<body>
+    <!-- ==================== 헤더 ==================== -->
+    <header class="header">
+
+    </header>
+
+    <!-- ==================== 메인 ==================== -->
+    <!-- ========== 섹션1: 검색 바 ========== -->
+    <section class="section section-1" id="section-1">
+        <div class="search-filter-bar">
+            <div class="filter-box" id="pickup-box">
+                <label>인수 일시</label>
+                <span class="value-display">날짜 선택</span>
+                <div class="detail-popup">
+                    <input type="date" class="date-input">
+                </div>
+            </div>
+            <div class="filter-box" id="return-box">
+                <label>반납 일시</label>
+                <span class="value-display">날짜 선택</span>
+                <div class="detail-popup">
+                    <input type="date" class="date-input">
+                </div>
+            </div>
+            <div class="filter-box" id="insurance-box">
+                <label>보험</label>
+                <span class="value-display">종류 선택</span>
+            
+                <div class="detail-popup" id="insurance-popup">
+                    <ul class="option-list">
+                        <li>일반자차</li>
+                        <li>고급자차</li>
+                        <li>완전자차</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="filter-box" id="age-box">
+                <label>운전자 연령</label>
+                <span class="value-display">연령 선택</span>
+                <div class="detail-popup" id="age-popup">
+                    <ul class="option-list">
+                        <li>만 21세 - 22세</li>
+                        <li>만 23세 - 25세</li>
+                        <li>만 25세 이상</li>
+                    </ul>
+                </div>
+            </div>
+            <button class="search-button">검색</button>
+        </div>
+    </section>
+<!-- ========== 섹션2: 진행중 이벤트 ========== -->
+    <section class="section section-2" id="section-2">
+        <div class="event">
+            <button class="btn prev"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="event-container">
+                <div class="event-items">
+                    <div class="event-card">
+                        <div class="card-image" style="background: url(/rentcar/rent/3677991.webp);"></div>
+                        <div class="card-content">
+                            <p>하리보 해피월드 X 제주패스</p>
+                            <h3>오직 제주패스에서만!<br>하리보 할인 혜택 총출동</h3>
+                            <p>입장권 및 카페 할인 받기</p>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="card-image" style="background: url(/rentcar/rent/3677991.webp);"></div>
+                        <div class="card-content">
+                            <p>제휴사 혜택</p>
+                            <h3>제주패스 고객에게 드리는<br>아쿠아플라넷 20% 할인</h3>
+                            <p>입장권 및 카페 할인 받기</p>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="card-image" style="background: url(/rentcar/rent/3677991.webp);"></div>
+                        <div class="card-content">
+                            <p>이전에는 없던 렌터카 서비스!</p>
+                            <h3>프리미엄 렌터카가<br>비싼 이유</h3>
+                            <p>한계를 극복한 육각형 렌터카</p>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="card-image" style="background: url(/rentcar/rent/3677991.webp);"></div>
+                        <div class="card-content">
+                            <p>제주패스 | 현대캐피탈</p>
+                            <h3>현대캐피탈 EV 충전카드로<br>어디서든 편리하게 충전하세요</h3>
+                            <p>지금 신청하시면<br>충전크레딧 3,000P 제공</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- ========== 섹션3: 최저가 렌트카 추천 ========== -->
+    <section class="section section-3" id="section-3">
+        <div class="car">
+            <div class="section-header">
+                <h2>렌트카 추천</h2>
+            </div>
+            <div class="car-container">
+                <div class="car-items">
+                    <div class="car-card">
+                        <div class="card-image"></div>
+                        <div class="card-content">
+                            <h3>운전이 어렵다면 경차 추천</h3>
+                            <p>13,500원 ~</p>
+                        </div>
+                    </div>
+                    <div class="car-card">
+                        <div class="card-image"></div>
+                        <div class="card-content">
+                            <h3>3인 이상 가족끼리 여행할 때</h3>
+                            <p>15,200원 ~</p>
+                        </div>
+                    </div>
+                    <div class="car-card">
+                        <div class="card-image"></div>
+                        <div class="card-content">
+                            <h3>4인 이상보다 편할 수 없어요</h3>
+                            <p>16,100원 ~</p>
+                        </div>
+                    </div>
+                    <div class="car-card hidden">
+                        <div class="card-image"></div>
+                        <div class="card-content">
+                            <h3>요즘 준중형은 중형만큼 커요</h3>
+                            <p>16,100원 ~</p>
+                        </div>
+                    </div>
+                    <div class="car-card hidden">
+                        <div class="card-image"></div>
+                        <div class="card-content">
+                            <h3>비포장 많은 제주에 딱 좋아</h3>
+                            <p>17,400원 ~</p>
+                        </div>
+                    </div>
+                    <div class="car-card hidden">
+                        <div class="card-image"></div>
+                        <div class="card-content">
+                            <h3>더 안락한 여행을 원한다면</h3>
+                            <p>22,500원 ~</p>
+                        </div>
+                    </div>
+                    <div class="car-card hidden">
+                        <div class="card-image"></div>
+                        <div class="card-content">
+                            <h3>고유가 시대, 선택이 아닌 필수</h3>
+                            <p>23,100원~ ~</p>
+                        </div>
+                    </div>
+                    <div class="car-card hidden">
+                        <div class="card-image"></div>
+                        <div class="card-content">
+                            <h3>커플여행 플렉스가 필요할 때</h3>
+                            <p>24,000원~ ~</p>
+                        </div>
+                    </div>
+                    <div class="car-card hidden">
+                        <div class="card-image"></div>
+                        <div class="card-content">
+                            <h3>경차보다 조금 더 공간이 필요할 때</h3>
+                            <p>42,000원~ ~</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="more-btn-container">
+                <button class="more-btn">더보기</button>
+            </div>
+        </div>
+    </section>
+<!-- ========== 섹션4: 서비스 이용 안내 ========== -->
+    <section class="section section-4" id="section-4">
+
+    </section>
+
+
+<!-- ==================== 푸터 ==================== -->
+    <footer class="footer">
+
+    </footer>
+
+    <script src="/rentcar/rent.js"></script>
+</body>
+</html>
