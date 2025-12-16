@@ -1,3 +1,4 @@
+// ==================== 섹션1: 검색 바 ====================
 document.addEventListener('DOMContentLoaded', function() {
     const filterBoxes = document.querySelectorAll('.filter-box');
 
@@ -48,6 +49,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+// ==================== 섹션2: 이벤트 배너 슬라이드 ====================
+document.addEventListener("DOMContentLoaded", () => {
+    const slider = document.querySelector(".event-items");
+    const cards = document.querySelectorAll(".event-card");
+    const total = cards.length;
+
+    let index = 0;
+
+    function moveSlide() {
+        slider.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    // 5초마다 자동 이동
+    setInterval(() => {
+        index = (index + 1) % total;
+        moveSlide();
+    }, 5000);
+});
+
+
+// ==================== 섹션3: 렌트카 카드 "더보기" 버튼 ====================
 const showMoreBtn = document.querySelector(".more-btn");
 const hiddenCards = document.querySelectorAll(".car-card.hidden");
 
@@ -55,3 +78,5 @@ showMoreBtn.addEventListener("click", () => {
     hiddenCards.forEach(card => card.classList.remove("hidden"));
     showMoreBtn.style.display = "none"; // 버튼 숨기기
 });
+
+
