@@ -22,73 +22,58 @@
 }
 html {
   scroll-behavior: smooth;
-  /* scroll-snap-type은 JavaScript의 풀페이지 스크롤과 충돌하므로 제거 */
-  /* 스크롤바 제거 */
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
-html::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  height: 0;
-}
+
 body {
   font-family: "FlightSans", -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-  background-color: #ffffff;
-  scroll-behavior: smooth; /* 마우스 휠 스크롤 부드러움 */
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  overflow-y: scroll;
-  /* 스크롤바 제거 */
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
 
-/* 스크롤바 숨김 - Webkit 브라우저 (Chrome, Safari, Edge) */
-body::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  height: 0;
-}
 
-/* 모든 요소의 스크롤바 제거 */
-*::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  height: 0;
+/* ============================================================================= */
+/* ======================== 공통  ======================== */
+.container { 
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.section {
+    padding-top: 50px;
+    padding-bottom: 120px;
+}
+.section-header {
+    font-size: 24px;
+    margin: 0 auto 40px;
 }
 
 /* ======================== 헤더 ======================== */
 .header {
-    background-color: #fff;
+    background: #fff;
     border-bottom: 1px solid #ddd;
     position: sticky; /* 스크롤 시 상단 고정 */
     top: 0;
     z-index: 999;
 }
-
 /* 메인 네비(GNB) */
 .gnb {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 25px;
     display: flex; 
     align-items: center;
-    justify-content: center; 
-    gap: 30px;  
+    justify-content: center;
+    padding: 30px 0;
 }
 /* 로고 */
 .gnb img {
-    height: 50px;
+    height: 60px;
     width: auto; 
     vertical-align: middle;
 }
 .menu {
     list-style: none;
     display: flex;
-    gap: 110px;
+    justify-content: space-around;
+    gap: 130px;
     padding: 0;
     margin: 0;
 }
@@ -105,7 +90,7 @@ body::-webkit-scrollbar {
     align-items: center;    
 }
 .menu > li > a:hover {
-    color: #ff5500; /* 주황색 */
+    color: #ff5500; 
 }
 
 .submenu {
@@ -149,23 +134,19 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 25px;
-    background-color: #f7f7f7;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    max-width: 1400px;
-    margin: 50px auto;
-    gap: 25px;
+    padding: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    gap: 10px;
 }
 .filter-box {
     position: relative; 
     flex-grow: 1; 
     margin-right: 20px;
-    padding: 25px 30px;
-    background-color: white;
+    padding: 30px 25px;
+    background-color: #fff;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.2s;
 }
 .filter-box:hover {
@@ -240,17 +221,29 @@ body::-webkit-scrollbar {
     background: #ff7333;
 }
 
+
 /* ======================== 섹션2 ======================== */
 .event .section-header {
-    font-size: 26px;
-    text-align: center;
-    padding: 80px 0 50px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: baseline; /* 배너 기준 */
+    font-size: 24px;
+    margin: 0 auto 40px;
 }
+.event .section-header a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #333;
+}
+.event .section-header a:hover {
+    text-decoration: underline; 
+}
+
 .event-banner {
     position: relative;
     overflow: hidden;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     height: 380px;
     margin: 0 auto;
     border-radius: 15px;
@@ -311,11 +304,6 @@ body::-webkit-scrollbar {
 
 
 /* ======================== 섹션3 ======================== */
-.car .section-header {
-    font-size: 26px;
-    text-align: center;
-    padding: 150px 0 50px;
-}
 .car-items {
     display: grid;
     grid-template-columns: repeat(3, 382px); /* 382px짜리 카드 3개 */
@@ -349,6 +337,7 @@ body::-webkit-scrollbar {
 .card-content h3 {
     font-size: 20px;
     margin-bottom: 6px;
+    color: #555;
 }
 .card-content p {
     font-size: 16px;
@@ -383,15 +372,14 @@ body::-webkit-scrollbar {
     margin-top: 20px;
 }
 .more-btn {
-    font-size: 14px;
+    font-size: 18px;
     margin-top: 20px;
-    padding: 14px 32px;
+    padding: 20px 35px;
     background: #ff5000;
     color: #fff;
     border: none;
-    border-radius: 7px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 .more-btn:hover {
     background: #ff7333;
@@ -400,43 +388,67 @@ body::-webkit-scrollbar {
 
 
 /* ======================== 섹션4 ======================== */
-.icon-container {
+.section-4 .service {
+    position: relative; /* 장식 이미지 배치용 */
+}
+
+.section-4 .service-items {
     display: flex;
-    text-align: center;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
+    align-items: center; 
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.section-4 .service-items img {
+    height: 55px;
+    width: 55px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.section-4 .service-text a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block; 
+}
+
+.section-4 .service-text h3 {
+    margin: 8px 0;
+    font-size: 24px;
     color: #333;
 }
 
-.calendar-icon {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto 8px;
-    border: 1px solid #ff5000;
-    border-radius: 50%;
-    position: relative;
-    background: white;
+.section-4 .service-text p {
+    font-size: 20px;
+    color: #333;
+    line-height: 1.7;
 }
 
-.calendar-body {
-    width: 28px;
-    height: 28px;
-    background: #ff5000;
-    border-radius: 6px;
+.section-4 .service-deco {
     position: absolute;
-    top: 18px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 0;   
+    top: 50%;
+    transform: translateY(-35%);
+    width: 600px;
+    opacity: 0.8;
 }
 
-.calendar-dot {
-    width: 6px;
-    height: 6px;
-    background: #fff;
-    border-radius: 50%;
-    position: absolute;
-    top: 28px;
-    left: 50%;
-    transform: translateX(-50%);
+
+
+/* ======================== 푸터 ======================== */
+.footer {
+    background-color: #ddd; 
+    color: #333; 
+    padding: 40px;         
+}
+.company-info p {
+    font-size: 15px;
+    margin: 45px 0;
+}
+.company-notice p {
+    font-size: 18px;
+    color: #333;
+}
+.company-notice a {
+    text-decoration: none;
 }
