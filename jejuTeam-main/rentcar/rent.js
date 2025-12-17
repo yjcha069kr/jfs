@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
             box.classList.remove('active');
         });
     });
-
     // ✅ 날짜 선택
     document.querySelectorAll('.date-input').forEach(input => {
         input.addEventListener('change', function(e) {
@@ -48,6 +47,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// ===선택된 항목들 색깔고정===
+const filterBoxes = document.querySelectorAll('.filter-box');
+
+filterBoxes.forEach(box => {
+    const valueDisplay = box.querySelector('.value-display');
+
+    // 날짜 선택 후
+    const dateInput = box.querySelector('.date-input');
+    if(dateInput){
+        dateInput.addEventListener('change', () => {
+            if(dateInput.value){
+                valueDisplay.style.color = '#ff5000'; // 선택 완료 시 색상
+            }
+        });
+    }
+    // 보험, 운전자 연령 선택 후
+    const options = box.querySelectorAll('.option-list li');
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            valueDisplay.textContent = option.textContent; // 선택 값 표시
+            valueDisplay.style.color = '#ff5000';         // 색상 변경
+            box.classList.remove('active');               // 팝업 닫기
+        });
+    });
+});
+
 
 
 // ==================== 섹션2: 이벤트 배너 슬라이드 ====================

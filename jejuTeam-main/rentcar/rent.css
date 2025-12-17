@@ -1,35 +1,35 @@
 /* ==================== 웹폰트 정의 ==================== */
 @font-face {
-  font-family: "FlightSans";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/FlightSans-Regular.woff2")
-    format("woff2");
-  font-weight: 400;
-  font-display: swap;
+    font-family: "FlightSans";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/FlightSans-Regular.woff2")
+        format("woff2");
+    font-weight: 400;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "FlightSans";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/FlightSans-Bold.woff2")
-    format("woff2");
-  font-weight: 700;
-  font-display: swap;
+    font-family: "FlightSans";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/FlightSans-Bold.woff2")
+        format("woff2");
+    font-weight: 700;
+    font-display: swap;
 }
 /* ==================== 기본 스타일 ==================== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: "FlightSans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+    font-family: "FlightSans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 
@@ -41,12 +41,13 @@ body {
 }
 .section {
     padding-top: 50px;
-    padding-bottom: 120px;
+    padding-bottom: 80px;
 }
 .section-header {
-    font-size: 24px;
-    margin: 0 auto 40px;
+    font-size: 22px;
+    margin-bottom: 20px;
 }
+
 
 /* ======================== 헤더 ======================== */
 .header {
@@ -92,6 +93,11 @@ body {
 .menu > li > a:hover {
     color: #ff5500; 
 }
+.menu > li.mainmenu:hover > .submenu {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
 
 .submenu {
     display: block;           
@@ -107,11 +113,6 @@ body {
     opacity: 0;               
     pointer-events: none;     
     transition: opacity 0.3s; 
-}
-.menu > li.mainmenu:hover > .submenu {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
 }
 .submenu li {
     list-style: none;
@@ -129,6 +130,7 @@ body {
 }
 
 
+
 /* ======================== 섹션1 ======================== */
 .search-filter-bar {
     display: flex;
@@ -138,10 +140,12 @@ body {
     background-color: #ddd;
     border-radius: 10px;
     gap: 10px;
+    
 }
 .filter-box {
     position: relative; 
     flex-grow: 1; 
+    max-width: 280px;
     margin-right: 20px;
     padding: 30px 25px;
     background-color: #fff;
@@ -149,9 +153,14 @@ body {
     cursor: pointer;
     transition: box-shadow 0.2s;
 }
+
+
 .filter-box:hover {
     color: #333;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.filter-box:hover .value-display {
+    color: #ff5000; 
 }
 .filter-box label {
     display: block;
@@ -165,6 +174,7 @@ body {
     color: #333;
     white-space: nowrap; 
 }
+
 
 /* 달력 */
 .date-input {
@@ -227,12 +237,10 @@ body {
     display: flex;
     justify-content: space-between; 
     align-items: baseline; /* 배너 기준 */
-    font-size: 24px;
-    margin: 0 auto 40px;
 }
 .event .section-header a {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     color: #333;
 }
 .event .section-header a:hover {
@@ -283,11 +291,11 @@ body {
 }
 .slide-text p {
     margin: 0;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 2.4;
 }
 
-/* 슬라이드 애니메이션 */
+/* (배너)슬라이드 애니메이션 */
 @keyframes slide {
     0%   { transform: translateX(0); }
     20%  { transform: translateX(0); }
@@ -299,7 +307,6 @@ body {
     95%  { transform: translateX(-60%); }
     100% { transform: translateX(-80%); }
 }
-
 
 
 
@@ -414,14 +421,14 @@ body {
 }
 .section-4 .service-text h3 {
     margin: 8px 0;
-    font-size: 24px;
+    font-size: 22px;
     color: #333;
 }
 .section-4 .service-text h3:hover {
     color:#ff5000
 }
 .section-4 .service-text p {
-    font-size: 20px;
+    font-size: 18px;
     color: #333;
     line-height: 1.7;
 }
@@ -440,14 +447,15 @@ body {
 .footer {
     background-color: #ddd; 
     color: #333; 
-    padding: 40px;         
+    padding: 30px; 
+    line-height: 1.5;
 }
 .company-info p {
-    font-size: 15px;
-    margin: 45px 0;
+    font-size: 13px;
+    margin: 25px 0;
 }
 .company-notice p {
-    font-size: 18px;
+    font-size: 16px;
     color: #333;
 }
 .company-notice a {
