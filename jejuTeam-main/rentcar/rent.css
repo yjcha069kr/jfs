@@ -222,9 +222,10 @@ body {
     color: #333;
     white-space: nowrap; 
 }
+.filter-box .value-display span {
+    color: #ff5000
+}
 
-
-/* 달력 */
 .date-input {
     position: absolute;
     top: 0;
@@ -487,6 +488,32 @@ body {
     transform: translateY(-35%);
     width: 600px;
     opacity: 0.8;
+}
+
+
+
+/* ======================== 고객센터 안내 배너 ======================== */
+.customer-service {
+    background-color: #fff3e6;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 16px;
+    color: #333;
+    border-top: 1px solid #ddd;
+    line-height: 1.6;
+}
+.customer-service p:nth-child(1) {
+    font-size: 20px;
+    font-weight: bold;
+}
+.customer-service p > i {
+    font-size: 30px;
+    color: #ff5000;
+    margin-right: 8px;
+}
+.customer-service p > b {
+    font-size: 45px;;
+    color: #ff5000; 
 }
 
 

@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// ===선택된 항목들 색깔고정===
+// ===옵션 선택 후 선택된 항목들 색깔 변함===
 const filterBoxes = document.querySelectorAll('.filter-box');
 
 filterBoxes.forEach(box => {
