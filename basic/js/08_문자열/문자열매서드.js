@@ -29,7 +29,7 @@ console.log(msg.length);// 11 (공백 포함)
 
 /**
  * 문자열.replace(찾을_내용, 바꿀_내용)
- *      - 문자열에서 찾을_내용을 바꿀_내용으로 대체하여 반환
+ *      - 문자열에서 (찾을_내용)을 (바꿀_내용)으로 대체하여 반환
  */
 text = "Hello World";
 let result = text.replace("World", "JavaScript");
