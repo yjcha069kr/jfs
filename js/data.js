@@ -3,12 +3,12 @@
 const datas=[
     {
         rank: 1,
-        poster: "assets/img/p1.jpg",
-        title: '팀작업명ㅇㅇㅇㅇ',
+        poster: "assets/img/project1_thumb.png",
+        title: 'Jeju',
         task: 'TE',
         description: ["팀작업 준비중..."],
         worktime: '240H',
-        siteurl: "#"
+        siteurl: "https://jejurentcar.netlify.app/"
     },
     {
         rank: 2,
